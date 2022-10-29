@@ -5,7 +5,8 @@ Rottenpotatoes::Application.routes.draw do
   post 'organization_login' =>'organizers#login', as: :organization_login
   post 'new_organization' =>'organizers#create', as: :organization_create_account
   get 'events' => 'events#index', as: :events
-  get 'dashboard' => 'events#new', as: :new_event
+  get 'create_event' => 'events#new', as: :new_event
+  get 'org_events' => 'events#organizer_index', as: :organizer_events
   # root :to => 'events#index'
   # get "/" => "events#index"
 end

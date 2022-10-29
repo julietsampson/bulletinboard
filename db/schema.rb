@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221029174053) do
+ActiveRecord::Schema.define(version: 20221029174535) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "datetime"
     t.string   "location"
     t.text     "description"
-    t.string   "tags",        default: "--- []\n"
+    t.string   "tags",         default: "--- []\n"
+    t.integer  "organizer_id"
   end
+
+  add_index "events", ["organizer_id"], name: "index_events_on_organizer_id"
 
   create_table "events_students", id: false, force: :cascade do |t|
     t.integer "student_id", null: false

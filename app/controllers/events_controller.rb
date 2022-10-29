@@ -10,6 +10,10 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def organizer_index
+    @events = Event.where(organizer_id: params[:organizer_id])
+  end
+
   def new
     # default: render 'new' template
   end
@@ -17,7 +21,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.create!(event_params)
     flash[:notice] = "#{@event.name} was successfully created."
-    redirect_to events_path
+    redirect_to organizer_events_path
   end
 
   def edit

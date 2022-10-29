@@ -1,0 +1,38 @@
+<!--  This file is app/views/events/organizer_index.html.erb -->
+<h2>Your Events</h2>
+
+<%#  Part 2: Start here... %>
+<%= link_to "Create an event", create_event_path %>
+
+<table class="table table-striped col-md-12" id="events">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Date and Time</th>
+      <th>Location</th>
+      <th>Tags</th>
+      <th>More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td>
+          <%= event.name %>
+        </td>
+        <td>
+          <%= event.datetime %>
+        </td>
+        <td>
+          <%= event.location %>
+        </td>
+        <td>
+          <%= event.tags %>
+        </td>
+        <td>
+          <%= link_to "More about #{event.name}", event_path(event) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
