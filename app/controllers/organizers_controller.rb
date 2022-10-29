@@ -2,12 +2,14 @@ class OrganizersController < ApplicationController
     def create
         @organization = Organizer.create!(organization_params)
         flash[:notice] = "Welcome #{@organization.name}!"
-        redirect_to events_path
+        session[:organizer_id] = @organization.id
+        redirect_to organizer_events_path('organizer_id': @organization.id)
     end
     
     def create_event
-        @event = @organizer.events.create(event_params)
-        redirect to organizer_events_path('organizer_id': @organization.id)
+      @organizer = Organizer.find_by(id: session[:organizer_id])
+      @event = @organizer.events.create(event_params)
+        redirect_to organizer_events_path('organizer_id': @organizer.id)
     end
     
     def login
@@ -20,6 +22,7 @@ class OrganizersController < ApplicationController
         redirect_to root_path
       else 
         flash[:notice] = "Welcome back #{@organization.name}!"
+        session[:organizer_id] = @organization.id
         redirect_to organizer_events_path('organizer_id': @organization.id)
       end
     end
