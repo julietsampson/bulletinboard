@@ -1,0 +1,43 @@
+<h1>Welcome!</h1>
+
+<h2> Are you a student? Either... </h2>
+<h3> Log In: </h3>
+<%= form_tag student_login_path, :class => 'form' do %>
+    <%= label :student, :name, 'Name', :class => 'col-form-label' %>
+    <%= text_field :student, :name, :class => 'form-control' %>
+    <%= label :student, :uni, 'UNI', :class => 'col-form-label' %>
+    <%= text_field :student, :uni, :class => 'form-control' %>
+    <br/>
+    <%= submit_tag 'Login', :class => 'btn btn-primary' %>
+<% end %>
+
+<h3> Or Create an Account: </h3>
+<%= form_tag student_create_account_path, :class => 'form' do %>
+    <%= label :student, :name, 'Name', :class => 'col-form-label' %>
+    <%= text_field :student, :name, :class => 'form-control' %>
+    <%= label :student, :uni, 'UNI', :class => 'col-form-label' %>
+    <%= text_field :student, :uni, :class => 'form-control' %>
+    <br/>
+    <%= submit_tag 'Create Account', :class => 'btn btn-primary' %>
+<% end %>
+
+<h2> Are you an organization? Either... </h2>
+<h3> Log In: </h3>
+<%= form_tag organization_login_path, :class => 'form' do %>
+    <%= label :organization, :name, 'Name', :class => 'col-form-label' %>
+    <%= text_field :organization, :name, :class => 'form-control' %>
+    <%= label :organization, :email, 'Email', :class => 'col-form-label' %>
+    <%= text_field :organization, :email, :class => 'form-control' %>
+    <br/>
+    <%= submit_tag 'Login', :class => 'btn btn-primary' %>
+<% end %>
+
+<h3> Or Create an Account: </h3>
+<%= form_tag organization_create_account_path, :class => 'form' do %>
+    <%= label :organization, :name, 'Name', :class => 'col-form-label' %>
+    <%= text_field :organization, :name, :class => 'form-control' %>
+    <%= label :organization, :email, 'Email', :class => 'col-form-label' %>
+    <%= text_field :organization, :email, :class => 'form-control' %>
+    <br/>
+    <%= submit_tag 'Login', :class => 'btn btn-primary' %>
+<% end %>

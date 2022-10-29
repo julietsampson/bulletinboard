@@ -1,0 +1,8 @@
+<h2>Create New Event</h2>
+
+<%= form_tag 'events#create', :class => 'form' do %>
+  <%= label :event, :name, 'Name', :class => 'col-form-label' %>
+  <%= text_field :event, :Name, :class => 'form-control' %>
+  <br/>
+  <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
+<% end %>
