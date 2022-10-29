@@ -7,14 +7,16 @@ class OrganizersController < ApplicationController
     
       def login
         @organization = Organizer.find_by(email: params[:organization][:email])
-        byebug
         if (@organization == nil)
-          flash[:notice] = "Invalid organization"
+          flash[:notice] = "Organization not found-- please create an account!"
+          redirect_to root_path
+        elsif (@organization.password != params[:organization][:password])
+          flash[:notice] = "Password incorrect. Please try again!"
           redirect_to root_path
         else 
           flash[:notice] = "Welcome back #{@organization.name}!"
+          redirect_to new_event_path
         end
-        redirect_to new_event_path
       end
     
     
@@ -22,7 +24,7 @@ class OrganizersController < ApplicationController
       # Making "internal" methods private is not required, but is a common practice.
       # This helps make clear which methods respond to requests, and which ones do not.
       def organization_params
-        params.require(:organization).permit(:name, :email)
+        params.require(:organization).permit(:name, :email, :password)
       end
     end
     

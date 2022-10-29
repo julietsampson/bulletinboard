@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221029145320) do
+ActiveRecord::Schema.define(version: 20221029174053) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20221029145320) do
     t.text     "description"
     t.string   "tags",        default: "--- []\n"
   end
+
+  create_table "events_students", id: false, force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "event_id",   null: false
+  end
+
+  add_index "events_students", ["event_id"], name: "index_events_students_on_event_id"
+  add_index "events_students", ["student_id"], name: "index_events_students_on_student_id"
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
@@ -33,11 +41,13 @@ ActiveRecord::Schema.define(version: 20221029145320) do
   create_table "organizers", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password"
   end
 
   create_table "students", force: :cascade do |t|
     t.string "uni"
     t.string "name"
+    t.string "password"
   end
 
 end
