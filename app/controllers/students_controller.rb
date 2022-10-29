@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
     def create
       @student = Student.create!(student_params)
       flash[:notice] = "Welcome #{@student.name}!"
+      session[:student_id] = @student.id
       redirect_to events_path
     end
   
@@ -16,8 +17,33 @@ class StudentsController < ApplicationController
         redirect_to root_path()
       else
         flash[:notice] = "Welcome back #{@student.name}!"
+        session[:student_id] = @student.id
         redirect_to events_path
       end
+    end
+
+    def add_event
+      @student = Student.find(session[:student_id])
+      @event = Event.find(params[:id])
+      if (@student.events.include?(@event))
+        flash[:notice] = "You've already added #{@event.name} to your list!"
+        redirect_to events_path
+        return
+      end
+      @student.events << @event
+      redirect_to student_events_path('student_id': @student.id)
+    end
+
+    def remove_event
+      @student = Student.find(session[:student_id])
+      @event = Event.find(params[:id])
+      @student.events.delete(@event)
+      redirect_to student_events_path('student_id': @student.id)
+    end
+
+    def my_events
+      @student = Student.find(session[:student_id])
+      @events = @student.events
     end
   
   

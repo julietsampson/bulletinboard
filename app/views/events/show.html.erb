@@ -1,24 +1,23 @@
 <!--  app/views/events/show.html.erb -->
-<h2>Details about <em><%= @movie.title %></em></h2>
+<h2>Details about <em><%= @event.name %></em></h2>
 
 <ul id="details">
   <li>
-    Rating:
-    <%= @movie.rating %>
+    Date and time:
+    <%= @event.datetime %>
   </li>
   <li>
-    Released on:
-    <%= @movie.release_date.strftime("%B %d, %Y") %>
+    Location:
+    <%= @event.location %>
   </li>
 </ul>
 
 <h3>Description:</h3>
 <p id="description">
-  <%= @movie.description %>
+  <%= @event.description %>
 </p>
 
-<div class="row">
-  <%= link_to 'Edit', edit_movie_path(@movie), :class => 'btn btn-primary col-2' %>
-  <%= link_to 'Delete', movie_path(@movie), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
-  <%= link_to 'Back to movie list', movies_path, :class => 'btn btn-primary col-2' %>
-</div>
+<h3> Add to your list? </h3>
+<%= link_to 'Add', add_event_path(@event.id), :class => 'btn btn-outline-success btn-sml' %>
+<p> </p>
+<%= button_to "Back to All Events", events_path, method: :get , :class => 'btn btn-primary'%>

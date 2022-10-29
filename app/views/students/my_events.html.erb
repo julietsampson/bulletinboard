@@ -1,5 +1,5 @@
-<!--  This file is app/views/events/index.html.erb -->
-<h2>All Events</h2>
+<!--  This file is app/views/events/organizer_index.html.erb -->
+<h2>Your Events</h2>
 
 <%#  Part 2: Start here... %>
 
@@ -9,7 +9,7 @@
       <th>Event Name</th>
       <th>Date and Time</th>
       <th>Location</th>
-      <th>More Info</th>
+      <th>Remove from List</th>
     </tr>
   </thead>
   <tbody>
@@ -25,12 +25,13 @@
           <%= event.location %>
         </td>
         <td>
-          <%= button_to "Learn More", about_event_path(event), method: :get, :class => 'btn btn-outline-info btn-sm' %>
+        <%= button_to "Remove", remove_event_path(event), method: :get , :class => 'btn btn-outline-danger btn-sm'%>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= button_to "My Events", student_events_path, method: :get , :class => 'btn btn-outline-primary'%>
+
+<%= button_to "Back to All Events", events_path, method: :get , :class => 'btn btn-outline-primary%>
 <p></p>
 <%= button_to "Log Out", root_path, method: :get , :class => 'btn btn-outline-secondary'%>
