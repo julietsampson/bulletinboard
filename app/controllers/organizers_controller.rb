@@ -6,10 +6,9 @@ class OrganizersController < ApplicationController
         redirect_to organizer_events_path('organizer_id': @organization.id)
     end
     
-    def create_event
-      @organizer = Organizer.find_by(id: session[:organizer_id])
-      @event = @organizer.events.create(event_params)
-        redirect_to organizer_events_path('organizer_id': @organizer.id)
+    def logout
+      reset_session
+      redirect_to root_path
     end
     
     def login

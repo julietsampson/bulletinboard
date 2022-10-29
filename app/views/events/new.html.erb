@@ -1,12 +1,16 @@
+<%= link_to "Logout", organization_logout_path %>
+
 <h2>Create New Event</h2>
 
-<%= form_tag submit_event_path, :class => 'form' do %>
+<%= form_tag events_path, :class => 'form' do %>
   <%= label :event, :name, 'Name', :class => 'col-form-label' %>
   <%= text_field :event, :name, :class => 'form-control' %>
   <%= label :event, :datetime, 'Date and Time', :class => 'col-form-label' %>
   <%= datetime_select :event, :datetime, :class => 'form-control' %>
   <%= label :event, :location, 'Location', :class => 'col-form-label' %>
   <%= text_field :event, :location, :class => 'form-control' %>
+  <%= label :event, :tags, 'Tags', :class => 'col-form-label' %>
+  <%= text_field :event, 'tags', :class => 'form-control' %>
   <%= label :event, :description, 'Description', :class => 'col-form-label' %>
   <%= text_field :event, :description, :class => 'form-control' %>
   <br/>

@@ -1,8 +1,11 @@
 <!--  This file is app/views/events/organizer_index.html.erb -->
+
+<%= link_to "Logout", organization_logout_path, 'data-method' => 'post' %>
+
 <h2>Your Events</h2>
 
 <%#  Part 2: Start here... %>
-<%= link_to "Create an event", new_event_path %>
+<%= link_to "Create an event", new_event_path, class: "btn btn-primary" %>
 
 <table class="table table-striped col-md-12" id="events">
   <thead>
@@ -21,7 +24,7 @@
           <%= event.name %>
         </td>
         <td>
-          <%= event.datetime %>
+          <%= event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
         </td>
         <td>
           <%= event.location %>
@@ -29,9 +32,9 @@
         <td>
           <%= event.tags %>
         </td>
-        <%# <td>
-          <%= link_to "More about #{event.name}", events_path(event) %>
-        <%# </td> %>
+        <td>
+          <%= link_to "More about #{event.name}", event_path(event) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
