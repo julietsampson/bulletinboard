@@ -3546,3 +3546,191 @@ Processing by EventsController#index as HTML
   Rendered events/index.html.erb within layouts/application (1.0ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 100.37.154.6 at 2022-10-29 19:55:46 +0000
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (20.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 318ms (Views: 317.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 100.37.154.6 at 2022-10-29 19:55:47 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 100.37.154.6 at 2022-10-29 19:55:47 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 100.37.154.6 at 2022-10-29 19:55:47 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 100.37.154.6 at 2022-10-29 19:55:47 +0000
+
+
+Started POST "/new_student" for 100.37.154.6 at 2022-10-29 19:56:11 +0000
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19ymS6SeDUVNP4+/TCeGyD5kOsTPTc6IvFwoSQgzOUxe6ZsYNhsXiOiWonNOSVgXFuWD34iikPWWEgUkQHNkPg==", "student"=>{"name"=>"Ti", "uni"=>"fa2539", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES (?, ?, ?)  [["name", "Ti"], ["uni", "fa2539"], ["password", "pass"]]
+  [1m[36m (57.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://jobspiral-newtonranger-3000.codio.io/events
+Completed 302 Found in 96ms (ActiveRecord: 62.1ms)
+
+
+Started GET "/events" for 100.37.154.6 at 2022-10-29 19:56:11 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/new_organization" for 100.37.154.6 at 2022-10-29 19:56:35 +0000
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19ymS6SeDUVNP4+/TCeGyD5kOsTPTc6IvFwoSQgzOUxe6ZsYNhsXiOiWonNOSVgXFuWD34iikPWWEgUkQHNkPg==", "organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES (?, ?, ?)  [["name", "all"], ["email", "all"], ["password", "pass"]]
+  [1m[36m (62.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://jobspiral-newtonranger-3000.codio.io/org_events?organizer_id=3
+Completed 302 Found in 74ms (ActiveRecord: 62.7ms)
+
+
+Started GET "/org_events?organizer_id=3" for 100.37.154.6 at 2022-10-29 19:56:35 +0000
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"3"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 3]]
+  Rendered events/organizer_index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/create_event" for 100.37.154.6 at 2022-10-29 19:56:37 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (18.0ms)
+  Rendered layouts/_flash.erb (1.0ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/submit_event" for 100.37.154.6 at 2022-10-29 19:56:45 +0000
+Processing by OrganizersController#create_event as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xyU0P3vc0VWjA9ekvC+5EiJ8h2dmot5JrMURcRA3AfROEAls6VnLmAaq+mi+QWfNCv0+fCFNgDSGizwcWHdchg==", "event"=>{"name"=>"test", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"19", "datetime(5i)"=>"56", "location"=>"", "description"=>"test"}, "commit"=>"Save Changes"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("name", "location", "description", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "test"], ["location", ""], ["description", "test"], ["datetime", "2022-10-29 19:56:00.000000"], ["organizer_id", 3]]
+  [1m[35m (60.5ms)[0m  commit transaction
+Redirected to https://jobspiral-newtonranger-3000.codio.io/org_events?organizer_id=3
+Completed 302 Found in 77ms (ActiveRecord: 61.3ms)
+
+
+Started GET "/org_events?organizer_id=3" for 100.37.154.6 at 2022-10-29 19:56:45 +0000
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"3"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 3]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/organization_login" for 100.37.154.6 at 2022-10-29 19:57:00 +0000
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19ymS6SeDUVNP4+/TCeGyD5kOsTPTc6IvFwoSQgzOUxe6ZsYNhsXiOiWonNOSVgXFuWD34iikPWWEgUkQHNkPg==", "organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1  [["email", "all"]]
+Redirected to https://jobspiral-newtonranger-3000.codio.io/org_events?organizer_id=3
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/org_events?organizer_id=3" for 100.37.154.6 at 2022-10-29 19:57:00 +0000
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"3"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 3]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/student_login" for 100.37.154.6 at 2022-10-29 19:57:16 +0000
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19ymS6SeDUVNP4+/TCeGyD5kOsTPTc6IvFwoSQgzOUxe6ZsYNhsXiOiWonNOSVgXFuWD34iikPWWEgUkQHNkPg==", "student"=>{"name"=>"Ti", "uni"=>"fa2539", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = ? LIMIT 1  [["uni", "fa2539"]]
+Redirected to https://jobspiral-newtonranger-3000.codio.io/events
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 100.37.154.6 at 2022-10-29 19:57:16 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 100.37.154.6 at 2022-10-30 01:24:11 +0000
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 175ms (Views: 174.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 100.37.154.6 at 2022-10-30 01:24:12 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 100.37.154.6 at 2022-10-30 01:24:12 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 100.37.154.6 at 2022-10-30 01:24:12 +0000
+
+
+Started POST "/organization_login" for 100.37.154.6 at 2022-10-30 01:24:21 +0000
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X2cG2jIWQ7HK7kLHUmIX5QHYd9lU7CW2I8YMfP/aAO5/FwRJApOkPTQ8JUj+KxjarbR8PWgDSSizJWnvJMlagQ==", "organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOrganizer Load (0.6ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1[0m  [["email", "all"]]
+Redirected to https://jobspiral-newtonranger-3000.codio.io/org_events?organizer_id=3
+Completed 302 Found in 67ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/org_events?organizer_id=3" for 100.37.154.6 at 2022-10-30 01:24:21 +0000
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"3"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 3]]
+  Rendered events/organizer_index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 14.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/create_event" for 100.37.154.6 at 2022-10-30 01:24:37 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (24.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/student_login" for 100.37.154.6 at 2022-10-30 01:28:28 +0000
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X2cG2jIWQ7HK7kLHUmIX5QHYd9lU7CW2I8YMfP/aAO5/FwRJApOkPTQ8JUj+KxjarbR8PWgDSSizJWnvJMlagQ==", "student"=>{"name"=>"Ti", "uni"=>"fa2539", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = ? LIMIT 1[0m  [["uni", "fa2539"]]
+Redirected to https://jobspiral-newtonranger-3000.codio.io/events
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 100.37.154.6 at 2022-10-30 01:28:28 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/student_login" for 100.37.154.6 at 2022-10-30 01:51:22 +0000
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X2cG2jIWQ7HK7kLHUmIX5QHYd9lU7CW2I8YMfP/aAO5/FwRJApOkPTQ8JUj+KxjarbR8PWgDSSizJWnvJMlagQ==", "student"=>{"name"=>"Ti", "uni"=>"fa2539", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = ? LIMIT 1[0m  [["uni", "fa2539"]]
+Redirected to https://jobspiral-newtonranger-3000.codio.io/events
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 100.37.154.6 at 2022-10-30 01:51:22 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.2ms)
