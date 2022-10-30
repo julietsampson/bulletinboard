@@ -6996,3 +6996,557 @@ Processing by PagesController#index as HTML
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 7ms (Views: 7.3ms | ActiveRecord: 0.0ms)
 >>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 10:11:41 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 228ms (Views: 222.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2022-10-30 10:11:42 -0400
+
+
+Started POST "/new_organization" for 127.0.0.1 at 2022-10-30 10:12:13 -0400
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GnXz3MpEV7euiUqV9bDKPun//q2lJAGqiTqtRZq98tsmmRMObHaYEY8NE2qLs6d66liMP5uKjrdk3c4YJ+wIAw==", "organization"=>{"name"=>"New Org", "email"=>"new@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES (?, ?, ?)  [["name", "New Org"], ["email", "new@gmail.com"], ["password", "password"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=4
+Completed 302 Found in 52ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/org_events?organizer_id=4" for 127.0.0.1 at 2022-10-30 10:12:13 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-10-30 10:12:19 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-10-30 10:12:46 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ga0BYFPP/jGdkGffU+LaJsKa08oU6KoQLLdOjyGhySu9QeGy9f0xl7wUPiAt4bdiwT2hWCpGJQ3BUC3SnPAz8w==", "event"=>{"name"=>"Party!", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"30", "datetime(4i)"=>"14", "datetime(5i)"=>"12", "location"=>"Butler", "tags"=>"Fun, Food", "description"=>"New party"}, "commit"=>"Save Changes"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Party!"], ["location", "Butler"], ["description", "New party"], ["tags", "Fun, Food"], ["datetime", "2022-10-30 14:12:00.000000"], ["organizer_id", 4]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=4
+Completed 302 Found in 25ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/org_events?organizer_id=4" for 127.0.0.1 at 2022-10-30 10:12:46 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2022-10-30 10:12:52 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/5/edit" for 127.0.0.1 at 2022-10-30 10:13:14 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/edit.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/events/5" for 127.0.0.1 at 2022-10-30 10:13:20 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bZXP1kI9zRoK4W79Rv45gifGEP10lF4UP+gqV0IHM61ReS8E5A8CvCtlNwI4/VTGJGFib0o60QnSD0kK/1bJdQ==", "event"=>{"name"=>"Party!", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"30", "datetime(4i)"=>"14", "datetime(5i)"=>"12", "location"=>"Butler", "tags"=>"Fun, Food, and Games", "description"=>"New party"}, "commit"=>"Update Event Info", "id"=>"5"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "events" SET "tags" = ? WHERE "events"."id" = ?  [["tags", "Fun, Food, and Games"], ["id", 5]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events/5
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2022-10-30 10:13:20 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mOrganizer Load (0.3ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/org_events?organizer_id=4" for 127.0.0.1 at 2022-10-30 10:13:23 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/organization_logout" for 127.0.0.1 at 2022-10-30 10:13:29 -0400
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"PShfLrY3wq27JVwBFz1n5Ke5VsNFJGBWhujlYhoaiQEBxL/8EAUNC5qhBf5pPgqgpB4kUXuK70trD4Y/p0tz2Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 10:13:29 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/student_login" for 127.0.0.1 at 2022-10-30 10:13:53 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VOVbcA9WfDiy+VVRFim6XY2hz/DwqNEvgc0Zy7NeXKYo/KQQ87FcFykp0Q0yl8CMJjtEzkZjy0s51lFH+xjPVw==", "student"=>{"name"=>"Shruti", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = ? LIMIT 1[0m  [["uni", "sv2611"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 10:13:53 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/student_login" for 127.0.0.1 at 2022-10-30 10:13:59 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CljPyQWb5+Mt7sUcIZ06lfgHevVqu0bD+J/y3r03t4F2QTCp+XzHzLY+QUAFI0BEU53xy9xwXKdAhLpS9XEkcA==", "student"=>{"name"=>"Shruti", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = ? LIMIT 1  [["uni", "sv2611"]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-10-30 10:13:59 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_events" for 127.0.0.1 at 2022-10-30 10:14:43 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:36: syntax error, unexpected '<', expecting ')'
+<p></p>
+^
+/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:40: unterminated regexp meets end of file
+          end
+              ^
+/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:40: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/students/my_events.html.erb:36: syntax error, unexpected '<', expecting ')'
+  app/views/students/my_events.html.erb:40: unterminated regexp meets end of file
+  app/views/students/my_events.html.erb:40: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+
+
+Started GET "/my_events" for 127.0.0.1 at 2022-10-30 10:15:08 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:37: syntax error, unexpected tIDENTIFIER, expecting ')'
+..., method: :get , :class => 'btn btn-outline-secondary');@out...
+...                            ^~~
+/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:37: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+... => 'btn btn-outline-secondary');@output_buffer.to_s
+...                              ^
+/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:40: unterminated string meets end of file
+          end
+              ^
+/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:40: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/students/my_events.html.erb:37: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/students/my_events.html.erb:37: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+  app/views/students/my_events.html.erb:40: unterminated string meets end of file
+  app/views/students/my_events.html.erb:40: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.2ms)
+
+
+Started GET "/my_events" for 127.0.0.1 at 2022-10-30 10:15:10 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:37: syntax error, unexpected tIDENTIFIER, expecting ')'
+..., method: :get , :class => 'btn btn-outline-secondary');@out...
+...                            ^~~
+/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:37: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+... => 'btn btn-outline-secondary');@output_buffer.to_s
+...                              ^
+/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:40: unterminated string meets end of file
+          end
+              ^
+/Users/shrutiverma/bulletinboard/app/views/students/my_events.html.erb:40: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/students/my_events.html.erb:37: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/students/my_events.html.erb:37: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+  app/views/students/my_events.html.erb:40: unterminated string meets end of file
+  app/views/students/my_events.html.erb:40: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.7ms)
+
+
+Started GET "/my_events" for 127.0.0.1 at 2022-10-30 10:15:49 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ?  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/remove_event/1" for 127.0.0.1 at 2022-10-30 10:15:55 -0400
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "events_students" WHERE "events_students"."student_id" = ? AND "events_students"."event_id" = 1  [["student_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/my_events?student_id=1
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/my_events?student_id=1" for 127.0.0.1 at 2022-10-30 10:15:55 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ?[0m  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-10-30 10:15:57 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about_event/5" for 127.0.0.1 at 2022-10-30 10:15:59 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", nil]]
+  Rendered events/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    30: <div class="row">
+    31:   <%= link_to 'Edit', edit_event_path(@event), :class => 'btn btn-primary col-2' %>
+    32:   <%= link_to 'Delete', event_path(@event), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
+    33:   <%= link_to 'Back to event list', organizer_events_path('organizer_id': Organizer.find_by(id: session[:organizer_id]).id), :class => 'btn btn-primary col-2' %>
+    34: </div>
+  app/views/events/show.html.erb:33:in `_app_views_events_show_html_erb___4505730958338825554_70303635385960'
+
+
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.9ms)
+
+
+Started GET "/about_event/5" for 127.0.0.1 at 2022-10-30 10:16:10 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", nil]]
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    30: <div class="row">
+    31:   <%= link_to 'Edit', edit_event_path(@event), :class => 'btn btn-primary col-2' %>
+    32:   <%= link_to 'Delete', event_path(@event), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
+    33:   <%= link_to 'Back to event list', organizer_events_path('organizer_id': Organizer.find_by(id: session[:organizer_id]).id), :class => 'btn btn-primary col-2' %>
+    34: </div>
+  app/views/events/show.html.erb:33:in `_app_views_events_show_html_erb___4505730958338825554_70303635385960'
+
+
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-10-30 10:21:33 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-10-30 10:23:23 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 17.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/about_event/5" for 127.0.0.1 at 2022-10-30 10:23:25 -0400
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered events/student_show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/add_event/5" for 127.0.0.1 at 2022-10-30 10:23:30 -0400
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Exists (0.1ms)[0m  SELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ? AND "events"."id" = ? LIMIT 1  [["student_id", 1], ["id", 5]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "events_students" ("student_id", "event_id") VALUES (?, ?)  [["student_id", 1], ["event_id", 5]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/my_events?student_id=1
+Completed 302 Found in 28ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/my_events?student_id=1" for 127.0.0.1 at 2022-10-30 10:23:30 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ?[0m  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/remove_event/4" for 127.0.0.1 at 2022-10-30 10:23:34 -0400
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "events_students" WHERE "events_students"."student_id" = ? AND "events_students"."event_id" = 4[0m  [["student_id", 1]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/my_events?student_id=1
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/my_events?student_id=1" for 127.0.0.1 at 2022-10-30 10:23:34 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ?  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/remove_event/2" for 127.0.0.1 at 2022-10-30 10:23:35 -0400
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "events_students" WHERE "events_students"."student_id" = ? AND "events_students"."event_id" = 2  [["student_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/my_events?student_id=1
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/my_events?student_id=1" for 127.0.0.1 at 2022-10-30 10:23:35 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ?[0m  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-10-30 10:23:37 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/about_event/5" for 127.0.0.1 at 2022-10-30 10:23:40 -0400
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered events/student_show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/add_event/5" for 127.0.0.1 at 2022-10-30 10:23:43 -0400
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Exists (0.2ms)[0m  SELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ? AND "events"."id" = ? LIMIT 1  [["student_id", 1], ["id", 5]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-10-30 10:23:43 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_events" for 127.0.0.1 at 2022-10-30 10:23:46 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ?[0m  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 10:23:49 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organization_login" for 127.0.0.1 at 2022-10-30 10:24:11 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r4howWB9ll1Kk1BFIKKdRqALDdnL8IrawB4+SvzGU0vTkZehnJq2ctFD1BkEHOeXC5GG5307kL54BXbGtIDAug==", "organization"=>{"name"=>"New Org", "email"=>"new@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1  [["email", "new@gmail.com"]]
+Redirected to http://localhost:3000/org_events?organizer_id=4
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/org_events?organizer_id=4" for 127.0.0.1 at 2022-10-30 10:24:11 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2022-10-30 10:24:15 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/events/5" for 127.0.0.1 at 2022-10-30 10:24:19 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7tW5mgaQk//NOs9LiNcf+YWeK/QAfNjEXgiodU+/E5KSzEb6+nez0FbqSxesaWUoLgSgyra3wqDmE+D5B/mAYw==", "id"=>"5"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events_students" WHERE "events_students"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 5]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=4
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/org_events?organizer_id=4" for 127.0.0.1 at 2022-10-30 10:24:19 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/organization_logout" for 127.0.0.1 at 2022-10-30 10:24:22 -0400
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"Hpe17/BPHZ/Vf/Ox1Zdq15uegDnRoPrjM5k6Xqm23A9ijkqPDKg9sE6vd+3xKRAGMAQLB2dr4IeLgnLS4fBP/g=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 10:24:22 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/student_login" for 127.0.0.1 at 2022-10-30 10:24:30 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gy6GGgey6VQ4eDj0erMIUE56JhV5EB4aX/AcI/agSttZtaoCxuvu4rH4umSyDtujM/IIa+W6jU8oRmXZnJSYag==", "student"=>{"name"=>"Shruti", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = ? LIMIT 1[0m  [["uni", "sv2611"]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-10-30 10:24:30 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/my_events" for 127.0.0.1 at 2022-10-30 10:24:34 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = ?  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-30 10:24:38 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
