@@ -3548,6 +3548,7 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2022-10-29 15:28:16 -0400
 Processing by PagesController#index as HTML
   Rendered pages/index.html.erb within layouts/application (12.9ms)
@@ -3765,6 +3766,141 @@ ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=):
 Started GET "/about_event.4" for 127.0.0.1 at 2022-10-29 16:18:41 -0400
 
 ActionController::RoutingError (No route matches [GET] "/about_event.4"):
+=======
+Started GET "/" for ::1 at 2022-10-29 16:53:21 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 155ms (Views: 154.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/student_login" for ::1 at 2022-10-29 16:53:38 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotNNljVLJZU7Etu0qp2ffBCn9ayr3V7sZJju2h9qR37V2abgpDkgmr0FatYEQuTsJm/vBtkEJeOaGCJBh2x5Q==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = ? LIMIT 1[0m  [["uni", "sk4699"]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 37ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for ::1 at 2022-10-29 16:53:38 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 16:54:00 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotNNljVLJZU7Etu0qp2ffBCn9ayr3V7sZJju2h9qR37V2abgpDkgmr0FatYEQuTsJm/vBtkEJeOaGCJBh2x5Q==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOrganizer Load (0.5ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1[0m  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 16:54:00 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/create_event" for ::1 at 2022-10-29 16:54:02 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_event" for ::1 at 2022-10-29 16:54:14 -0400
+Processing by OrganizersController#create_event as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yc81TKQZhW0hznyYKCI4mgO4kCAKXdkfAfLQS0Owz8LsEx7hflxNeR/WIl2imUV0Q2OwSqOWvPM+CNN5LdDXOg==", "event"=>{"name"=>"hi", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"20", "datetime(5i)"=>"54", "location"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "events" ("name", "location", "description", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "hi"], ["location", ""], ["description", ""], ["datetime", "2022-10-29 20:54:00.000000"], ["organizer_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 15ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 16:54:14 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 16:56:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/new_event" for ::1 at 2022-10-29 16:56:30 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_event" for ::1 at 2022-10-29 16:56:34 -0400
+Processing by OrganizersController#create_event as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SqsX231rQGz2uDjrvSlhFC+DpV4HB0GAm/WyjM82mPLHdzx2py6IeMigZi43khz6b1iFNK7MJGykD7G+oVaACg==", "event"=>{"name"=>"testing", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"20", "datetime(5i)"=>"56", "location"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("name", "location", "description", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "testing"], ["location", ""], ["description", ""], ["datetime", "2022-10-29 20:56:00.000000"], ["organizer_id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 16:56:34 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/new_event" for ::1 at 2022-10-29 17:22:08 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_event" for ::1 at 2022-10-29 17:22:14 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SBbnrZAmj5U2lqXzPvUk/HLBVbjN5xYWG2rZwVX+vfDFyswASmNHgQiO+za0TlkSMhp10mQsc/okkNrzO56lCA==", "event"=>{"name"=>"testing 2", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"21", "datetime(5i)"=>"22", "location"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("name", "location", "description", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?)  [["name", "testing 2"], ["location", ""], ["description", ""], ["datetime", "2022-10-29 21:22:00.000000"], ["organizer_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 13ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 17:22:14 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/create_event" for ::1 at 2022-10-29 17:22:19 -0400
+
+ActionController::RoutingError (No route matches [GET] "/create_event"):
+>>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b
   actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
@@ -3785,6 +3921,7 @@ ActionController::RoutingError (No route matches [GET] "/about_event.4"):
   rack (1.6.10) lib/rack/lock.rb:17:in `call'
   rack (1.6.10) lib/rack/content_length.rb:15:in `call'
   rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
@@ -4122,10 +4259,334 @@ ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=):
 Started GET "/" for 127.0.0.1 at 2022-10-29 16:38:25 -0400
 Processing by PagesController#index as HTML
   Rendered pages/index.html.erb within layouts/application (3.8ms)
+=======
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.2ms)
+
+
+Started GET "/new_event" for ::1 at 2022-10-29 17:22:22 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_event" for ::1 at 2022-10-29 17:22:28 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4kwCXXBmcnBkWnhBcKW8W29D22DZFFvMVA8IAfRczCxvkCnwqiO6ZFpCJoT6HsG1L5j7CnDfPiBr9QszmjzU1A==", "event"=>{"name"=>"lalala", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"21", "datetime(5i)"=>"22", "location"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("name", "location", "description", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "lalala"], ["location", ""], ["description", ""], ["datetime", "2022-10-29 21:22:00.000000"], ["organizer_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 17:22:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 18:11:26 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 18:11:52 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kycWRJJd0zxI6pLiMr768A2w5ofeiplex6z3SZHFdTYe+z3pSBgbKHbyzCe4BYceTWvG7XdB/LL4VvR7/6Vtzg==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:11:52 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/new" for ::1 at 2022-10-29 18:12:01 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2022-10-29 18:12:32 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hiLJ3M6KuR0bbQDda3Sp6jjFm0XfaL2Rd1w7tFUjC6YL/uJxFM9xCSV1Xhjhz9QEeB67L3aj2H1IpjiGO0MTXg==", "event"=>{"name"=>"halloween!", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"31", "datetime(4i)"=>"04", "datetime(5i)"=>"30", "location"=>"", "tags"=>"cupcakes", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?, ?)  [["name", "halloween!"], ["location", ""], ["description", ""], ["tags", "cupcakes"], ["datetime", "2022-10-31 04:30:00.000000"], ["organizer_id", 2]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:12:32 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events.8" for ::1 at 2022-10-29 18:12:37 -0400
+Processing by EventsController#index as 
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/events" for ::1 at 2022-10-29 18:13:19 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hiLJ3M6KuR0bbQDda3Sp6jjFm0XfaL2Rd1w7tFUjC6YL/uJxFM9xCSV1Xhjhz9QEeB67L3aj2H1IpjiGO0MTXg==", "event"=>{"name"=>"halloween!", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"31", "datetime(4i)"=>"04", "datetime(5i)"=>"30", "location"=>"", "tags"=>"cupcakes", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?, ?)  [["name", "halloween!"], ["location", ""], ["description", ""], ["tags", "cupcakes"], ["datetime", "2022-10-31 04:30:00.000000"], ["organizer_id", 2]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:13:19 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/9" for ::1 at 2022-10-29 18:13:22 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/9/edit" for ::1 at 2022-10-29 18:13:25 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered events/edit.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/views/events/edit.html.erb:6: syntax error, unexpected ':'
+...nt, :datetime, :class => class: 'form-control col-2 d-inline...
+...                              ^):
+  app/views/events/edit.html.erb:6: syntax error, unexpected ':'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.5ms)
+
+
+Started GET "/events/9/edit" for ::1 at 2022-10-29 18:15:27 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered events/edit.html.erb within layouts/application (21.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `movies_path' for #<#<Class:0x00007f8d47c3c018>:0x00007f8d4b59be08>):
+    12:   <%= text_field :event, :description, :class => 'form-control' %>
+    13:   <br/>
+    14:   <%= submit_tag 'Update Movie Info', :class => 'btn btn-primary' %>
+    15:   <%= link_to 'Cancel', movies_path, :class => 'btn btn-secondary' %>
+    16: <% end %>
+  app/views/events/edit.html.erb:15:in `block in _app_views_events_edit_html_erb___1603250746458428224_70122415660140'
+  app/views/events/edit.html.erb:2:in `_app_views_events_edit_html_erb___1603250746458428224_70122415660140'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.8ms)
+
+
+Started GET "/events/9/edit" for ::1 at 2022-10-29 18:15:47 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered events/edit.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/events/9" for ::1 at 2022-10-29 18:17:10 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CMkcqQQakuKfObKxufLvy6pLx0lgQy+o1oJqh3+crqKFFTcE3l9a9qEh7HQzSZIl6pDnI8mISkTpeGm1Efy2Wg==", "event"=>{"name"=>"halloween!", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"31", "datetime(4i)"=>"04", "datetime(5i)"=>"30", "location"=>"", "tags"=>"chocolate", "description"=>""}, "commit"=>"Update Event Info", "id"=>"9"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "events" SET "tags" = ? WHERE "events"."id" = ?[0m  [["tags", "chocolate"], ["id", 9]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `title' for #<Event:0x00007f8d4e21a7b8>):
+  app/controllers/events_controller.rb:41:in `update'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.2ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.1ms)
+
+
+Started PUT "/events/9" for ::1 at 2022-10-29 18:18:47 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CMkcqQQakuKfObKxufLvy6pLx0lgQy+o1oJqh3+crqKFFTcE3l9a9qEh7HQzSZIl6pDnI8mISkTpeGm1Efy2Wg==", "event"=>{"name"=>"halloween!", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"31", "datetime(4i)"=>"04", "datetime(5i)"=>"30", "location"=>"", "tags"=>"chocolate", "description"=>""}, "commit"=>"Update Event Info", "id"=>"9"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events/9
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/events/9" for ::1 at 2022-10-29 18:18:47 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for ::1 at 2022-10-29 18:18:49 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/9" for ::1 at 2022-10-29 18:18:53 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"a8RPlNH7LL8lfvz9Dyf0RX5o7LquS2M6bcgmVlCUGonmGGQ5C77kqxtmojiFnImrPrPM0AeABtZSMiVkPvQCcQ==", "id"=>"9"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events_students" WHERE "events_students"."event_id" = ?  [["event_id", 9]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/events
+Completed 302 Found in 13ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for ::1 at 2022-10-29 18:18:53 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for ::1 at 2022-10-29 18:19:30 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 18:19:37 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 18:19:48 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wQI8zfOA/KCu/ESTGfnIEk2hrp8Ehnjap+McfJzwuZBM3hdgKcU0tJDkGlaTQrX8DXqO9a1NHTaYGR9O8pChaA==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1[0m  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:19:48 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/2" for ::1 at 2022-10-29 18:19:52 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for ::1 at 2022-10-29 18:19:53 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for ::1 at 2022-10-29 18:20:34 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/2" for ::1 at 2022-10-29 18:20:37 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events" for ::1 at 2022-10-29 18:20:38 -0400
+Processing by EventsController#organizer_index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" IS NULL[0m
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/new" for ::1 at 2022-10-29 18:20:45 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (3.1ms)
+>>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started POST "/student_login" for 127.0.0.1 at 2022-10-29 16:38:33 -0400
 Processing by StudentsController#login as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"u0oG3mWvVuKyyesDNdKpvD1aw/B9vbgWn2DG1bA774uHpuYMw52ZRJNNsvxL0cT4Pv2xYkMTNwtyh6WIDWoVUw==", "student"=>{"name"=>"Shruti Verma", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Login"}
@@ -4471,6 +4932,56 @@ AbstractController::ActionNotFound (The action 'remove_Event' could not be found
   actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+=======
+Started POST "/events" for ::1 at 2022-10-29 18:20:49 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bfE1IL2kaoZHPfh8QLgRmL9SNd8EIKfZoF+QFIsgyLvgLR6NZ+GiknklprnKA2x2/4kVta3rwjWfpZMm5UDQQw==", "event"=>{"name"=>"hihi", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"22", "datetime(5i)"=>"20", "location"=>"", "tags"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?, ?)  [["name", "hihi"], ["location", ""], ["description", ""], ["tags", ""], ["datetime", "2022-10-29 22:20:00.000000"], ["organizer_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:20:49 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/10" for ::1 at 2022-10-29 18:20:55 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events" for ::1 at 2022-10-29 18:20:56 -0400
+Processing by EventsController#organizer_index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" IS NULL
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events" for ::1 at 2022-10-29 18:21:19 -0400
+Processing by EventsController#organizer_index as HTML
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" IS NULL[0m
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/create_event" for ::1 at 2022-10-29 18:24:46 -0400
+
+ActionController::RoutingError (No route matches [GET] "/create_event"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
   railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
@@ -4490,6 +5001,423 @@ AbstractController::ActionNotFound (The action 'remove_Event' could not be found
   rack (1.6.10) lib/rack/lock.rb:17:in `call'
   rack (1.6.10) lib/rack/content_length.rb:15:in `call'
   rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.2ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 18:24:52 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 18:25:00 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HBiOhRMaGe8BBdc9yuoKGdXEMJzfN9vKAE8sZWhKOSGRxKUoyV/R+z8difhAUXf3lR8Q9nb8viY/tS9XBioh2Q==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:25:00 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/1" for ::1 at 2022-10-29 18:25:08 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/1" for ::1 at 2022-10-29 18:25:11 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vn7UFkJZevZkFpTuh9meDYeR6Mh2GbmY9ToCEGMtoaczov+7mByy4loOyisNYuPjx0rIot/S3HTKwAEiDU25Xw==", "id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events_students" WHERE "events_students"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 3ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/events" for ::1 at 2022-10-29 18:25:11 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 18:27:09 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HBiOhRMaGe8BBdc9yuoKGdXEMJzfN9vKAE8sZWhKOSGRxKUoyV/R+z8difhAUXf3lR8Q9nb8viY/tS9XBioh2Q==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1[0m  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:27:09 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/2" for ::1 at 2022-10-29 18:27:14 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events" for ::1 at 2022-10-29 18:27:15 -0400
+Processing by EventsController#organizer_index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" IS NULL
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/events/2" for ::1 at 2022-10-29 18:27:19 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hIVXlgzJ6qWKVQixE730uGG0UxnyQiz4VkOIsDsQVTIJWXw71owisbRNVnSZBolWIW9zc1uJSRRpuYuCVXBNyg==", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events_students" WHERE "events_students"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 2]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for ::1 at 2022-10-29 18:27:19 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 18:30:14 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HBiOhRMaGe8BBdc9yuoKGdXEMJzfN9vKAE8sZWhKOSGRxKUoyV/R+z8difhAUXf3lR8Q9nb8viY/tS9XBioh2Q==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1[0m  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:30:14 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/3" for ::1 at 2022-10-29 18:30:19 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/org_events" for ::1 at 2022-10-29 18:30:20 -0400
+Processing by EventsController#organizer_index as HTML
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" IS NULL
+  Rendered events/organizer_index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 18:37:06 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HBiOhRMaGe8BBdc9yuoKGdXEMJzfN9vKAE8sZWhKOSGRxKUoyV/R+z8difhAUXf3lR8Q9nb8viY/tS9XBioh2Q==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1[0m  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:37:06 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/3" for ::1 at 2022-10-29 18:37:09 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:37:10 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/3" for ::1 at 2022-10-29 18:37:13 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:37:14 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/3" for ::1 at 2022-10-29 18:37:16 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/3" for ::1 at 2022-10-29 18:37:19 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"y4lerFGk/CsEnBjTM8VyQXKIJOXnc/3FP/ePFIhWfENGVXUBi+E0PzqERha5fg+vMlMEj064mCkADYwm5jZkuw==", "id"=>"3"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events_students" WHERE "events_students"."event_id" = ?  [["event_id", 3]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:37:19 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/4" for ::1 at 2022-10-29 18:37:24 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/4/edit" for ::1 at 2022-10-29 18:37:25 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/events/4" for ::1 at 2022-10-29 18:37:31 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGWN00kDUmCY+YDpbtLE5Sj0Hjrj/dKqurjuOCVbPvrFuaZ+k0aadKbh3izkabkLaC8+UEo2t0aFQu0KSzsmAg==", "event"=>{"name"=>"hi", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"20", "datetime(5i)"=>"54", "location"=>"tcfyvghbj", "tags"=>"--- []", "description"=>""}, "commit"=>"Update Event Info", "id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "events" SET "location" = ?, "tags" = ? WHERE "events"."id" = ?  [["location", "tcfyvghbj"], ["tags", "--- []"], ["id", 4]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events/4
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/events/4" for ::1 at 2022-10-29 18:37:31 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:37:34 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/4" for ::1 at 2022-10-29 18:40:38 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:41:14 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/4" for ::1 at 2022-10-29 18:42:15 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:42:24 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/4" for ::1 at 2022-10-29 18:42:29 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:44:11 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 18:54:58 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 18:55:38 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 19:05:43 -0400
+
+SyntaxError (/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/organizers_controller.rb:40: syntax error, unexpected end-of-input, expecting end):
+  app/controllers/organizers_controller.rb:40: syntax error, unexpected end-of-input, expecting end
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.2ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (12.1ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 19:06:09 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"188Z9HnyVi6CCf9WNUlqEblbhwyB9jS931JV1KRXWcVaEzJZo7eeOrwRoZO/8hf/+YCnZig9UVHgqFbmyjdBPQ==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1[0m  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:06:09 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organization_logout" for ::1 at 2022-10-29 19:06:13 -0400
+
+ActionController::RoutingError (No route matches [GET] "/organization_logout"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+>>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
@@ -4769,6 +5697,86 @@ Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
 Started POST "/about_event/1" for 127.0.0.1 at 2022-10-29 17:02:11 -0400
 
 ActionController::RoutingError (No route matches [POST] "/about_event/1"):
+=======
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (14.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:08:38 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/organization_logout" for ::1 at 2022-10-29 19:08:39 -0400
+Processing by OrganizersController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 19:08:39 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 19:11:56 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iOfMhLCGpEOLPtS+5cIyABgoyPj5IM+4gVymSkbp8a+g5yqt/5a3pI+Pp1djZvpcOmhfpmgnI3r2kpmC4d9wjA==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"sinkris1h@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1  [["email", "sinkris1h@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 19:11:56 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/new_organization" for ::1 at 2022-10-29 19:12:06 -0400
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"35KE51XImAHHBkHxiPiHUPRTFGeci+xKwA4/9xZTRRj3kmLOGtiL5sO3MhgOXE8M1hODOQ2MAIi3wAA/sWXEOw==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES (?, ?, ?)  [["name", "Sindhu Krishnamurthy"], ["email", "swe@columbia.edu"], ["password", "password"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=3
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/org_events?organizer_id=3" for ::1 at 2022-10-29 19:12:06 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"3"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 3]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for ::1 at 2022-10-29 19:12:19 -0400
+Processing by EventsController#new as HTML
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered events/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/org_events?organizer_id=3" for ::1 at 2022-10-29 19:12:23 -0400
+
+ActionController::RoutingError (No route matches [POST] "/org_events"):
   actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
@@ -4789,6 +5797,234 @@ ActionController::RoutingError (No route matches [POST] "/about_event/1"):
   rack (1.6.10) lib/rack/lock.rb:17:in `call'
   rack (1.6.10) lib/rack/content_length.rb:15:in `call'
   rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.3ms)
+
+
+Started POST "/org_events?organizer_id=3" for ::1 at 2022-10-29 19:14:44 -0400
+
+ActionController::RoutingError (No route matches [POST] "/org_events"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.2ms)
+
+
+Started POST "/org_events?organizer_id=3" for ::1 at 2022-10-29 19:16:44 -0400
+
+ArgumentError (Invalid route name, already in use: 'organizer_events' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  config/routes.rb:12:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.3ms)
+
+
+Started POST "/org_events?organizer_id=3" for ::1 at 2022-10-29 19:18:49 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9MzRzQ65DBUaPb3O88kZCMiLWcpz6lbr9kRgF8TBNazczDfkQakf8h6Mzid1bdFU6svOlOLtuimBil/fY/e0jw==", "event"=>{"name"=>"hihi", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"23", "datetime(5i)"=>"12", "location"=>"", "tags"=>"", "description"=>""}, "commit"=>"Save Changes", "organizer_id"=>"3"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 3]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/new_organization" for ::1 at 2022-10-29 19:21:58 -0400
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"35KE51XImAHHBkHxiPiHUPRTFGeci+xKwA4/9xZTRRj3kmLOGtiL5sO3MhgOXE8M1hODOQ2MAIi3wAA/sWXEOw==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES (?, ?, ?)  [["name", "Sindhu Krishnamurthy"], ["email", "swe@columbia.edu"], ["password", "password"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=4
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:21:58 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for ::1 at 2022-10-29 19:21:59 -0400
+Processing by EventsController#new as HTML
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:22:02 -0400
+
+ActionController::RoutingError (No route matches [POST] "/org_events"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.7ms)
+
+
+Started POST "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:26:06 -0400
+
+ActionController::RoutingError (No route matches [POST] "/org_events"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (12.5ms)
+
+
+Started POST "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:26:16 -0400
+
+ActionController::RoutingError (No route matches [POST] "/org_events"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (11.7ms)
+
+
+Started POST "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:29:52 -0400
+
+ActionController::RoutingError (No route matches [POST] "/org_events"):
+>>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
@@ -4804,6 +6040,23 @@ ActionController::RoutingError (No route matches [POST] "/about_event/1"):
 Started POST "/about_event/2" for 127.0.0.1 at 2022-10-29 17:02:37 -0400
 
 ActionController::RoutingError (No route matches [POST] "/about_event/2"):
+=======
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (12.4ms)
+
+
+Started POST "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:34:10 -0400
+
+ActionController::RoutingError (No route matches [POST] "/org_events"):
+>>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b
   actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
@@ -4824,6 +6077,7 @@ ActionController::RoutingError (No route matches [POST] "/about_event/2"):
   rack (1.6.10) lib/rack/lock.rb:17:in `call'
   rack (1.6.10) lib/rack/content_length.rb:15:in `call'
   rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
@@ -4839,6 +6093,188 @@ ActionController::RoutingError (No route matches [POST] "/about_event/2"):
 Started POST "/about_event/1" for 127.0.0.1 at 2022-10-29 17:03:17 -0400
 
 ActionController::RoutingError (No route matches [POST] "/about_event/1"):
+=======
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.2ms)
+
+
+Started GET "/events/new" for ::1 at 2022-10-29 19:34:20 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2022-10-29 19:34:24 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nhvjxKweL2UyE1ih8f2Y81qKYP06ez5376prrNFN5Yy2GwXt4w48gjaiK0h3WVCveMr3o6t80rWYZFRkdntkrw==", "event"=>{"name"=>"lala", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"23", "datetime(5i)"=>"34", "location"=>"", "tags"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?, ?)  [["name", "lala"], ["location", ""], ["description", ""], ["tags", ""], ["datetime", "2022-10-29 23:34:00.000000"], ["organizer_id", 4]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=4
+Completed 302 Found in 13ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:34:24 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/11" for ::1 at 2022-10-29 19:34:30 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:34:31 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/11" for ::1 at 2022-10-29 19:34:32 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/11/edit" for ::1 at 2022-10-29 19:34:33 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/edit.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:34:35 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/11" for ::1 at 2022-10-29 19:34:37 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/11/edit" for ::1 at 2022-10-29 19:34:38 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered events/edit.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/events/11" for ::1 at 2022-10-29 19:34:46 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3BBEy4vWnphCAL+5rghe0rUIjXzTUiKoi5p2TxElN4n0EKLixMaNf0axzFAorJaOl0gaIkJVzmr8VEmHthO2qg==", "event"=>{"name"=>"lala", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"23", "datetime(5i)"=>"34", "location"=>"amc", "tags"=>"", "description"=>""}, "commit"=>"Update Event Info", "id"=>"11"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "events" SET "location" = ? WHERE "events"."id" = ?[0m  [["location", "amc"], ["id", 11]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/events/11
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/events/11" for ::1 at 2022-10-29 19:34:46 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/11" for ::1 at 2022-10-29 19:34:52 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Hy2ZJBBjEGZ/ISSjm5eWpxgrj6jrOicpaCAG5TcSxFs3LX8NX3MDgXuQV0odM177OmsY9no9y+sf7jktkCRFeA==", "id"=>"11"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events_students" WHERE "events_students"."event_id" = ?  [["event_id", 11]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=4
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/org_events?organizer_id=4" for ::1 at 2022-10-29 19:34:53 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"4"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 4]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/new" for ::1 at 2022-10-29 19:36:54 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (22.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `organization_logout_path' for #<#<Class:0x00007f8d47acede8>:0x00007f8d47adf738>
+Did you mean?  organization_login_path):
+    1: <%= link_to "Logout", organization_logout_path %>
+    2: 
+    3: <h2>Create New Event</h2>
+    4: 
+  app/views/events/new.html.erb:1:in `_app_views_events_new_html_erb___896431253947401849_70122384844020'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/events/new" for ::1 at 2022-10-29 19:37:47 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organization_logout" for ::1 at 2022-10-29 19:37:51 -0400
+
+ActionController::RoutingError (No route matches [GET] "/organization_logout"):
+>>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b
   actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
@@ -4859,6 +6295,7 @@ ActionController::RoutingError (No route matches [POST] "/about_event/1"):
   rack (1.6.10) lib/rack/lock.rb:17:in `call'
   rack (1.6.10) lib/rack/content_length.rb:15:in `call'
   rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
@@ -4874,6 +6311,55 @@ ActionController::RoutingError (No route matches [POST] "/about_event/1"):
 Started POST "/about_event/1" for 127.0.0.1 at 2022-10-29 17:03:21 -0400
 
 ActionController::RoutingError (No route matches [POST] "/about_event/1"):
+=======
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.2ms)
+
+
+Started GET "/organization_logout" for ::1 at 2022-10-29 19:38:20 -0400
+Processing by OrganizersController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 19:38:20 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/new_organization" for ::1 at 2022-10-29 19:38:29 -0400
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c3s66nl3SS7qNaDY2fPCpyJjkVjNsiQQysC2M2h9yQb1obS2YCliMMVAa+0H5yE0rXfXtsn7QVsxAqt4zz7peA==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES (?, ?, ?)[0m  [["name", "Sindhu Krishnamurthy"], ["email", "swe@columbia.edu"], ["password", "password"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=5
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/org_events?organizer_id=5" for ::1 at 2022-10-29 19:38:29 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 5]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/organization_logout" for ::1 at 2022-10-29 19:38:56 -0400
+
+ActionController::RoutingError (No route matches [POST] "/organization_logout"):
+>>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b
   actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
@@ -4894,6 +6380,7 @@ ActionController::RoutingError (No route matches [POST] "/about_event/1"):
   rack (1.6.10) lib/rack/lock.rb:17:in `call'
   rack (1.6.10) lib/rack/content_length.rb:15:in `call'
   rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+<<<<<<< HEAD
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
   /Users/shrutiverma/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
@@ -5086,3 +6573,426 @@ Processing by PagesController#index as HTML
   Rendered pages/index.html.erb within layouts/application (3.6ms)
   Rendered layouts/_flash.erb (0.0ms)
 Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+=======
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.9ms)
+
+
+Started POST "/organization_logout" for ::1 at 2022-10-29 19:39:31 -0400
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"2UpA/zjdIcGR5mYlxT7OC1dDD3mYQ3zz8xWog0Obce9fkM6jIYMK376TrRAbKi2Y2FdJl5wKGbgI17XI5NhRkQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 19:39:31 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 19:39:42 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QcpFdGtUbuxLTso7tHaQJ2+O8QqKKGh7F3OxTZasCTsHexi1eg0z2dTnLw1tV0mkIIuIpY2np31ySaxr3c7NzA==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:39:42 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/4" for ::1 at 2022-10-29 19:39:46 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:41:06 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:41:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:42:20 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:42:22 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:42:54 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/views/events/organizer_index.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+<table class="table table-striped col-md-12" id=...
+              ^~~~~
+/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/views/events/organizer_index.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+... class="table table-striped col-md-12" id="events">
+...                            ^~~
+/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/views/events/organizer_index.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting ')'
+..."table table-striped col-md-12" id="events">
+...                              ^
+/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/views/events/organizer_index.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+...e-striped col-md-12" id="events">
+...                         ^~~~~~
+/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/views/events/organizer_index.html.erb:27: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...=( event.datetime.strftime("%I:%M %p on %m/%d/%Y") );@output...
+...                              ^
+/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/views/events/organizer_index.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+....datetime.strftime("%I:%M %p on %m/%d/%Y") );@output_buffer....
+...                             ^~
+/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/views/events/organizer_index.html.erb:27: unknown type of %string
+...etime.strftime("%I:%M %p on %m/%d/%Y") );@output_buffer.safe...
+...                            ^~~):
+  app/views/events/organizer_index.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/events/organizer_index.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+  app/views/events/organizer_index.html.erb:10: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/events/organizer_index.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/events/organizer_index.html.erb:27: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+  app/views/events/organizer_index.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+  app/views/events/organizer_index.html.erb:27: unknown type of %string
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.0ms)
+
+
+Started POST "/organization_login" for ::1 at 2022-10-29 19:43:12 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QcpFdGtUbuxLTso7tHaQJ2+O8QqKKGh7F3OxTZasCTsHexi1eg0z2dTnLw1tV0mkIIuIpY2np31ySaxr3c7NzA==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = ? LIMIT 1  [["email", "swe@columbia.edu"]]
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:43:12 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:43:16 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:43:40 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/4" for ::1 at 2022-10-29 19:43:48 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/4/edit" for ::1 at 2022-10-29 19:43:51 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/events/4" for ::1 at 2022-10-29 19:43:55 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GaNF5MQe6Aie+9j6kbzAM6tw+xKVQ1pSN90BfgHDik9fEhgl1Ue1PQFSPcxInRmw5HWCvZLMlVRS5xxYSqFOuA==", "event"=>{"name"=>"hi", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"20", "datetime(5i)"=>"54", "location"=>"", "tags"=>"--- []", "description"=>""}, "commit"=>"Update Event Info", "id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "events" SET "location" = ? WHERE "events"."id" = ?  [["location", ""], ["id", 4]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events/4
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/events/4" for ::1 at 2022-10-29 19:43:55 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:43:57 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/6" for ::1 at 2022-10-29 19:43:59 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/6" for ::1 at 2022-10-29 19:44:01 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8Jbs4IH7lJtgXnPOK2Wf7ghbKVaJ+4PJJghvVa1P2US2J7EhkKLJrv/3lvjyREZtR15Q+Y50TM9DMnJz5i0dsw==", "id"=>"6"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events_students" WHERE "events_students"."event_id" = ?  [["event_id", 6]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 27ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:44:01 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/new" for ::1 at 2022-10-29 19:44:07 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2022-10-29 19:44:10 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6ib6aVann8eHRHNmGY/Y/HoB37beTRj5I1Mgr5uKSvOsl6eoR/7C8hjtllDArgF/NQSmGdnC1/9GaT2J0OiOBA==", "event"=>{"name"=>"", "datetime(1i)"=>"2022", "datetime(2i)"=>"10", "datetime(3i)"=>"29", "datetime(4i)"=>"23", "datetime(5i)"=>"44", "location"=>"", "tags"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES (?, ?, ?, ?, ?, ?)  [["name", ""], ["location", ""], ["description", ""], ["tags", ""], ["datetime", "2022-10-29 23:44:00.000000"], ["organizer_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:44:10 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/12" for ::1 at 2022-10-29 19:44:20 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/12" for ::1 at 2022-10-29 19:44:23 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UiSJUUwgsuDifQ2jaMkRp9Fgi/X6FnApGxtiQX7ebuIUldSQXXnv1X3U6JWx6MgknmXyWv2Zvy9+IX9nNbyqFQ==", "id"=>"12"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events_students" WHERE "events_students"."event_id" = ?  [["event_id", 12]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:44:23 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/organization_logout" for ::1 at 2022-10-29 19:44:36 -0400
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"/2ThZcKjaGafIu1HF+8v1HYF1RnDDMmx20Ruv6J39KK51byk0/o1UwCLCHHOzvZXOQCstsSDBre+fnOZ6RUwVQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 19:44:36 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organization_logout" for ::1 at 2022-10-29 19:44:47 -0400
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"/2ThZcKjaGafIu1HF+8v1HYF1RnDDMmx20Ruv6J39KK51byk0/o1UwCLCHHOzvZXOQCstsSDBre+fnOZ6RUwVQ=="}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:164:in `block in halting'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /Users/sindhukrishnamurthy/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/sindhukrishnamurthy/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (11.5ms)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-10-29 19:45:01 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = ?  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2022-10-29 19:45:26 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+>>>>>>> 35031365fdbdd3650e7ef9cce9c934c6f7d10c8b

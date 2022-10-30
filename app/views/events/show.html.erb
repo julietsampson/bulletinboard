@@ -1,14 +1,20 @@
 <!--  app/views/events/show.html.erb -->
+<%= link_to "Logout", organization_logout_path %>
+
 <h2>Details about <em><%= @event.name %></em></h2>
 
 <ul id="details">
   <li>
-    Date and time:
-    <%= @event.datetime %>
+    Date and Time:
+    <%= @event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
   </li>
   <li>
     Location:
     <%= @event.location %>
+  </li>
+  <li>
+    Tags:
+    <%= @event.tags %>
   </li>
 </ul>
 
@@ -21,3 +27,8 @@
 <%= link_to 'Add', add_event_path(@event.id), :class => 'btn btn-outline-success btn-sml' %>
 <p> </p>
 <%= button_to "Back to All Events", events_path, method: :get , :class => 'btn btn-primary'%>
+<div class="row">
+  <%= link_to 'Edit', edit_event_path(@event), :class => 'btn btn-primary col-2' %>
+  <%= link_to 'Delete', event_path(@event), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
+  <%= link_to 'Back to event list', organizer_events_path('organizer_id': Organizer.find_by(id: session[:organizer_id]).id), :class => 'btn btn-primary col-2' %>
+</div>
