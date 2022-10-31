@@ -6,6 +6,12 @@ class EventsController < ApplicationController
     # will render app/views/events/show.<extension> by default
   end
 
+  def student_show
+    id = params[:id] # retrieve event ID from URI route
+    @event = Event.find(id) # look up event by unique ID
+    # will render app/views/events/show.<extension> by default
+  end
+
   def index
     @events = Event.all
   end
@@ -18,10 +24,17 @@ class EventsController < ApplicationController
     # default: render 'new' template
   end
 
+  # def create
+  #   @event = Event.create!(event_params)
+  #   flash[:notice] = "#{@event.name} was successfully created."
+  #   redirect_to organizer_events_path
+  # end
+
   def create
-    @event = Event.create!(event_params)
+    @organizer = Organizer.find_by(id: session[:organizer_id])
+    @event = @organizer.events.create(event_params)
     flash[:notice] = "#{@event.name} was successfully created."
-    redirect_to organizer_events_path
+    redirect_to organizer_events_path('organizer_id': @organizer.id)
   end
 
   def edit
@@ -31,15 +44,16 @@ class EventsController < ApplicationController
   def update
     @event = Event.find params[:id]
     @event.update_attributes!(event_params)
-    flash[:notice] = "#{@event.title} was successfully updated."
+    flash[:notice] = "#{@event.name} was successfully updated."
     redirect_to event_path(@event)
   end
 
   def destroy
+    @organizer = Organizer.find_by(id: session[:organizer_id])
     @event = Event.find(params[:id])
     @event.destroy
     flash[:notice] = "Event '#{@event.name}' deleted."
-    redirect_to events_path
+    redirect_to organizer_events_path('organizer_id': @organizer.id)
   end
 
   private

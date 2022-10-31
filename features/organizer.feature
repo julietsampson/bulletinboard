@@ -5,49 +5,59 @@ Feature: logged in as an organizer
 
 Background: 
 
-  Given a valid user
-  When  I go to the login page
-  An    I fill in the following:
-            |name|User|
-            |email|ab@columbia.edu|
-            |password|pass|
-  And   I press "Login"
-  Then  I should see organizer index page
-   
+  Given a valid organizer
+  
+
 Scenario: Signing in with correct credentials
+
   When I go to sign in page
-  And I fill in "name" with "User User"
-  And I fill in "email" with "ab@columbia.edu"
-  And I fill in "password" with "pass"
-  And I click "Login" button
-  Then I should see index page
+  And I fill in 'orgName' with 'User User'
+  And I fill in 'Email' with 'ab@columbia.edu'
+  And I fill in 'orgPassword' with 'pass'
+  When I press "Login_org"
+  Then I should go to org events page
   
 Scenario: User tries to sign in with incorrect password
+
   When I go to sign in page
-  And I fill in "name" with "User User"
-  And I fill in "email" with "ab@columbia.edu"
-  And I fill in "password" with "bla"
-  And I click "Login" button
-  Then I should see "Invalid credentials"
+  And I fill in 'orgName' with 'User User'
+  And I fill in 'Email' with 'ab@columbia.edu'
+  And I fill in 'orgPassword' with 'bla'
+  When I press "Login_org"
+  Then I should see "Password incorrect. Please try again!"
 
 Scenario: Events List
 
-  Given I am logged in as "email" with password "pass"
-  When  I am on the organizer index page
+  Given I am on the org events page
   Then  I should see all the created events
   
 
-Scenario: create events
+Scenario: create events and delete events
+  When I go to sign in page
+  And I fill in 'orgName' with 'User User'
+  And I fill in 'Email' with 'ab@columbia.edu'
+  And I fill in 'orgPassword' with 'pass'
+  When I press "Login_org"
+  Then I should go to org events page
+  When I go to org events page
+  When I follow "Create an event"
+  Then I should go to new page 
+  And I fill in 'Event Name' with 'Party!'
+  And I fill in 'Location' with 'Uris'
+  And I fill in 'Tags' with 'Food, Fun'
+  And I fill in 'Description' with 'Come join us for fun'
+  When I press "Save Changes"
+  Then I should go to org events page
+  And I should see "Party!"
+  When I follow "More about Party!"
+  Then I should go to info page
+  When I follow "Delete"
+  And I should see "Event 'Party!' deleted"
+  When I go to org events page
+  And I should not see "Party!"
 
-  Given I am on the organizer index page
-  When  I follow "Create an event"
-  Then  I should be on the new page 
-  And   I should see fields to create new event
-  And   I should be able to save the new event
 
-Scenario: modify event
-  Given I am on the organizer index page
-  Then  I  
-  When  I 
-  Then  I 
-  And   I 
+
+
+  
+  

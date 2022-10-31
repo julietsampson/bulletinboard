@@ -1,11 +1,7 @@
 <!--  This file is app/views/events/organizer_index.html.erb -->
-
-<%= link_to "Logout", organization_logout_path, 'data-method' => 'post' %>
-
 <h2>Your Events</h2>
 
 <%#  Part 2: Start here... %>
-<%= link_to 'Create an event', new_event_path, class: "btn btn-primary" %>
 
 <table class="table table-striped col-md-12" id="events">
   <thead>
@@ -13,8 +9,7 @@
       <th>Event Name</th>
       <th>Date and Time</th>
       <th>Location</th>
-      <th>Tags</th>
-      <th>More Info</th>
+      <th>Remove from List</th>
     </tr>
   </thead>
   <tbody>
@@ -24,18 +19,19 @@
           <%= event.name %>
         </td>
         <td>
-          <%= event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+          <%= event.datetime %>
         </td>
         <td>
           <%= event.location %>
         </td>
         <td>
-          <%= event.tags %>
-        </td>
-        <td>
-          <%= link_to "More about #{event.name}", event_path(event) %>
+        <%= button_to "Remove", remove_event_path(event), method: :get , :class => 'btn btn-outline-danger btn-sm'%>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= button_to "Back to All Events", events_path, method: :get , :class => 'btn btn-outline-primary'%>
+<p></p>
+<%= button_to "Log Out", root_path, method: :get , :class => 'btn btn-outline-secondary'%>

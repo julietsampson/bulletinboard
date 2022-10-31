@@ -1,30 +1,13 @@
-Given /^a valid user$/ do
-  @user = User.create!({
-             :name => "User User",
-             :uni => "ab1234",
-             :password => "pass",
-             :password_confirmation => "pass"
-           })
+Given /^a valid student user$/ do
+  @student = Student.create!({
+        :name => "User User",
+        :uni => "ab1234",
+        :password => "pass",
+      })
 end
 
-feature "logged in as a student" do
-  
-  scenario "Signing in with correct credentials" do
-    page.visit "/sessions/new"
-    page.fill_in "name", :with => "User User"
-    page.fill_in "uni", :with => "ab1234"
-    page.fill_in "password", :with => "pass"
-    page.click_button "Login"
-    page.should have_content("Welcome, ab1234!")
+Then /I should see all the events/ do
+    
+    rows = page.all('tbody tr').count
+    expect(rows).to eq Event.count
   end
-
-  scenario "User tries to sign in with incorrect password" do
-    page.visit "/sessions/new"
-    page.fill_in "name", :with => "User User"
-    page.fill_in "uni", :with => "ab1234"
-    page.fill_in "password", :with => "bla"
-    page.click_button "Login"
-    page.should have_content("Invalid credentials")
-  end
-  
-end

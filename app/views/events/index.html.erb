@@ -9,7 +9,6 @@
       <th>Event Name</th>
       <th>Date and Time</th>
       <th>Location</th>
-      <th>Tags</th>
       <th>More Info</th>
     </tr>
   </thead>
@@ -26,12 +25,12 @@
           <%= event.location %>
         </td>
         <td>
-          <%= event.tags %>
+          <%= button_to "Learn More", about_event_path(event), method: :get, :class => 'btn btn-outline-info btn-sm' %>
         </td>
-        <%# <td>
-          <%= link_to "More about #{event.name}", event_path(event) %>
-        <%# </td> %>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= button_to "My Events", student_events_path, method: :get , :class => 'btn btn-outline-primary'%>
+<p></p>
+<%= button_to "Log Out", root_path, method: :get , :class => 'btn btn-outline-secondary'%>

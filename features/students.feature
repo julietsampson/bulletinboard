@@ -4,34 +4,37 @@ Feature: logged in as a student
   I want to view and sign up for the events
 
 Background: 
-  Given a valid user
-  When  I go to the login page
-  An    I fill in the following:
-            |name|User|
-            |uni|ab1234|
-            |password|pass|
-  And   I press "Login"
-  Then  I should see index page
+
+  Given a valid student user
+ 
    
 Scenario: Signing in with correct credentials
+
   When I go to sign in page
-  And I fill in "name" with "User User"
-  And I fill in "uni" with "ab1234"
-  And I fill in "password" with "pass"
-  And I click "Login" button
-  Then I should see index page
+  And I fill in 'Name' with 'User User'
+  And I fill in 'UNI' with 'ab1234'
+  And I fill in 'Password' with 'pass'
+  When I press "Login_student"
+  Then I should go to event page
   
 Scenario: User tries to sign in with incorrect password
+
   When I go to sign in page
-  And I fill in "name" with "User User"
-  And I fill in "uni" with "ab1234"
-  And I fill in "password" with "bla"
-  And I click "Login" button
-  Then I should see "Invalid credentials"
+  And I fill in 'Name' with 'User User'
+  And I fill in 'UNI' with 'ab1234'
+  And I fill in 'Password' with 'bla'
+  When I press "Login_student" 
+  Then I should see "Password incorrect. Please try again!"
 
-Scenario: Events List
+Scenario: Events page
 
-  Given I am logged in as "uni" with password "pass"
-  When  I am on the index page
-  Then  I should see all the events
+  When I go to sign in page
+  And I fill in 'Name' with 'User User'
+  And I fill in 'UNI' with 'ab1234'
+  And I fill in 'Password' with 'pass'
+  When I press "Login_student"
+  Then I should go to event page
+  Then I should see all the events
+  When I press "My Events" 
+
   
