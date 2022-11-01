@@ -6,7 +6,11 @@
 <ul id="details">
   <li>
     Date and Time:
-    <%= @event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+    <% if @event.datetime != nil %>
+            <%= @event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+            <% else %>
+            <%= @event.datetime %>
+            <% end %>
   </li>
   <li>
     Location:

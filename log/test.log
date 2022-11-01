@@ -32192,3 +32192,1856 @@ Processing by StudentsController#my_events as HTML
   Rendered students/my_events.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:54 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 151ms (Views: 146.9ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 09:55:54 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"User User", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login_org"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/org_events?organizer_id=142
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/org_events?organizer_id=142" for 127.0.0.1 at 2022-11-01 09:55:54 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"142"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 142]]
+  Rendered events/organizer_index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 24ms (Views: 13.2ms | ActiveRecord: 1.0ms)
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=142" for 127.0.0.1 at 2022-11-01 09:55:54 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"142"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 142]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.4ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:54 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"User User", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login_org"}
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_flash.erb (0.8ms)
+Completed 200 OK in 7ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=144" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"144"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 144]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 144]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"CucumberTestUser", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Login_org"}
+  [1m[36mOrganizer Load (0.3ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1[0m  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/org_events?organizer_id=145
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+Started GET "/org_events?organizer_id=145" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"145"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 145]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=145" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"145"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 145]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started GET "/events/new" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (29.0ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events/new" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_flash.erb (1.7ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+Started POST "/events" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"name"=>"Party!", "datetime(1i)"=>"2022", "datetime(2i)"=>"11", "datetime(3i)"=>"1", "datetime(4i)"=>"13", "datetime(5i)"=>"55", "location"=>"Uris", "tags"=>"Food, Fun", "description"=>"Come join us for fun"}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 145]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Party!"], ["location", "Uris"], ["description", "Come join us for fun"], ["tags", "Food, Fun"], ["datetime", "2022-11-01 13:55:00.000000"], ["organizer_id", 145]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/org_events?organizer_id=145
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+Started GET "/org_events?organizer_id=145" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"145"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 145]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=145" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"145"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 145]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+Started GET "/events/104" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."organizer_id" = $1 AND "events"."name" = $2 LIMIT 1  [["organizer_id", 145], ["name", "Party!"]]
+Started GET "/events/104" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 104]]
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 145]]
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+Started DELETE "/events/104" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events_students" WHERE "events_students"."event_id" = $1  [["event_id", 104]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 104]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/org_events?organizer_id=145
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+Started GET "/org_events?organizer_id=145" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"145"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 145]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=145" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"145"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 145]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Login_student"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Login_student"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Login_student"}
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"CucumberTestStudent", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Login_student"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1[0m  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" ASC LIMIT 1[0m
+Started GET "/about_event/1" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/student_show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+Started GET "/add_event/1" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 122]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1[0m  [["student_id", 122], ["id", 1]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 122], ["event_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/my_events?student_id=122
+Completed 302 Found in 19ms (ActiveRecord: 1.7ms)
+Started GET "/my_events?student_id=122" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"122"}
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 122]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 122]]
+  Rendered students/my_events.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.6ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/my_events" for 127.0.0.1 at 2022-11-01 09:55:55 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 122]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 122]]
+  Rendered students/my_events.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 122]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mOrganizer Load (0.4ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrganizer Load (0.6ms)[0m  [1mSELECT  "organizers".* FROM "organizers"  ORDER BY "organizers"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "organizers"
+  [1m[36mStudent Load (1.4ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "students"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("name") VALUES ($1) RETURNING "id"  [["name", "test event"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("name") VALUES ($1) RETURNING "id"  [["name", "tester event"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 1], ["event_id", 106]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by EventsController#index as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "test event"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"107"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "test event"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"location"=>"Butler"}, "id"=>"108"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 108]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "events" SET "location" = $1 WHERE "events"."id" = $2[0m  [["location", "Butler"], ["id", 108]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/108
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 108]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/student_show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"id"=>"1"}
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/organizer_index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"name"=>"New event"}}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("name", "organizer_id") VALUES ($1, $2) RETURNING "id"[0m  [["name", "New event"], ["organizer_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/org_events?organizer_id=1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."organizer_id" = $1  ORDER BY "events"."id" ASC LIMIT 1[0m  [["organizer_id", 1]]
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "events_students" WHERE "events_students"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/org_events?organizer_id=1
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "organizers"[0m
+Processing by OrganizersController#create as HTML
+  Parameters: {"organization"=>{"name"=>"New org", "email"=>"neworg@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New org"], ["email", "neworg@gmail.com"], ["password", "password"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/org_events?organizer_id=146
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "organizers"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by OrganizersController#login as HTML
+  Parameters: {"organization"=>{"email"=>"swe@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "swe@gmail.com"]]
+Redirected to http://test.host/org_events?organizer_id=1
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by OrganizersController#login as HTML
+  Parameters: {"organization"=>{"email"=>"swe@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1[0m  [["email", "swe@gmail.com"]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by OrganizersController#login as HTML
+  Parameters: {"organization"=>{"email"=>"fake@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "fake@gmail.com"]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+Processing by OrganizersController#logout as HTML
+Redirected to http://test.host/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PagesController#index as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered pages/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "students"[0m
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"name"=>"New student", "uni"=>"ns1234", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New student"], ["uni", "ns1234"], ["password", "password"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "students"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by StudentsController#login as HTML
+  Parameters: {"student"=>{"uni"=>"sv2611", "password"=>"[FILTERED]"}}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "sv2611"]]
+Redirected to http://test.host/events
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StudentsController#login as HTML
+  Parameters: {"student"=>{"uni"=>"sv2611", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1[0m  [["uni", "sv2611"]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by StudentsController#login as HTML
+  Parameters: {"student"=>{"uni"=>"fake1234", "password"=>"[FILTERED]"}}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "fake1234"]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 1]]
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"105"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 105]]
+  [1m[36mEvent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1[0m  [["student_id", 1], ["id", 105]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 1], ["event_id", 105]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/my_events?student_id=1
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "tester event"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)  [["student_id", 1], ["event_id", 110]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 1]]
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"110"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 110]]
+  [1m[35mEvent Exists (0.2ms)[0m  SELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1  [["student_id", 1], ["id", 110]]
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 1]]
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"106"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 106]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = 106  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/my_events?student_id=1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 1]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by StudentsController#my_events as HTML
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered students/my_events.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 126ms (Views: 121.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=149" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"149"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 149]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 6.6ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 149]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_flash.erb (2.7ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.6ms)
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (18.0ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"CucumberTestStudent", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1[0m  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" ASC LIMIT 1[0m
+Started GET "/about_event/1" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/student_show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+Started GET "/add_event/1" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1[0m  [["student_id", 127], ["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 127], ["event_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/my_events?student_id=127
+Completed 302 Found in 30ms (ActiveRecord: 2.1ms)
+Started GET "/my_events?student_id=127" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"127"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 127]]
+  Rendered students/my_events.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/my_events" for 127.0.0.1 at 2022-11-01 10:02:18 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 127]]
+  Rendered students/my_events.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 127]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:06:43 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:06:43 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=153" for 127.0.0.1 at 2022-11-01 10:06:43 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"153"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 153]]
+  Rendered events/organizer_index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 152ms (Views: 148.1ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 153]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:06:43 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:06:43 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:06:43 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:06:43 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:06:43 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:27 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 135ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 10:07:27 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"User User", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[35mOrganizer Load (0.4ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/org_events?organizer_id=155
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/org_events?organizer_id=155" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"155"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 155]]
+  Rendered events/organizer_index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (1.0ms)
+Completed 200 OK in 21ms (Views: 10.3ms | ActiveRecord: 0.8ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=155" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"155"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 155]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"CucumberTestUser", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=157" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"157"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 157]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 157]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"CucumberTestUser", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1[0m  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/org_events?organizer_id=158
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/org_events?organizer_id=158" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"158"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 158]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=158" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"158"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 158]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+Started GET "/events/new" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (22.3ms)
+  Rendered layouts/_flash.erb (1.9ms)
+Completed 200 OK in 29ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events/new" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+Started POST "/events" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"name"=>"Party!", "datetime(1i)"=>"2022", "datetime(2i)"=>"11", "datetime(3i)"=>"1", "datetime(4i)"=>"14", "datetime(5i)"=>"07", "location"=>"Uris", "tags"=>"Food, Fun", "description"=>"Come join us for fun"}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 158]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Party!"], ["location", "Uris"], ["description", "Come join us for fun"], ["tags", "Food, Fun"], ["datetime", "2022-11-01 14:07:00.000000"], ["organizer_id", 158]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/org_events?organizer_id=158
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+Started GET "/org_events?organizer_id=158" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"158"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 158]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=158" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"158"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 158]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+Started GET "/events/111" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"111"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 111]]
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1[0m  [["id", 158]]
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."organizer_id" = $1 AND "events"."name" = $2 LIMIT 1  [["organizer_id", 158], ["name", "Party!"]]
+Started GET "/events/111" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"111"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 111]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 158]]
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Started DELETE "/events/111" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"111"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1[0m  [["id", 158]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 111]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events_students" WHERE "events_students"."event_id" = $1  [["event_id", 111]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 111]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/org_events?organizer_id=158
+Completed 302 Found in 15ms (ActiveRecord: 1.3ms)
+Started GET "/org_events?organizer_id=158" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"158"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 158]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=158" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"158"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 158]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"CucumberTestStudent", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1[0m  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" ASC LIMIT 1[0m
+Started GET "/about_event/1" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/student_show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+Started GET "/add_event/1" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1[0m  [["student_id", 135], ["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 135], ["event_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/my_events?student_id=135
+Completed 302 Found in 17ms (ActiveRecord: 1.8ms)
+Started GET "/my_events?student_id=135" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"135"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 135]]
+  Rendered students/my_events.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/my_events" for 127.0.0.1 at 2022-11-01 10:07:28 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 135]]
+  Rendered students/my_events.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 135]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 123ms (Views: 118.5ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"User User", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/org_events?organizer_id=161
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/org_events?organizer_id=161" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"161"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 161]]
+  Rendered events/organizer_index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_flash.erb (0.8ms)
+Completed 200 OK in 18ms (Views: 9.7ms | ActiveRecord: 1.2ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=161" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"161"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 161]]
+  Rendered events/organizer_index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"CucumberTestUser", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=163" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"163"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 163]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 163]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestUser"], ["email", "ab@columbia.edu"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "organization"=>{"name"=>"CucumberTestUser", "email"=>"ab@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1[0m  [["email", "ab@columbia.edu"]]
+Redirected to http://www.example.com/org_events?organizer_id=164
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/org_events?organizer_id=164" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"164"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 164]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=164" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"164"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 164]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+Started GET "/events/new" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (26.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events/new" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+Started POST "/events" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"name"=>"Party!", "datetime(1i)"=>"2022", "datetime(2i)"=>"11", "datetime(3i)"=>"1", "datetime(4i)"=>"14", "datetime(5i)"=>"18", "location"=>"Uris", "tags"=>"Food, Fun", "description"=>"Come join us for fun"}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 164]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("name", "location", "description", "tags", "datetime", "organizer_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Party!"], ["location", "Uris"], ["description", "Come join us for fun"], ["tags", "Food, Fun"], ["datetime", "2022-11-01 14:18:00.000000"], ["organizer_id", 164]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/org_events?organizer_id=164
+Completed 302 Found in 14ms (ActiveRecord: 1.2ms)
+Started GET "/org_events?organizer_id=164" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"164"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 164]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=164" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"164"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 164]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+Started GET "/events/114" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"114"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1[0m  [["id", 164]]
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."organizer_id" = $1 AND "events"."name" = $2 LIMIT 1  [["organizer_id", 164], ["name", "Party!"]]
+Started GET "/events/114" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"114"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 114]]
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 164]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+Started DELETE "/events/114" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"114"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1[0m  [["id", 164]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events_students" WHERE "events_students"."event_id" = $1  [["event_id", 114]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 114]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/org_events?organizer_id=164
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+Started GET "/org_events?organizer_id=164" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"164"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 164]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/org_events?organizer_id=164" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"164"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1  [["organizer_id", 164]]
+  Rendered events/organizer_index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"User User", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1  [["name", "CucumberTestUser"]]
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestStudent"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CucumberTestStudent"], ["uni", "ab1234"], ["password", "pass"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/student_login" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"CucumberTestStudent", "uni"=>"ab1234", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1[0m  [["uni", "ab1234"]]
+Redirected to http://www.example.com/events
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/events" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" ASC LIMIT 1[0m
+Started GET "/about_event/1" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/student_show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+Started GET "/add_event/1" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 140]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1[0m  [["student_id", 140], ["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 140], ["event_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/my_events?student_id=140
+Completed 302 Found in 18ms (ActiveRecord: 1.7ms)
+Started GET "/my_events?student_id=140" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"140"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 140]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 140]]
+  Rendered students/my_events.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."name" = $1 LIMIT 1[0m  [["name", "CucumberTestUser"]]
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."name" = $1 LIMIT 1  [["name", "CucumberTestStudent"]]
+Started GET "/my_events" for 127.0.0.1 at 2022-11-01 10:18:17 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 140]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 140]]
+  Rendered students/my_events.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 140]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrganizer Load (0.4ms)[0m  [1mSELECT  "organizers".* FROM "organizers"  ORDER BY "organizers"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "organizers"
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "students"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("name") VALUES ($1) RETURNING "id"  [["name", "test event"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("name") VALUES ($1) RETURNING "id"  [["name", "tester event"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 1], ["event_id", 116]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by EventsController#index as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/index.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "test event"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"117"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "test event"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"location"=>"Butler"}, "id"=>"118"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "events" SET "location" = $1 WHERE "events"."id" = $2[0m  [["location", "Butler"], ["id", 118]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/118
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/student_show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"id"=>"1"}
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/organizer_index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"name"=>"New event"}}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("name", "organizer_id") VALUES ($1, $2) RETURNING "id"[0m  [["name", "New event"], ["organizer_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/org_events?organizer_id=1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."organizer_id" = $1  ORDER BY "events"."id" ASC LIMIT 1[0m  [["organizer_id", 1]]
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "events_students" WHERE "events_students"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/org_events?organizer_id=1
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "organizers"[0m
+Processing by OrganizersController#create as HTML
+  Parameters: {"organization"=>{"name"=>"New org", "email"=>"neworg@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New org"], ["email", "neworg@gmail.com"], ["password", "password"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/org_events?organizer_id=165
+Completed 302 Found in 2ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "organizers"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by OrganizersController#login as HTML
+  Parameters: {"organization"=>{"email"=>"swe@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mOrganizer Load (0.3ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "swe@gmail.com"]]
+Redirected to http://test.host/org_events?organizer_id=1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by OrganizersController#login as HTML
+  Parameters: {"organization"=>{"email"=>"swe@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1[0m  [["email", "swe@gmail.com"]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by OrganizersController#login as HTML
+  Parameters: {"organization"=>{"email"=>"fake@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35mOrganizer Load (0.1ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT 1  [["email", "fake@gmail.com"]]
+Redirected to http://test.host/
+Completed 302 Found in 0ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by OrganizersController#logout as HTML
+Redirected to http://test.host/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+Processing by PagesController#index as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered pages/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "students"[0m
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"name"=>"New student", "uni"=>"ns1234", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New student"], ["uni", "ns1234"], ["password", "password"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "students"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by StudentsController#login as HTML
+  Parameters: {"student"=>{"uni"=>"sv2611", "password"=>"[FILTERED]"}}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "sv2611"]]
+Redirected to http://test.host/events
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StudentsController#login as HTML
+  Parameters: {"student"=>{"uni"=>"sv2611", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1[0m  [["uni", "sv2611"]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by StudentsController#login as HTML
+  Parameters: {"student"=>{"uni"=>"fake1234", "password"=>"[FILTERED]"}}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT 1  [["uni", "fake1234"]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 1]]
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"115"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 115]]
+  [1m[36mEvent Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1[0m  [["student_id", 1], ["id", 115]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 1], ["event_id", 115]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/my_events?student_id=1
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "tester event"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)  [["student_id", 1], ["event_id", 120]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 1]]
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"120"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 120]]
+  [1m[35mEvent Exists (0.1ms)[0m  SELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1  [["student_id", 1], ["id", 120]]
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 1]]
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"116"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 116]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = 116  [["student_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/my_events?student_id=1
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 1]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by StudentsController#my_events as HTML
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered students/my_events.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

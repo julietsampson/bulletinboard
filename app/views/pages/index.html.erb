@@ -10,16 +10,16 @@
     <%= label :student, :password, 'Password', :class => 'col-form-label' %>
     <%= text_field :student, :password, :class => 'form-control' %>
     <br/>
-    <%= submit_tag 'Login_student', :class => 'btn btn-primary' %>
+    <%= submit_tag 'Student Login', :class => 'btn btn-primary' %>
 <% end %>
 
 <h3> Or Create an Account: </h3>
 <%= form_tag student_create_account_path, :class => 'form' do %>
-    <%= label :student, :name, 'newName', :class => 'col-form-label' %>
+    <%= label :student, :name, 'What is your name?', :class => 'col-form-label' %>
     <%= text_field :student, :name, :class => 'form-control' %>
-    <%= label :student, :uni, 'newUNI', :class => 'col-form-label' %>
+    <%= label :student, :uni, 'What is your uni?', :class => 'col-form-label' %>
     <%= text_field :student, :uni, :class => 'form-control' %>
-    <%= label :student, :password, 'newPassword', :class => 'col-form-label' %>
+    <%= label :student, :password, 'Choose a password!', :class => 'col-form-label' %>
     <%= text_field :student, :password, :class => 'form-control' %>
     <br/>
     <%= submit_tag 'Create Account', :class => 'btn btn-primary' %>
@@ -28,23 +28,23 @@
 <h2> Are you an organization? Either... </h2>
 <h3> Log In: </h3>
 <%= form_tag organization_login_path, :class => 'form' do %>
-    <%= label :organization, :name, 'orgName', :class => 'col-form-label' %>
+    <%= label :organization, :name, 'Org Name', :class => 'col-form-label' %>
     <%= text_field :organization, :name, :class => 'form-control' %>
     <%= label :organization, :email, 'Email', :class => 'col-form-label' %>
     <%= text_field :organization, :email, :class => 'form-control' %>
-    <%= label :organization, :password, 'orgPassword', :class => 'col-form-label' %>
+    <%= label :organization, :password, 'Org Password', :class => 'col-form-label' %>
     <%= text_field :organization, :password, :class => 'form-control' %>
     <br/>
-    <%= submit_tag 'Login_org', :class => 'btn btn-primary' %>
+    <%= submit_tag 'Organization Login', :class => 'btn btn-primary' %>
 <% end %>
 
 <h3> Or Create an Account: </h3>
 <%= form_tag organization_create_account_path, :class => 'form' do %>
-    <%= label :organization, :name, 'neworgName', :class => 'col-form-label' %>
+    <%= label :organization, :name, 'Organization name?', :class => 'col-form-label' %>
     <%= text_field :organization, :name, :class => 'form-control' %>
-    <%= label :organization, :email, 'newEmail', :class => 'col-form-label' %>
+    <%= label :organization, :email, 'Organization Email', :class => 'col-form-label' %>
     <%= text_field :organization, :email, :class => 'form-control' %>
-    <%= label :organization, :password, 'neworgPassword', :class => 'col-form-label' %>
+    <%= label :organization, :password, 'Choose a password!', :class => 'col-form-label' %>
     <%= text_field :organization, :password, :class => 'form-control' %>
     <br/>
     <%= submit_tag 'Create Account', :class => 'btn btn-primary' %>

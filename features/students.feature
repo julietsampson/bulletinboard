@@ -14,7 +14,7 @@ Scenario: Student signs in with correct credentials
   And I fill in 'Name' with 'User User'
   And I fill in 'UNI' with 'ab1234'
   And I fill in 'Password' with 'pass'
-  When I press "Login_student"
+  When I press "Student Login"
   Then I should go to event page
   
 Scenario: Student tries to sign in with incorrect password
@@ -23,7 +23,7 @@ Scenario: Student tries to sign in with incorrect password
   And I fill in 'Name' with 'User User'
   And I fill in 'UNI' with 'ab1234'
   And I fill in 'Password' with 'bla'
-  When I press "Login_student" 
+  When I press "Student Login" 
   Then I should see "Password incorrect. Please try again!"
 
 Scenario: Navigate to and view all created events
@@ -32,7 +32,7 @@ Scenario: Navigate to and view all created events
   And I fill in 'Name' with 'User User'
   And I fill in 'UNI' with 'ab1234'
   And I fill in 'Password' with 'pass'
-  When I press "Login_student"
+  When I press "Student Login"
   Then I should go to event page
   Then I should see all the events
 
@@ -41,7 +41,7 @@ Scenario: Add and remove events from my list
   And I fill in 'Name' with 'CucumberTestStudent'
   And I fill in 'UNI' with 'ab1234'
   And I fill in 'Password' with 'pass'
-  When I press "Login_student"
+  When I press "Student Login"
   When I go to event about page
   When I follow "Add"
   Then I should go to my event list page

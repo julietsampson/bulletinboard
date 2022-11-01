@@ -24,7 +24,11 @@
           <%= event.name %>
         </td>
         <td>
-          <%= event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+          <% if event.datetime != nil %>
+            <%= event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+            <% else %>
+            <%= event.datetime %>
+            <% end %>
         </td>
         <td>
           <%= event.location %>
