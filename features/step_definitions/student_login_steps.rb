@@ -6,13 +6,32 @@ Given /^a valid student user$/ do
       })
 end
 
+Given /the following events exist/ do |events_table|
+  @organization = Organizer.create!({
+    :name => "CucumberTestUser",
+    :email => "ab@columbia.edu",
+    :password => "pass",
+  })
+
+  events_table.hashes.each do |event|
+    to_add = @organization.events.create(event)
+  end
+end
+  
+Given /the following events are on my events list/ do |events_table|
+  events_table.hashes.each do |event|
+    @event = Event.find_by(:name => event[:name])
+    @student.events << @event
+  end
+end
+
 Then /I should see all the events/ do
     
     rows = page.all('tbody tr').count
     expect(rows).to eq Event.count
   end
 
-  Then /my event list should be updated/ do
+Then /my event list should be updated/ do
     
     rows = page.all('tbody tr').count
     expect(rows).to eq @student.events.count
