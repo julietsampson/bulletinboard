@@ -40,12 +40,6 @@ Scenario: Organization can delete an event
   And I go to org events page
   Then I should not see "pumpkin carving"
 
-Scenario: Organization can edit an event
-  When I go to the edit page for "pumpkin carving"
-  And I fill in "Location" with "Uris"
-  And I press "Update event info"
-  Then the location of "pumpkin carving" should be "Uris"
-
 
 
 

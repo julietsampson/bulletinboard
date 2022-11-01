@@ -43,7 +43,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find params[:id]
-    @event.update_attributes!(event_params)
+    @event.update(event_params)
     flash[:notice] = "#{@event.name} was successfully updated."
     redirect_to event_path(@event)
   end

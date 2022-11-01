@@ -4,7 +4,7 @@ describe StudentsController do
     
     describe 'POST #create' do
         it 'creates a new student' do
-            expect {post :create, student: {:name => "New student", :uni => "ns1234", :password => "password"}}.to change {Student.count}.by(1)
+            expect {post :create, params: {student: {name: "New student", uni: "ns1234", password: "password"}}}.to change {Student.count}.by(1)
         end
     end
 
@@ -12,17 +12,17 @@ describe StudentsController do
         student = Student.first
         count = Student.count
         it 'should login an existing student that provides the correct password' do
-          post :login, student: {:uni => student.uni, :password => student.password}
+          post :login, params: {student: {uni: student.uni, password: student.password}}
           expect(response).to redirect_to(events_path)
         end
 
         it 'should not login a student that provides an incorrect password' do
-            post :login, student: {:uni => student.uni, :password => ""}
+            post :login, params: {student: {:uni => student.uni, :password => ""}}
             expect(response).to redirect_to(root_path)
         end
 
         it 'should not login an student that has not created an account' do
-            post :login, student: {:uni => "fake1234", :password => ""}
+            post :login, params: {student: {:uni => "fake1234", :password => ""}}
             expect(response).to redirect_to(root_path)
         end
     end
@@ -32,14 +32,14 @@ describe StudentsController do
         it 'should add an event to the student\'s event list if the event is not already on their list' do
             request.session[:student_id] = 1
             
-            expect {post :add_event, {:id => event.id}}.to change {Student.first.events.count}.by(1)
+            expect {post :add_event, params: {:id => event.id}}.to change {Student.first.events.count}.by(1)
             expect(response).to redirect_to(student_events_path('student_id': 1))
         end
 
         it 'should not add an event to a student\'s list if the event is already on their list' do
             event = Student.first.events.create(:name => "tester event")
             request.session[:student_id] = 1
-            expect {post :add_event, {:id => event.id}}.to change {Student.first.events.count}.by(0)
+            expect {post :add_event, params: {:id => event.id}}.to change {Student.first.events.count}.by(0)
             expect(response).to redirect_to(events_path)
         end
     end
@@ -48,7 +48,7 @@ describe StudentsController do
         event =  Student.first.events.create(:name => "tester event")
         it 'should remove an event from the student\'s event list' do
             request.session[:student_id] = 1
-            expect {post :remove_event, {:id => event.id}}.to change {Student.first.events.count}.by(-1)
+            expect {post :remove_event, params: {:id => event.id}}.to change {Student.first.events.count}.by(-1)
             expect(response).to redirect_to(student_events_path('student_id': 1))
         end
     end

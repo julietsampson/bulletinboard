@@ -8,7 +8,7 @@
       <tr>
         <th scope="col" class="py-3 px-6">Event Name</th>
         <th scope="col" class="py-3 px-6">Date and Time</th>
-        <th scope="col" class="py-3 px-6">Location</th>
+        <th scope="col" id= "location" class="py-3 px-6">Location</th>
         <th scope="col" class="py-3 px-6">Tags</th>
         <th scope="col" class="py-3 px-6">More Info</th>
       </tr>
@@ -29,7 +29,7 @@
             <%= event.tags %>
           </td>
           <td class="py-4 px-6">
-            <%= link_to "More about #{event.name}", edit_event_path(event), :class => 'font-medium text-blue-600 dark:text-blue-500 hover:underline' %>
+            <%= link_to "More about #{event.name}", event_path(event), :class => 'font-medium text-blue-600 dark:text-blue-500 hover:underline' %>
           </td>
         </tr>
       <% end %>

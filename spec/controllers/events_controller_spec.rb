@@ -11,7 +11,7 @@ describe EventsController do
     describe 'GET edit' do
         it 'show the details for the right event' do
             new_event = Event.create(:name => "test event")
-            get :edit, :id => new_event.id
+            get :edit, params: {id: new_event.id}
             assigns(:event).should eq(new_event)
         end
     end
@@ -20,7 +20,7 @@ describe EventsController do
         it 'saves an event\'s updated details' do
             new_event = Event.create(:name => "test event")
             new_attr = {:location => 'Butler'}
-            put :update, :id => new_event.id, :event => new_attr
+            put :update, params: {id: new_event.id, event: new_attr}
             new_event.reload
             expect(new_event.location).to eq('Butler')
         end
@@ -28,21 +28,21 @@ describe EventsController do
       
     describe 'GET show' do
         it 'should render the show template' do
-          get :show, {:id => "1"}
+          get :show, params: {id: "1"}
           expect(response).to render_template('show')
         end
     end
 
     describe 'GET student_show' do
         it 'should render the student_show template' do
-          get :student_show, {:id => "1"}
+          get :student_show, params: {id: "1"}
           expect(response).to render_template('student_show')
         end
     end
     
     describe 'GET organizer_index' do
         it 'should render the organizer_index template' do
-          get :organizer_index, {:id => "1"}
+          get :organizer_index, params: {id: "1"}
           expect(response).to render_template('organizer_index')
         end
     end
@@ -50,7 +50,7 @@ describe EventsController do
     describe 'POST #create' do
         it 'creates a new event' do
           request.session[:organizer_id] = 1
-          expect {post :create, event: {:name => "New event"}}.to change {Event.count}.by(1)
+          expect {post :create, params: {event: {name: "New event"}}}.to change {Event.count}.by(1)
         end
     end
     
@@ -59,7 +59,7 @@ describe EventsController do
         # byebug
         it 'destroys movie' do
           request.session[:organizer_id] = 1
-          expect {delete :destroy, id: organizer.events.first.id}.to change{Event.count}.by(-1)
+          expect {delete :destroy, params: {id: organizer.events.first.id}}.to change{Event.count}.by(-1)
         end
     end
 end
