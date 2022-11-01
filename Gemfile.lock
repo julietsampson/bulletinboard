@@ -141,6 +141,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.9-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
+      racc (~> 1.4)
     pg (1.4.4)
     public_suffix (5.0.0)
     racc (1.6.0)
@@ -226,6 +228,8 @@ GEM
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.16-x86_64-darwin)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.16-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.1)
     tilt (2.0.11)
     tzinfo (2.0.5)
@@ -242,6 +246,7 @@ GEM
 PLATFORMS
   ruby
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   ZenTest (= 4.11.2)
