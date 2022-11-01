@@ -8,7 +8,7 @@ Background:
   Given a valid organizer
   
 
-Scenario: Signing in with correct credentials
+Scenario: Organization signs in with correct credentials
 
   When I go to sign in page
   And I fill in 'orgName' with 'User User'
@@ -17,7 +17,7 @@ Scenario: Signing in with correct credentials
   When I press "Login_org"
   Then I should go to org events page
   
-Scenario: User tries to sign in with incorrect password
+Scenario: Organization tries to sign in with incorrect password
 
   When I go to sign in page
   And I fill in 'orgName' with 'User User'
@@ -26,22 +26,21 @@ Scenario: User tries to sign in with incorrect password
   When I press "Login_org"
   Then I should see "Password incorrect. Please try again!"
 
-Scenario: Events List
+Scenario: Organization can see all events they have created
 
   Given I am on the org events page
-  Then  I should see all the created events
+  Then  I should see all my created events
   
 
-Scenario: create events and delete events
+Scenario: Organization can create events and delete events
   When I go to sign in page
-  And I fill in 'orgName' with 'User User'
+  And I fill in 'orgName' with 'CucumberTestUser'
   And I fill in 'Email' with 'ab@columbia.edu'
   And I fill in 'orgPassword' with 'pass'
   When I press "Login_org"
   Then I should go to org events page
-  When I go to org events page
   When I follow "Create an event"
-  Then I should go to new page 
+  Then I should go to event creation page 
   And I fill in 'Event Name' with 'Party!'
   And I fill in 'Location' with 'Uris'
   And I fill in 'Tags' with 'Food, Fun'
@@ -52,7 +51,6 @@ Scenario: create events and delete events
   When I follow "More about Party!"
   Then I should go to info page
   When I follow "Delete"
-  And I should see "Event 'Party!' deleted"
   When I go to org events page
   And I should not see "Party!"
 

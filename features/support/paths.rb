@@ -11,14 +11,17 @@ module NavigationHelpers
   # step definition in web_steps.rb
   #
   def path_to(page_name)
+    @organization = Organizer.find_by(:name => "CucumberTestUser")
+    @student = Student.find_by(:name => "CucumberTestStudent")
     case page_name
 
-    # when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
     when /sign in page/ then '/'
     when /event page/ then '/events?'
-    when /org events page/ then '/org_events?organizer_id=1'
-    when /new page/ then '/events/new'
-    when /info page/ then '/events/1'
+    when /org events page/ then '/org_events?organizer_id='+@organization.id.to_s
+    when /event creation page/ then '/events/new'
+    when /info page/ then '/events/'+@organization.events.find_by(:name => 'Party!').id.to_s
+    when /event about page/ then '/about_event/'+Event.first.id.to_s
+    when /my event list page/ then '/my_events'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

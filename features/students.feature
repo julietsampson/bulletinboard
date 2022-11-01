@@ -8,7 +8,7 @@ Background:
   Given a valid student user
  
    
-Scenario: Signing in with correct credentials
+Scenario: Student signs in with correct credentials
 
   When I go to sign in page
   And I fill in 'Name' with 'User User'
@@ -17,7 +17,7 @@ Scenario: Signing in with correct credentials
   When I press "Login_student"
   Then I should go to event page
   
-Scenario: User tries to sign in with incorrect password
+Scenario: Student tries to sign in with incorrect password
 
   When I go to sign in page
   And I fill in 'Name' with 'User User'
@@ -26,7 +26,7 @@ Scenario: User tries to sign in with incorrect password
   When I press "Login_student" 
   Then I should see "Password incorrect. Please try again!"
 
-Scenario: Events page
+Scenario: Navigate to and view all created events
 
   When I go to sign in page
   And I fill in 'Name' with 'User User'
@@ -35,6 +35,17 @@ Scenario: Events page
   When I press "Login_student"
   Then I should go to event page
   Then I should see all the events
-  When I press "My Events" 
+
+Scenario: Add and remove events from my list
+  When I go to sign in page
+  And I fill in 'Name' with 'CucumberTestStudent'
+  And I fill in 'UNI' with 'ab1234'
+  And I fill in 'Password' with 'pass'
+  When I press "Login_student"
+  When I go to event about page
+  When I follow "Add"
+  Then I should go to my event list page
+  Then my event list should be updated
+
 
   
