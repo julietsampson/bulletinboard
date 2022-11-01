@@ -33,9 +33,5 @@ class OrganizersController < ApplicationController
       def organization_params
         params.require(:organization).permit(:name, :email, :password)
       end
-
-      def event_params
-        params.require(:event).permit(:name, :datetime, :location, :description, :tags)
-      end
     end
     

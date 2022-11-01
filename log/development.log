@@ -9559,3 +9559,58 @@ Processing by PagesController#index as HTML
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
 >>>>>>> 3dee61abda9d964024a6cb8a78664ffa7842796b
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-31 22:26:54 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 244ms (Views: 238.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2022-10-31 22:26:55 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2022-10-31 22:26:55 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-10-31 22:26:55 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2022-10-31 22:27:03 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/org_events?organizer_id=1" for 127.0.0.1 at 2022-10-31 22:27:15 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 17.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2022-10-31 22:27:29 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2022-10-31 22:27:40 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mc9y6DwdGypTmixAfJZ0WD2LytFuAbogyqSGmncIzbzrh8C7Lji4cd/AlUM7wTm8pjLH7r6J7FUtZRiNVMEINA==", "event"=>{"name"=>"Party!", "datetime(1i)"=>"2022", "datetime(2i)"=>"11", "datetime(3i)"=>"1", "datetime(4i)"=>"02", "datetime(5i)"=>"27", "location"=>"Random", "tags"=>"Random", "description"=>"Random"}, "commit"=>"Save Changes"}
+  [1m[35mOrganizer Load (0.2ms)[0m  SELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `events' for nil:NilClass):
+  app/controllers/events_controller.rb:35:in `create'
+
+
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/shrutiverma/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.9ms)
