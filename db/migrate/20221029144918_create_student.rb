@@ -1,8 +1,8 @@
 class CreateStudent < ActiveRecord::Migration
   def change
     create_table :students do |t|
-      t.string :uni, unique: true
-      t.string :name
+      t.text :uni, unique: true
+      t.text :name
     end
   end
 end
