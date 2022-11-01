@@ -1,4 +1,4 @@
-class CreateEventsStudentsJoinTable < ActiveRecord::Migration
+class CreateEventsStudentsJoinTable < ActiveRecord::Migration[6.1.2]
   def change
     create_join_table :students, :events do |t|
       t.index :student_id
