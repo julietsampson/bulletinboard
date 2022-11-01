@@ -7912,3 +7912,114 @@ Processing by PagesController#index as HTML
   Rendered pages/index.html.erb within layouts/application (1.6ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:52:08 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 210ms (Views: 205.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/new_student" for 127.0.0.1 at 2022-11-01 09:52:20 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p4MIPHTMvX8lB5k0De5xMw2UPWqYznsxBzX2+s9oh+XVy7pvZukeJKldIDdKuTzXli0wVUhGLUTg9Gjt7KFCbQ==", "student"=>{"name"=>"A", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "students" ("name", "uni", "password") VALUES ($1, $2, $3) RETURNING "id"  [["name", "A"], ["uni", "a"], ["password", "a"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 41ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-11-01 09:52:20 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/my_events" for 127.0.0.1 at 2022-11-01 09:52:26 -0400
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 118]]
+  Rendered students/my_events.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 18.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-11-01 09:52:27 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about_event/1" for 127.0.0.1 at 2022-11-01 09:52:29 -0400
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/student_show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/add_event/1" for 127.0.0.1 at 2022-11-01 09:52:30 -0400
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT 1[0m  [["student_id", 118], ["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 118], ["event_id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/my_events?student_id=118
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/my_events?student_id=118" for 127.0.0.1 at 2022-11-01 09:52:30 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"118"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1  [["student_id", 118]]
+  Rendered students/my_events.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/remove_event/1" for 127.0.0.1 at 2022-11-01 09:52:34 -0400
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = 1  [["student_id", 118]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=118
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/my_events?student_id=118" for 127.0.0.1 at 2022-11-01 09:52:34 -0400
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"118"}
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 118]]
+  Rendered students/my_events.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-11-01 09:52:35 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-01 09:52:39 -0400
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
