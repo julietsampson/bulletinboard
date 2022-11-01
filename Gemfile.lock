@@ -226,8 +226,6 @@ GEM
       sprockets (>= 3.0.0)
     tailwindcss-rails (2.0.16)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.0.16-x86_64-darwin)
-      railties (>= 6.0.0)
     tailwindcss-rails (2.0.16-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.1)
