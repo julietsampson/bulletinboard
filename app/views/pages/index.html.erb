@@ -1,51 +1,81 @@
-<h1>Welcome!</h1>
+<h1 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Welcome!</h1>
 
-<h2> Are you a student? Either... </h2>
-<h3> Log In: </h3>
-<%= form_tag student_login_path, :class => 'form' do %>
-    <%= label :student, :name, 'Name', :class => 'col-form-label' %>
-    <%= text_field :student, :name, :class => 'form-control' %>
-    <%= label :student, :uni, 'UNI', :class => 'col-form-label' %>
-    <%= text_field :student, :uni, :class => 'form-control' %>
-    <%= label :student, :password, 'Password', :class => 'col-form-label' %>
-    <%= text_field :student, :password, :class => 'form-control' %>
-    <br/>
-    <%= submit_tag 'Student Login', :class => 'btn btn-primary' %>
-<% end %>
+<div>
+  <h2 class="mt-4 text-center text-2xl font-bold tracking-tight text-gray-900"> Are you a student? Either... </h2>
+  <div class="grid grid-cols-2 gap-3">
+    <div class="flex min-h-full items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-md space-y-8">
+          <h3 class="mt-2 text-center text-lg font-bold tracking-tight text-gray-900"> Log In: </h3>
+          <%= form_tag student_login_path, :class => 'mt-8 space-y-6' do %>
+              <div class="-space-y-px rounded-md shadow-sm">
+                  <%= label :student, :name, 'Name', :class => 'sr-only' %>
+                  <%= text_field :student, :name, :placeholder => "Name", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                  <%= label :student, :uni, 'UNI', :class => 'sr-only' %>
+                  <%= text_field :student, :uni, :placeholder => "UNI", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                  <%= label :student, :password, 'Password', :class => 'sr-only' %>
+                  <%= text_field :student, :password, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+              </div>
+              <br/>
+              <%= submit_tag 'Login', :class => 'group relative flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>
+          <% end %>
+      </div>
+    </div>
+    <div class="flex min-h-full items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-md space-y-8">
+          <h3 class="mt-2 text-center text-lg font-bold tracking-tight text-gray-900"> Or Create an Account: </h3>
+          <%= form_tag student_create_account_path, :class => 'mt-8 space-y-6' do %>
+              <div class="-space-y-px rounded-md shadow-sm">
+                  <%= label :student, :name, 'Name', :class => 'sr-only' %>
+                  <%= text_field :student, :name, :placeholder => "Name", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                  <%= label :student, :uni, 'UNI', :class => 'sr-only' %>
+                  <%= text_field :student, :uni, :placeholder => "UNI", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                  <%= label :student, :password, 'Password', :class => 'sr-only' %>
+                  <%= text_field :student, :password, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+              </div>
+              <br/>
+              <%= submit_tag 'Create Account', :class => 'group relative flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h3> Or Create an Account: </h3>
-<%= form_tag student_create_account_path, :class => 'form' do %>
-    <%= label :student, :name, 'What is your name?', :class => 'col-form-label' %>
-    <%= text_field :student, :name, :class => 'form-control' %>
-    <%= label :student, :uni, 'What is your uni?', :class => 'col-form-label' %>
-    <%= text_field :student, :uni, :class => 'form-control' %>
-    <%= label :student, :password, 'Choose a password!', :class => 'col-form-label' %>
-    <%= text_field :student, :password, :class => 'form-control' %>
-    <br/>
-    <%= submit_tag 'Create Account', :class => 'btn btn-primary' %>
-<% end %>
-
-<h2> Are you an organization? Either... </h2>
-<h3> Log In: </h3>
-<%= form_tag organization_login_path, :class => 'form' do %>
-    <%= label :organization, :name, 'Org Name', :class => 'col-form-label' %>
-    <%= text_field :organization, :name, :class => 'form-control' %>
-    <%= label :organization, :email, 'Email', :class => 'col-form-label' %>
-    <%= text_field :organization, :email, :class => 'form-control' %>
-    <%= label :organization, :password, 'Org Password', :class => 'col-form-label' %>
-    <%= text_field :organization, :password, :class => 'form-control' %>
-    <br/>
-    <%= submit_tag 'Organization Login', :class => 'btn btn-primary' %>
-<% end %>
-
-<h3> Or Create an Account: </h3>
-<%= form_tag organization_create_account_path, :class => 'form' do %>
-    <%= label :organization, :name, 'Organization name?', :class => 'col-form-label' %>
-    <%= text_field :organization, :name, :class => 'form-control' %>
-    <%= label :organization, :email, 'Organization Email', :class => 'col-form-label' %>
-    <%= text_field :organization, :email, :class => 'form-control' %>
-    <%= label :organization, :password, 'Choose a password!', :class => 'col-form-label' %>
-    <%= text_field :organization, :password, :class => 'form-control' %>
-    <br/>
-    <%= submit_tag 'Create Account', :class => 'btn btn-primary' %>
-<% end %>
+<div>
+  <h2 class="mt-4 text-center text-2xl font-bold tracking-tight text-gray-900"> Are you an organization? Either... </h2>
+  <div class="grid grid-cols-2 gap-3">
+    <div class="flex min-h-full items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-md space-y-8">
+        <h3 class="mt-2 text-center text-lg font-bold tracking-tight text-gray-900"> Log In: </h3>
+        <%= form_tag organization_login_path, :class => 'mt-8 space-y-6' do %>
+            <div class="-space-y-px rounded-md shadow-sm">
+                <%= label :organization, :name, 'Name', :class => 'sr-only' %>
+                <%= text_field :organization, :name, :placeholder => "Name", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                <%= label :organization, :email, 'Email', :class => 'sr-only' %>
+                <%= text_field :organization, :email, :placeholder => "Email", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                <%= label :organization, :password, 'Password', :class => 'sr-only' %>
+                <%= text_field :organization, :password, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+            </div>
+            <br/>
+            <%= submit_tag 'Login', :class => 'group relative flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="flex min-h-full items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
+      <div class="w-full max-w-md space-y-8">
+        <h3 class="mt-2 text-center text-lg font-bold tracking-tight text-gray-900"> Or Create an Account: </h3>
+        <%= form_tag organization_create_account_path, :class => 'mt-8 space-y-6' do %>
+            <div class="-space-y-px rounded-md shadow-sm">
+                <%= label :organization, :name, 'Name', :class => 'sr-only' %>
+                <%= text_field :organization, :name, :placeholder => "Name", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                <%= label :organization, :email, 'Email', :class => 'sr-only' %>
+                <%= text_field :organization, :email, :placeholder => "Email", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                <%= label :organization, :password, 'Password', :class => 'sr-only' %>
+                <%= text_field :organization, :password, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+            </div>
+            <br/>
+            <%= submit_tag 'Create Account', :class => 'group relative flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
