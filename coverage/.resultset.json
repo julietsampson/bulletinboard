@@ -1,13 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/helpers/application_helper.rb": {
+      "/Users/shrutiverma/bulletinboard/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/events_controller.rb": {
+      "/Users/shrutiverma/bulletinboard/app/controllers/events_controller.rb": {
         "lines": [
           1,
           null,
@@ -76,7 +76,7 @@
           null
         ]
       },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/application_controller.rb": {
+      "/Users/shrutiverma/bulletinboard/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -85,14 +85,22 @@
           null
         ]
       },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/organizer.rb": {
+      "/Users/shrutiverma/bulletinboard/app/models/event.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/shrutiverma/bulletinboard/app/models/organizer.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/organizers_controller.rb": {
+      "/Users/shrutiverma/bulletinboard/app/controllers/organizers_controller.rb": {
         "lines": [
           1,
           1,
@@ -133,7 +141,7 @@
           null
         ]
       },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/pages_controller.rb": {
+      "/Users/shrutiverma/bulletinboard/app/controllers/pages_controller.rb": {
         "lines": [
           1,
           1,
@@ -144,7 +152,7 @@
           null
         ]
       },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/students_controller.rb": {
+      "/Users/shrutiverma/bulletinboard/app/controllers/students_controller.rb": {
         "lines": [
           1,
           null,
@@ -205,22 +213,14 @@
           null
         ]
       },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/student.rb": {
+      "/Users/shrutiverma/bulletinboard/app/models/student.rb": {
         "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/event.rb": {
-        "lines": [
-          1,
           1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1667349817
+    "timestamp": 1667389122
   }
 }
