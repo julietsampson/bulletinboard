@@ -2027,3 +2027,545 @@ Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da7
 Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2022-11-01 17:36:51 -0400
 Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2022-11-01 17:36:51 -0400
 Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-11-01 17:36:51 -0400
+Started GET "/" for ::1 at 2022-11-01 20:16:49 -0400
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2842)
+  Rendered layouts/_flash.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 370.5ms | Allocations: 377676)
+Completed 200 OK in 386ms (Views: 374.4ms | Allocations: 381377)
+
+
+Started GET "/assets/tailwind.self-e0998d49eecce401a6dcae5b244b9823c06720084604685ea78595f0ba77110e.css?body=1" for ::1 at 2022-11-01 20:16:50 -0400
+Started GET "/assets/inter-font.self-b09c62c2a5577703b8b6c61fe76b6169c89d746dbe28f44da83161702a0d90ef.css?body=1" for ::1 at 2022-11-01 20:16:50 -0400
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-01 20:16:50 -0400
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2022-11-01 20:16:50 -0400
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2022-11-01 20:16:50 -0400
+Started POST "/organization_login" for ::1 at 2022-11-01 20:17:00 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ez6nREU5odEFLhwLWvebjuelebCc71xWW/w7ZsPbyY4QvelPBZxdAstNk9rhQJ2THQrynmBdgetGafAGXY+dw==", "organization"=>{"name"=>"SK", "email"=>"swe@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+Completed 500 Internal Server Error in 46ms (Allocations: 19295)
+
+
+  
+ActiveRecord::ConnectionNotEstablished (connection to server on socket "/tmp/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+):
+  
+app/controllers/organizers_controller.rb:15:in `login'
+Started POST "/organization_login" for ::1 at 2022-11-01 20:18:23 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ez6nREU5odEFLhwLWvebjuelebCc71xWW/w7ZsPbyY4QvelPBZxdAstNk9rhQJ2THQrynmBdgetGafAGXY+dw==", "organization"=>{"name"=>"SK", "email"=>"swe@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+Completed 500 Internal Server Error in 51ms (Allocations: 20750)
+
+
+  
+ActiveRecord::NoDatabaseError (connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "bulletinbored" does not exist
+):
+  
+app/controllers/organizers_controller.rb:15:in `login'
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudent (20221029144918)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text, "name" text)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221029144918"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrganizer (20221029145149)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221029145149"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvent (20221029145320)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}')[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221029145320"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordToStudents (20221029170936)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "students" ADD "password" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221029170936"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordToOrganizers (20221029170949)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "organizers" ADD "password" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221029170949"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEventsStudentsJoinTable (20221029174053)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221029174053"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddReferencesToEvents (20221029174535)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "events" ADD "organizer_id" bigint[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221029174535"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-02 00:25:27.872550"], ["updated_at", "2022-11-02 00:25:27.872550"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/organization_login" for ::1 at 2022-11-01 20:26:00 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ez6nREU5odEFLhwLWvebjuelebCc71xWW/w7ZsPbyY4QvelPBZxdAstNk9rhQJ2THQrynmBdgetGafAGXY+dw==", "organization"=>{"name"=>"SK", "email"=>"swe@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms (ActiveRecord: 6.6ms | Allocations: 28312)
+
+
+Started GET "/" for ::1 at 2022-11-01 20:26:00 -0400
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2816)
+  Rendered layouts/_flash.erb (Duration: 0.8ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 150.5ms | Allocations: 320147)
+Completed 200 OK in 156ms (Views: 153.8ms | ActiveRecord: 0.0ms | Allocations: 322619)
+
+
+Started POST "/new_organization" for ::1 at 2022-11-01 20:26:20 -0400
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqKoompIbaA+U0Cp8hkzV2EApq2tdgPXkbubgmHY6E3vDKWaR0r6U3Fqzpa09+9PFuoYgRaEyKFlzcyv46G5HA==", "organization"=>{"name"=>"Sindhu Krishnamurthy", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Create (0.7ms)[0m  [1m[32mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sindhu Krishnamurthy"], ["email", "swe@columbia.edu"], ["password", "password"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 8ms (ActiveRecord: 3.6ms | Allocations: 3041)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:26:20 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 562)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 20080)
+Completed 200 OK in 30ms (Views: 17.9ms | ActiveRecord: 1.4ms | Allocations: 24775)
+
+
+Started GET "/events/new" for ::1 at 2022-11-01 20:26:21 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 5686)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 24951)
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 25352)
+
+
+Started POST "/events" for ::1 at 2022-11-01 20:26:27 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F7jC6+GYchYy3x2NvKLGe/SH3gPUccbO7Er8owaBeG3yFs/TzJrl5X3mk7L6TBpjg21gL2+DDbgYPKuOhPgpPA==", "event"=>{"name"=>"hihi", "datetime(1i)"=>"2022", "datetime(2i)"=>"11", "datetime(3i)"=>"2", "datetime(4i)"=>"00", "datetime(5i)"=>"26", "location"=>"", "tags"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (1.0ms)[0m  [1m[32mINSERT INTO "events" ("name", "datetime", "location", "description", "organizer_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hihi"], ["datetime", "2022-11-02 00:26:00"], ["location", ""], ["description", ""], ["organizer_id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 25ms (ActiveRecord: 3.1ms | Allocations: 8485)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:26:27 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 280)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 19797)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms | Allocations: 20120)
+
+
+Started GET "/events/1" for ::1 at 2022-11-01 20:26:29 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 851)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 20119)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.4ms | Allocations: 20765)
+
+
+Started GET "/events/1/edit" for ::1 at 2022-11-01 20:26:31 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3034)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 22299)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 22847)
+
+
+Started POST "/events" for ::1 at 2022-11-01 20:26:34 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ihP8QVEmKMxXiLtFvbv7lLChYpzuDrHfW9WpOAlu6gDhkLJKEYPUH5nrNJQGDP2JSg7pshK8bGJGQGJYlzq+Q==", "event"=>{"name"=>"hihi", "datetime(1i)"=>"2022", "datetime(2i)"=>"11", "datetime(3i)"=>"2", "datetime(4i)"=>"00", "datetime(5i)"=>"26", "location"=>"", "tags"=>"", "description"=>""}, "commit"=>"Update Event Info"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("name", "datetime", "location", "description", "organizer_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hihi"], ["datetime", "2022-11-02 00:26:00"], ["location", ""], ["description", ""], ["organizer_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms | Allocations: 1396)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:26:34 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 323)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 19840)
+Completed 200 OK in 35ms (Views: 34.8ms | ActiveRecord: 0.2ms | Allocations: 20163)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:27:05 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3443)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 22956)
+Completed 200 OK in 58ms (Views: 46.0ms | ActiveRecord: 3.6ms | Allocations: 26203)
+
+
+Started GET "/events/2" for ::1 at 2022-11-01 20:27:07 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3516)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 22783)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 2.2ms | Allocations: 23299)
+
+
+Started GET "/events/2/edit" for ::1 at 2022-11-01 20:27:08 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2612)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 21879)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.4ms | Allocations: 22300)
+
+
+Started POST "/events" for ::1 at 2022-11-01 20:27:14 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r9wWiwTSllDzgfixRcb8AceYEDpquSX+89CqtRfwiY9KchuzKdABo7y4do4DKCAZsHKuFtFL7ogHpv2YlYnY3g==", "event"=>{"name"=>"hihi", "datetime(1i)"=>"2022", "datetime(2i)"=>"11", "datetime(3i)"=>"2", "datetime(4i)"=>"00", "datetime(5i)"=>"26", "location"=>"testing", "tags"=>"", "description"=>""}, "commit"=>"Update Event Info"}
+  [1m[36mOrganizer Load (0.1ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "datetime", "location", "description", "organizer_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hihi"], ["datetime", "2022-11-02 00:26:00"], ["location", "testing"], ["description", ""], ["organizer_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms | Allocations: 1808)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:27:14 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 377)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 19894)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.2ms | Allocations: 20216)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:28:51 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 679)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 20708)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.2ms | Allocations: 21772)
+
+
+Started GET "/events/3" for ::1 at 2022-11-01 20:28:53 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 830)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 20097)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 20645)
+
+
+Started GET "/events/3/edit" for ::1 at 2022-11-01 20:28:55 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 3019)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 22284)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.4ms | Allocations: 22832)
+
+
+Started POST "/events/3" for ::1 at 2022-11-01 20:28:59 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/events/3"):
+  
+Started GET "/events/3/edit" for ::1 at 2022-11-01 20:30:33 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.1ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3121)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 165)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 23006)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.3ms | Allocations: 24317)
+
+
+Started POST "/events/3" for ::1 at 2022-11-01 20:30:38 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/events/3"):
+  
+Started POST "/events/3" for ::1 at 2022-11-01 20:31:05 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/events/3"):
+  
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:31:50 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 5288)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 155.6ms | Allocations: 322870)
+Completed 200 OK in 239ms (Views: 153.7ms | ActiveRecord: 9.9ms | Allocations: 353001)
+
+
+Started GET "/events/3" for ::1 at 2022-11-01 20:31:53 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 10.6ms | Allocations: 3954)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 23221)
+Completed 200 OK in 47ms (Views: 41.8ms | ActiveRecord: 2.8ms | Allocations: 23885)
+
+
+Started GET "/events/3/edit" for ::1 at 2022-11-01 20:31:54 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 11.1ms | Allocations: 6312)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 25577)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.5ms | Allocations: 26125)
+
+
+Started POST "/events/3" for ::1 at 2022-11-01 20:31:57 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/events/3"):
+  
+Started GET "/" for ::1 at 2022-11-01 20:33:38 -0400
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2131)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 21923)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 23017)
+
+
+Started GET "/assets/tailwind.self-e0998d49eecce401a6dcae5b244b9823c06720084604685ea78595f0ba77110e.css?body=1" for ::1 at 2022-11-01 20:33:38 -0400
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-11-01 20:33:38 -0400
+Started GET "/assets/inter-font.self-b09c62c2a5577703b8b6c61fe76b6169c89d746dbe28f44da83161702a0d90ef.css?body=1" for ::1 at 2022-11-01 20:33:38 -0400
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-01 20:33:38 -0400
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2022-11-01 20:33:38 -0400
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2022-11-01 20:33:38 -0400
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2022-11-01 20:33:38 -0400
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2022-11-01 20:33:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  
+Started GET "/apple-touch-icon.png" for ::1 at 2022-11-01 20:33:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  
+Started GET "/" for ::1 at 2022-11-01 20:33:38 -0400
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1273)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 20533)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 21051)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-01 20:33:51 -0400
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oYKULz3O+d1xppxTQISJ1LLJb7JAwbvCYZZq+++vhxHCS+m3XbWMfIJJayD9nhhJ5RoXjZSiD4v941ozRSaElQ==", "organization"=>{"name"=>"SK", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 721)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:33:51 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 665)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 20181)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.3ms | Allocations: 21021)
+
+
+Started GET "/events/3" for ::1 at 2022-11-01 20:33:55 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 833)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 20100)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.4ms | Allocations: 20648)
+
+
+Started GET "/events/3/edit" for ::1 at 2022-11-01 20:33:57 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1099)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1179)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1706)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 0..2)):
+     6:     </div>
+     7:   </div>
+     8:   <div class="mt-5 md:col-span-2 md:mt-0">
+     9:     <%= form_tag event_path(@event), method = 'put', :class => 'form' do %>
+    10:       <div class="overflow-hidden shadow sm:rounded-md">
+    11:         <div class="bg-white px-4 py-5 sm:p-6">
+    12:           <div class="grid grid-cols-6 gap-6">
+  
+app/views/events/edit.html.erb:9
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:34:24 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 5508)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 150.8ms | Allocations: 323125)
+Completed 200 OK in 221ms (Views: 151.5ms | ActiveRecord: 8.7ms | Allocations: 354402)
+
+
+Started GET "/events/3" for ::1 at 2022-11-01 20:34:26 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 10.3ms | Allocations: 3956)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 23223)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 2.7ms | Allocations: 23887)
+
+
+Started GET "/events/3/edit" for ::1 at 2022-11-01 20:34:27 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 8.8ms | Allocations: 6506)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 25771)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.5ms | Allocations: 26319)
+
+
+Started PUT "/events/3" for ::1 at 2022-11-01 20:34:32 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fH5IUJzHXj7bvkodCz4tn/WDMPlUrUIcdAzv70C3Q1QftzXI/LwrnyhRvW62JLwColBIxoDO9lXoed8n6j5A0A==", "event"=>{"name"=>"hihi", "datetime(1i)"=>"2022", "datetime(2i)"=>"11", "datetime(3i)"=>"2", "datetime(4i)"=>"00", "datetime(5i)"=>"26", "location"=>"testing trying", "tags"=>"", "description"=>""}, "commit"=>"Update Event Info", "id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Update (7.5ms)[0m  [1m[33mUPDATE "events" SET "location" = $1 WHERE "events"."id" = $2[0m  [["location", "testing trying"], ["id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/3
+Completed 302 Found in 15327ms (ActiveRecord: 8.2ms | Allocations: 47714)
+
+
+Started GET "/events/3" for ::1 at 2022-11-01 20:34:48 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 550)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 19820)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.4ms | Allocations: 20243)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-01 20:34:57 -0400
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 378)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 19886)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.2ms | Allocations: 20208)
+
+

@@ -11,7 +11,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: bulletinbored
+  database: postgres
   pool: 5
   # username: postgres
   # password: password
@@ -24,7 +24,7 @@ development:
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: bulletinbored
+  database: postgres
   # username: postgres
   # password: password
   pool: 5
@@ -34,7 +34,7 @@ test: &test
 production:
   adapter: postgresql
   encoding: unicode
-  database: bulletinbored
+  database: postgres
   # username: postgres
   # password: password
   pool: 5
