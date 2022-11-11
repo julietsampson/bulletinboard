@@ -9837,3 +9837,1462 @@ Processing by StudentsController#show_schedule as HTML
 Completed 200 OK in 28ms (Views: 17.5ms | ActiveRecord: 3.7ms | Allocations: 24476)
 
 
+Started GET "/show_schedule" for ::1 at 2022-11-11 17:53:14 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.8ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2203)
+  Rendered layouts/_flash.erb (Duration: 0.5ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 128.5ms | Allocations: 319731)
+Completed 200 OK in 252ms (Views: 130.5ms | ActiveRecord: 20.4ms | Allocations: 365624)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 17:53:22 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.8ms | Allocations: 385)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 19650)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.2ms | Allocations: 20421)
+
+
+Started GET "/events" for ::1 at 2022-11-11 17:53:25 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 6764)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 26269)
+Completed 200 OK in 65ms (Views: 23.8ms | ActiveRecord: 2.6ms | Allocations: 29304)
+
+
+Started GET "/my_events" for ::1 at 2022-11-11 17:53:29 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3692)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 22957)
+Completed 200 OK in 31ms (Views: 22.7ms | ActiveRecord: 1.6ms | Allocations: 25200)
+
+
+Started GET "/remove_event/344" for ::1 at 2022-11-11 17:53:33 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"344"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 344], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (2.3ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 344]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 9ms (ActiveRecord: 5.0ms | Allocations: 1646)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:33 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1091)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 20356)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.6ms | Allocations: 21051)
+
+
+Started GET "/remove_event/351" for ::1 at 2022-11-11 17:53:36 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"351"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 351], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (1.2ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 351]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:36 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1035)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 20300)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 20994)
+
+
+Started GET "/remove_event/358" for ::1 at 2022-11-11 17:53:37 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"358"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 358], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (0.2ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 358]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:37 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.8ms | Allocations: 979)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 20245)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.4ms | Allocations: 20939)
+
+
+Started GET "/remove_event/365" for ::1 at 2022-11-11 17:53:38 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"365"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 365], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (0.8ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 365]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:38 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.7ms | Allocations: 923)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 20188)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.4ms | Allocations: 20882)
+
+
+Started GET "/remove_event/304" for ::1 at 2022-11-11 17:53:39 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"304"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 304], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (0.2ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 304]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:39 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.6ms | Allocations: 867)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 20132)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.4ms | Allocations: 20826)
+
+
+Started GET "/remove_event/310" for ::1 at 2022-11-11 17:53:39 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"310"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 310], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (0.2ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 310]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:39 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.5ms | Allocations: 811)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 20076)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 20770)
+
+
+Started GET "/remove_event/372" for ::1 at 2022-11-11 17:53:40 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"372"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 372], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (0.2ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 372]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:41 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.5ms | Allocations: 755)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 20021)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.4ms | Allocations: 20715)
+
+
+Started GET "/remove_event/316" for ::1 at 2022-11-11 17:53:41 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"316"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 316], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (0.8ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 316]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:41 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.3ms | Allocations: 698)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 19963)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 20657)
+
+
+Started GET "/remove_event/322" for ::1 at 2022-11-11 17:53:42 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"322"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 322], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (0.8ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 322]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:42 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.4ms | Allocations: 642)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 19907)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.3ms | Allocations: 20601)
+
+
+Started GET "/remove_event/379" for ::1 at 2022-11-11 17:53:42 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"379"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 379], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (0.2ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 379]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 1388)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 17:53:42 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.3ms | Allocations: 586)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 19851)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.4ms | Allocations: 20545)
+
+
+Started GET "/events" for ::1 at 2022-11-11 17:53:45 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2509)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 22015)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.2ms | Allocations: 22302)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 17:53:51 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.3ms | Allocations: 188)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 19454)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.2ms | Allocations: 20099)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 17:53:55 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1562)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 20827)
+Completed 200 OK in 28ms (Views: 16.9ms | ActiveRecord: 4.1ms | Allocations: 24476)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-11 17:53:57 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 10.2ms | Allocations: 5411)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 24674)
+Completed 200 OK in 30ms (Views: 20.7ms | ActiveRecord: 3.1ms | Allocations: 28449)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 17:54:10 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1565)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 20830)
+Completed 200 OK in 28ms (Views: 17.0ms | ActiveRecord: 3.8ms | Allocations: 24480)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 17:54:41 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 17.4ms | Allocations: 1937)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 21732)
+Completed 200 OK in 44ms (Views: 32.8ms | ActiveRecord: 3.9ms | Allocations: 26137)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-11 17:54:43 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4784)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 24047)
+Completed 200 OK in 32ms (Views: 20.5ms | ActiveRecord: 3.8ms | Allocations: 27823)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 17:55:00 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1562)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 20827)
+Completed 200 OK in 28ms (Views: 17.4ms | ActiveRecord: 3.5ms | Allocations: 24477)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 17:55:05 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.6ms | Allocations: 377)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 19642)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.1ms | Allocations: 20412)
+
+
+Started GET "/events" for ::1 at 2022-11-11 17:55:08 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2806)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 22311)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.2ms | Allocations: 23115)
+
+
+Started GET "/about_event/342" for ::1 at 2022-11-11 17:55:12 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"342"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 342], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1317)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1397)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 1922)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+     9:       <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+    10:         <dt class="text-sm font-medium text-gray-500">Date and Time:</dt>
+    11:         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+    12:           <%= @event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+    13:         </dd>
+    14:       </div>
+    15:       <div class="bg-white px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+  
+app/views/events/student_show.html.erb:12
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:55:16 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 175)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 19788)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.1ms | Allocations: 20339)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:55:36 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 583)
+  Rendered layouts/_flash.erb (Duration: 1.0ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 20606)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.2ms | Allocations: 21770)
+
+
+Started GET "/events" for ::1 at 2022-11-11 17:55:45 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2837)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 22342)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.2ms | Allocations: 22766)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:55:48 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 258)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 19762)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 20184)
+
+
+Started GET "/events" for ::1 at 2022-11-11 17:56:06 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2501)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 22005)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.2ms | Allocations: 22291)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:56:18 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 255)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 19759)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 20180)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:56:44 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 568)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 20591)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.2ms | Allocations: 21744)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:58:27 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 567)
+  Rendered layouts/_flash.erb (Duration: 0.7ms | Allocations: 162)
+  Rendered layout layouts/application.html.erb (Duration: 60.0ms | Allocations: 20597)
+Completed 200 OK in 66ms (Views: 62.0ms | ActiveRecord: 1.2ms | Allocations: 21763)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:58:43 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 572)
+  Rendered layouts/_flash.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 20594)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 21747)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:59:44 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 432)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 514)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1658)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!--  app/views/events/show.html.erb -->
+
+<div class="mt-3 inline-flex">
+  <%= button_to "My Profile", student_profile_path, method: :get, :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'%>
+  <%= button_to "All Events", events_path, method: :get, :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'%>
+  <%= button_to "My Events", student_events_path, method: :get , :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'%>
+</div>
+
+<div class="overflow-hidden bg-white shadow sm:rounded-lg">
+  <div class="px-4 py-3 sm:px-6">
+    <h2 class="text-lg font-medium leading-6 text-gray-900">Details about <em><%= @event.name %></em></h2>
+  </div>
+  <div class="border-t border-gray-200">
+    <dl>
+      <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Date and Time:</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+          <%= @event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+        </dd>
+      </div>
+      <div class="bg-white px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Location:</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+          <%= @event.location %>
+        </dd>
+      </div>
+      <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Tags:</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+          <%= @event.tags %>
+        </dd>
+      </div>
+      <div class="bg-white px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Description:</dt>
+        <dd id="description" class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+          <%= @event.description %>
+        </dd>
+      </div>
+      <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500"> Add to your list? </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+          <%= link_to 'Add', add_event_path(@event.id), :class => 'font-medium text-green-600 hover:text-green-500' %>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="mt-3 inline-flex">
+  <%= link_to "Back to All Events", events_path, method: :get, {style: "color: blue"}%>
+  <%= link_to "Logout", organization_logout_path, 'data-method' => 'post', :class => "text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"%>
+</div>
+
+):
+1:    <!--  app/views/events/show.html.erb -->
+2:    
+3:    <div class="mt-3 inline-flex">
+4:      <%= button_to "My Profile", student_profile_path, method: :get, :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'%>
+5:      <%= button_to "All Events", events_path, method: :get, :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'%>
+6:      <%= button_to "My Events", student_events_path, method: :get , :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'%>
+7:    </div>
+8:    
+9:    <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+10:      <div class="px-4 py-3 sm:px-6">
+11:        <h2 class="text-lg font-medium leading-6 text-gray-900">Details about <em><%= @event.name %></em></h2>
+12:      </div>
+13:      <div class="border-t border-gray-200">
+14:        <dl>
+15:          <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+16:            <dt class="text-sm font-medium text-gray-500">Date and Time:</dt>
+17:            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+18:              <%= @event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+19:            </dd>
+20:          </div>
+21:          <div class="bg-white px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+22:            <dt class="text-sm font-medium text-gray-500">Location:</dt>
+23:            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+24:              <%= @event.location %>
+25:            </dd>
+26:          </div>
+27:          <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+28:            <dt class="text-sm font-medium text-gray-500">Tags:</dt>
+29:            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+30:              <%= @event.tags %>
+31:            </dd>
+32:          </div>
+33:          <div class="bg-white px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+34:            <dt class="text-sm font-medium text-gray-500">Description:</dt>
+35:            <dd id="description" class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+36:              <%= @event.description %>
+37:            </dd>
+38:          </div>
+39:          <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+40:            <dt class="text-sm font-medium text-gray-500"> Add to your list? </dt>
+41:            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+42:              <%= link_to 'Add', add_event_path(@event.id), :class => 'font-medium text-green-600 hover:text-green-500' %>
+43:            </dd>
+44:          </div>
+45:        </dl>
+46:      </div>
+47:    </div>
+48:    
+49:    <div class="mt-3 inline-flex">
+50:      <%= link_to "Back to All Events", events_path, method: :get, {style: "color: blue"}%>
+51:      <%= link_to "Logout", organization_logout_path, 'data-method' => 'post', :class => "text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"%>
+52:    </div>
+  
+app/views/events/student_show.html.erb:50: syntax error, unexpected ')', expecting =>
+app/views/events/student_show.html.erb:55: syntax error, unexpected end, expecting ')'
+app/views/events/student_show.html.erb:50: syntax error, unexpected ')', expecting =>
+app/views/events/student_show.html.erb:55: syntax error, unexpected end, expecting ')'
+app/views/events/student_show.html.erb:50: syntax error, unexpected ')', expecting =>
+app/views/events/student_show.html.erb:55: syntax error, unexpected end, expecting ')'
+app/views/events/student_show.html.erb:50: syntax error, unexpected ')', expecting =>
+app/views/events/student_show.html.erb:55: syntax error, unexpected end, expecting ')'
+Started GET "/events" for ::1 at 2022-11-11 17:59:56 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2807)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 22835)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 23855)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 17:59:58 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 568)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 20073)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.2ms | Allocations: 20621)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:01:11 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 574)
+  Rendered layouts/_flash.erb (Duration: 1.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 20602)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms | Allocations: 21773)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:02:38 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 566)
+  Rendered layouts/_flash.erb (Duration: 1.0ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 20593)
+Completed 200 OK in 58ms (Views: 47.1ms | ActiveRecord: 0.7ms | Allocations: 21759)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:05:29 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 568)
+  Rendered layouts/_flash.erb (Duration: 1.8ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 20595)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 0.2ms | Allocations: 21761)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:06:00 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 567)
+  Rendered layouts/_flash.erb (Duration: 1.2ms | Allocations: 162)
+  Rendered layout layouts/application.html.erb (Duration: 173.5ms | Allocations: 20597)
+Completed 200 OK in 188ms (Views: 183.9ms | ActiveRecord: 0.3ms | Allocations: 21763)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:06:12 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 571)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 20593)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.3ms | Allocations: 21746)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:06:27 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 567)
+  Rendered layouts/_flash.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 20589)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.2ms | Allocations: 21737)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:06:39 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 566)
+  Rendered layouts/_flash.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 20588)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.2ms | Allocations: 21736)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:06:43 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"vnLjX/PqMVlGoDCheDr2d+HavisX87XTfE4GqKG1+Ppb3O5n3uimqgmZvp4+1CpvljAAB6wBfqWIOFGFI8ypqw=="}
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2807)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 22311)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.5ms | Allocations: 22725)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:06:47 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 244)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 19749)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.2ms | Allocations: 20171)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:07:01 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 572)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 20595)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.2ms | Allocations: 21748)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:07:08 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 567)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 20589)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.3ms | Allocations: 21737)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:07:23 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"fkfOcnicT8QWwnXfcP3kgHxdHO1eq0iEgwk+o19P8Oib6cNKVZ7YN1n7++A2EziYC7eiweVZg/J3f2mO3TahuQ=="}
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2806)
+  Rendered layouts/_flash.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 22828)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.3ms | Allocations: 23842)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 18:07:24 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 2.0ms | Allocations: 377)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 19643)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 1.0ms | Allocations: 20805)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 18:07:25 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (1.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (1.1ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (1.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1943)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 21208)
+Completed 200 OK in 51ms (Views: 28.0ms | ActiveRecord: 9.0ms | Allocations: 25077)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 18:09:58 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (1.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1926)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 21715)
+Completed 200 OK in 44ms (Views: 27.8ms | ActiveRecord: 6.8ms | Allocations: 26119)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 18:10:17 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1925)
+  Rendered layouts/_flash.erb (Duration: 0.5ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 21708)
+Completed 200 OK in 43ms (Views: 28.2ms | ActiveRecord: 5.3ms | Allocations: 26084)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 18:10:32 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1925)
+  Rendered layouts/_flash.erb (Duration: 0.5ms | Allocations: 162)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 21711)
+Completed 200 OK in 56ms (Views: 41.0ms | ActiveRecord: 5.4ms | Allocations: 26087)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 18:10:46 -0500
+Processing by StudentsController#my_profile as HTML
+  Parameters: {"authenticity_token"=>"cdGgC5eFXxMJplnXYcst/cA62yNvu7lBkV6jmMbpAoSUf60zuofI4Eaf1+gnJfHlt9BlD9RJcjdlKPS1RJBT1Q=="}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 1.0ms | Allocations: 381)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 20164)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.2ms | Allocations: 21540)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 18:10:48 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.4ms | Allocations: 196)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 19463)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.2ms | Allocations: 20108)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:10:50 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2806)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 22310)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.3ms | Allocations: 23114)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:10:54 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 567)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 20071)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.2ms | Allocations: 20620)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:11:00 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"/GWDrkkpYj+IMOlc7/dS4pJ8L95Ix2lsrK7aFoVaAv4Zy46WZCv1zMcJZ2OpGY765ZaR8vM1ohpY2I07ByNTrw=="}
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2503)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 22008)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.4ms | Allocations: 22295)
+
+
+Started GET "/my_events" for ::1 at 2022-11-11 18:11:02 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 3.6ms | Allocations: 920)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 20185)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.6ms | Allocations: 21007)
+
+
+Started GET "/my_events" for ::1 at 2022-11-11 18:11:29 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 5.7ms | Allocations: 899)
+  Rendered layouts/_flash.erb (Duration: 1.1ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 20683)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.5ms | Allocations: 22108)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 18:11:31 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 1.6ms | Allocations: 377)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 19642)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.2ms | Allocations: 20413)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:11:32 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2806)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 22311)
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.3ms | Allocations: 23115)
+
+
+Started GET "/my_events" for ::1 at 2022-11-11 18:11:35 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 2.6ms | Allocations: 595)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 19862)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 1.3ms | Allocations: 20557)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:11:38 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2501)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 22005)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.3ms | Allocations: 22292)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:11:41 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 571)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 20075)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.2ms | Allocations: 20622)
+
+
+Started GET "/add_event/291" for ::1 at 2022-11-11 18:11:48 -0500
+Processing by StudentsController#add_event as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  [1m[36mEvent Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1 AND "events"."id" = $2 LIMIT $3[0m  [["student_id", 5], ["id", 291], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Create (7.0ms)[0m  [1m[32mINSERT INTO "events_students" ("student_id", "event_id") VALUES ($1, $2)[0m  [["student_id", 5], ["event_id", 291]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 55ms (ActiveRecord: 10.5ms | Allocations: 3116)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 18:11:48 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.9ms | Allocations: 664)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 19931)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.5ms | Allocations: 20626)
+
+
+Started GET "/remove_event/337" for ::1 at 2022-11-11 18:11:52 -0500
+Processing by StudentsController#remove_event as HTML
+  Parameters: {"id"=>"337"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 337], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent::HABTM_Events Destroy (1.7ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."student_id" = $1 AND "events_students"."event_id" = $2[0m  [["student_id", 5], ["event_id", 337]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/my_events?student_id=5
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms | Allocations: 1396)
+
+
+Started GET "/my_events?student_id=5" for ::1 at 2022-11-11 18:11:52 -0500
+Processing by StudentsController#my_events as HTML
+  Parameters: {"student_id"=>"5"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.8ms | Allocations: 599)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 19864)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.5ms | Allocations: 20558)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:11:55 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2503)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 22007)
+Completed 200 OK in 49ms (Views: 43.1ms | ActiveRecord: 0.3ms | Allocations: 22294)
+
+
+Started GET "/about_event/342" for ::1 at 2022-11-11 18:12:00 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"342"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 342], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 647)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 729)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms | Allocations: 1121)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    15:       <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+    16:         <dt class="text-sm font-medium text-gray-500">Date and Time:</dt>
+    17:         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+    18:           <%= @event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
+    19:         </dd>
+    20:       </div>
+    21:       <div class="bg-white px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+  
+app/views/events/student_show.html.erb:18
+Started GET "/student_profile" for ::1 at 2022-11-11 18:12:05 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.4ms | Allocations: 188)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 19454)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.2ms | Allocations: 20098)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:12:08 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2501)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 22006)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.3ms | Allocations: 22292)
+
+
+Started GET "/my_events" for ::1 at 2022-11-11 18:12:10 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.9ms | Allocations: 599)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 19864)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.5ms | Allocations: 20558)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 18:12:12 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.3ms | Allocations: 187)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 19452)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.2ms | Allocations: 20096)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:12:13 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2501)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 22005)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.3ms | Allocations: 22291)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:12:16 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 241)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 19745)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.2ms | Allocations: 20166)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 18:12:19 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.4ms | Allocations: 187)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 19453)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.2ms | Allocations: 20097)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 18:12:28 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (1.1ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1942)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 21207)
+Completed 200 OK in 38ms (Views: 23.1ms | ActiveRecord: 5.8ms | Allocations: 24982)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 18:13:09 -0500
+Processing by StudentsController#my_profile as HTML
+  Parameters: {"authenticity_token"=>"rjExIXEcdm4eshykQXXDimAswmzy5O4IbHshiBoE2xNLnzwZXB7hnVGLkpsHmx+SF8Z8QEkWJX6YDXalmH2KQg=="}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.3ms | Allocations: 188)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 19458)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.2ms | Allocations: 20119)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 18:13:10 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1547)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 20812)
+Completed 200 OK in 37ms (Views: 22.5ms | ActiveRecord: 5.3ms | Allocations: 24467)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 18:13:14 -0500
+Processing by StudentsController#my_profile as HTML
+  Parameters: {"authenticity_token"=>"DApuWBFiR6AOfBQ9ygsvMEeIiePO8DKDPTaUn7sm3qXppGNgPGDQU0FFmgKM5fMoMGI3z3UC+fXJQMOyOV+P9A=="}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 0.3ms | Allocations: 187)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 19453)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.2ms | Allocations: 20097)
+
+
+Started GET "/my_events" for ::1 at 2022-11-11 18:13:16 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 1.8ms | Allocations: 600)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 19865)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.4ms | Allocations: 20559)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:13:16 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2509)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 22015)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.3ms | Allocations: 22302)
+
+
+Started GET "/about_event/291" for ::1 at 2022-11-11 18:13:20 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"291"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 291], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 244)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 19748)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.2ms | Allocations: 20170)
+
+
+Started GET "/events" for ::1 at 2022-11-11 18:13:40 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"v8EJ/+pNhj7AbJIv+9DAGloYQHW43sj/yEEwIJ1YTV1abwTHx08RzY9VHBC9PhwCLfL+WQMsA4k8N2cNHyEcDA=="}
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2501)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 22005)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.3ms | Allocations: 22291)
+
+
