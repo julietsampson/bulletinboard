@@ -15,7 +15,7 @@
                 <% @schedule[day].each do |block| %>
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        <%= block.busy_range.begin.hour %>:<%= block.busy_range.begin.min %> - <%= block.busy_range.last.hour %>:<%= block.busy_range.last.min %>
+                        <%= block.busy_range.begin.strftime("%l:%M %p") %> - <%= block.busy_range.last.strftime("%l:%M %p") %>
                     </th>
                     <td class="py-4 px-6">
                         <%= button_to "Remove", remove_timeblock_path(block),  method: :get , :class => 'font-medium text-red-600 dark:text-red-500 hover:underline' %>
