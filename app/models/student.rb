@@ -3,7 +3,6 @@ class Student < ActiveRecord::Base
     has_many :timeblocks
 
     def weekday_schedule
-        puts "GETTING WEEKDAY SCHEDULE"
         mon = Date.new(1996,1,1)
         tue = Date.new(1996,1,2)
         wed = Date.new(1996,1,3)
@@ -19,7 +18,6 @@ class Student < ActiveRecord::Base
         sat_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", sat.beginning_of_day, sat.end_of_day).order('lower(busy_range)')
         sun_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", sun.beginning_of_day, sun.end_of_day).order('lower(busy_range)')
         schedule = {:mon => mon_sched, :tue => tue_sched, :wed => wed_sched, :thu => thu_sched, :fri => fri_sched, :sat => sat_sched, :sun => sun_sched}
-        puts schedule
         return schedule
     end
 end
