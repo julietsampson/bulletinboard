@@ -13,6 +13,10 @@ Rottenpotatoes::Application.routes.draw do
   get 'about_event/:id' => 'events#student_show', as: :about_event
   get 'add_event/:id' => 'students#add_event', as: :add_event
   get 'remove_event/:id' => 'students#remove_event', as: :remove_event
+  get 'student_profile' => 'students#my_profile', as: :student_profile
+  get 'show_schedule' => 'students#show_schedule', as: :show_schedule
+  get 'edit_schedule' => 'students#edit_schedule', as: :edit_schedule
+  post 'update_schedule' => 'students#update_schedule', as: :update_schedule
   # root :to => 'events#index'
   # get "/" => "events#index"
 end

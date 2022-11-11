@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_29_174535) do
+ActiveRecord::Schema.define(version: 2022_11_11_080500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,5 +44,14 @@ ActiveRecord::Schema.define(version: 2022_10_29_174535) do
     t.text "password"
   end
 
+  create_table "timeblocks", force: :cascade do |t|
+    t.tsrange "busy_range"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "student_id"
+    t.index ["student_id"], name: "index_timeblocks_on_student_id"
+  end
+
   add_foreign_key "events", "organizers"
+  add_foreign_key "timeblocks", "students"
 end
