@@ -11,13 +11,13 @@ class Student < ActiveRecord::Base
         fri = Date.new(1996,1,5)
         sat = Date.new(1996,1,6)
         sun = Date.new(1996,1,7)
-        mon_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", mon.beginning_of_day, mon.end_of_day)
-        tue_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", tue.beginning_of_day, tue.end_of_day)
-        wed_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", wed.beginning_of_day, wed.end_of_day)
-        thu_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", thu.beginning_of_day, thu.end_of_day)
-        fri_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", fri.beginning_of_day, fri.end_of_day)
-        sat_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", sat.beginning_of_day, sat.end_of_day)
-        sun_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", sun.beginning_of_day, sun.end_of_day)
+        mon_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", mon.beginning_of_day, mon.end_of_day).order('lower(busy_range)')
+        tue_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", tue.beginning_of_day, tue.end_of_day).order('lower(busy_range)')
+        wed_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", wed.beginning_of_day, wed.end_of_day).order('lower(busy_range)')
+        thu_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", thu.beginning_of_day, thu.end_of_day).order('lower(busy_range)')
+        fri_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", fri.beginning_of_day, fri.end_of_day).order('lower(busy_range)')
+        sat_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", sat.beginning_of_day, sat.end_of_day).order('lower(busy_range)')
+        sun_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", sun.beginning_of_day, sun.end_of_day).order('lower(busy_range)')
         schedule = {:mon => mon_sched, :tue => tue_sched, :wed => wed_sched, :thu => thu_sched, :fri => fri_sched, :sat => sat_sched, :sun => sun_sched}
         puts schedule
         return schedule
