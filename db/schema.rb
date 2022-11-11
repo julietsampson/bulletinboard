@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_29_174535) do
+ActiveRecord::Schema.define(version: 2022_11_11_214938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,16 +32,27 @@ ActiveRecord::Schema.define(version: 2022_10_29_174535) do
     t.index ["student_id"], name: "index_events_students_on_student_id"
   end
 
+  create_table "offerings", force: :cascade do |t|
+    t.text "name"
+    t.datetime "datetime"
+    t.text "location"
+    t.text "description"
+    t.text "image_url"
+  end
+
   create_table "organizers", force: :cascade do |t|
     t.text "name"
-    t.text "email"
-    t.text "password"
+    t.text "email", null: false
+    t.text "password", null: false
+    t.index ["email"], name: "index_organizers_on_email", unique: true
   end
 
   create_table "students", force: :cascade do |t|
-    t.text "uni"
+    t.text "uni", null: false
     t.text "name"
-    t.text "password"
+    t.text "password", null: false
+    t.integer "points"
+    t.index ["uni"], name: "index_students_on_uni", unique: true
   end
 
   add_foreign_key "events", "organizers"

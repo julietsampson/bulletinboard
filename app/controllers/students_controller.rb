@@ -1,10 +1,19 @@
 class StudentsController < ApplicationController
   
     def create
-      @student = Student.create!(student_params)
-      flash[:notice] = "Welcome #{@student.name}!"
-      session[:student_id] = @student.id
-      redirect_to events_path
+      @existing_student = Student.find_by(uni: params[:student][:uni])
+      if (params[:student][:uni] == "" || params[:student][:name] == "" || params[:student][:password] == "")
+        flash[:notice] = "Please fill out all of the fields."
+        redirect_to root_path
+      elsif (@existing_student != nil)
+        flash[:notice] = "An account with this UNI already exists. Please login instead. "
+        redirect_to root_path
+      else
+        @student = Student.create!(student_params)
+        flash[:notice] = "Welcome #{@student.name}!"
+        session[:student_id] = @student.id
+        redirect_to events_path
+      end
     end
   
     def login
