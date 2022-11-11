@@ -89,6 +89,13 @@ class StudentsController < ApplicationController
       flash[:notice] = "Schedule was successfully updated."
       redirect_to edit_schedule_path()
     end
+
+    def remove_timeblock
+      @student = Student.find(session[:student_id])
+      @timeblock = @student.timeblocks.find(params[:id])
+      @student.timeblocks.delete(@timeblock)
+      redirect_to edit_schedule_path()
+    end
   
     private
     # Making "internal" methods private is not required, but is a common practice.

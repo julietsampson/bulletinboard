@@ -17,6 +17,7 @@ Rottenpotatoes::Application.routes.draw do
   get 'show_schedule' => 'students#show_schedule', as: :show_schedule
   get 'edit_schedule' => 'students#edit_schedule', as: :edit_schedule
   post 'update_schedule' => 'students#update_schedule', as: :update_schedule
+  get 'remove_timeblock/:id' => 'students#remove_timeblock', as: :remove_timeblock
   # root :to => 'events#index'
   # get "/" => "events#index"
 end

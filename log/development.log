@@ -5785,3 +5785,667 @@ Processing by StudentsController#my_events as HTML
 Completed 200 OK in 151ms (Views: 76.7ms | ActiveRecord: 9.2ms | Allocations: 25074)
 
 
+Started GET "/my_events" for ::1 at 2022-11-11 15:49:33 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (2.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 5]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 20.1ms | Allocations: 8484)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 190.4ms | Allocations: 326013)
+Completed 200 OK in 374ms (Views: 187.6ms | ActiveRecord: 69.6ms | Allocations: 367255)
+
+
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-11 15:49:33 -0500
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-11-11 15:49:33 -0500
+Started GET "/events" for ::1 at 2022-11-11 15:49:37 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2776)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 52.3ms | Allocations: 22280)
+Completed 200 OK in 54ms (Views: 52.9ms | ActiveRecord: 0.7ms | Allocations: 23097)
+
+
+Started GET "/" for ::1 at 2022-11-11 15:49:37 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2595)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 21858)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 22892)
+
+
+Started POST "/student_login" for ::1 at 2022-11-11 15:49:40 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QEPPRbOm2LXEs9MYPKkwQS2C08WKHmZE+3lZGq6MJx2l7cJ9nqRPRouKXSd6R+xZWmht6THsrTIPDw43LPV2TA==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms | Allocations: 679)
+
+
+Started GET "/events" for ::1 at 2022-11-11 15:49:40 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2467)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 21984)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms | Allocations: 22271)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-11 15:49:47 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 1.4ms | Allocations: 196)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 19461)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.2ms | Allocations: 20232)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 15:49:49 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 2.1ms | Allocations: 801)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 20066)
+Completed 200 OK in 51ms (Views: 27.7ms | ActiveRecord: 10.2ms | Allocations: 24317)
+
+
+Started GET "/remove_timeblock/1996-01-07%2011:13:00%20UTC..1996-01-07%2017:13:00%20UTC" for ::1 at 2022-11-11 15:49:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/remove_timeblock/1996-01-07%2011:13:00%20UTC..1996-01-07%2017:13:00%20UTC"):
+  
+Started GET "/remove_timeblock/1996-01-07%2011:13:00%20UTC..1996-01-07%2017:13:00%20UTC" for ::1 at 2022-11-11 15:50:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/remove_timeblock/1996-01-07%2011:13:00%20UTC..1996-01-07%2017:13:00%20UTC"):
+  
+Started GET "/remove_timeblock/1996-01-07%2011:13:00%20UTC..1996-01-07%2017:13:00%20UTC" for ::1 at 2022-11-11 15:50:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/remove_timeblock/1996-01-07%2011:13:00%20UTC..1996-01-07%2017:13:00%20UTC"):
+  
+Started GET "/remove_timeblock/1996-01-07%2011:13:00%20UTC..1996-01-07%2017:13:00%20UTC" for ::1 at 2022-11-11 15:55:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/remove_timeblock/1996-01-07%2011:13:00%20UTC..1996-01-07%2017:13:00%20UTC"):
+  
+Started GET "/remove_timeblock/1996-01-07%2002:14:00%20UTC..1996-01-07%2017:14:00%20UTC" for ::1 at 2022-11-11 15:55:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/remove_timeblock/1996-01-07%2002:14:00%20UTC..1996-01-07%2017:14:00%20UTC"):
+  
+Started GET "/show_schedule" for ::1 at 2022-11-11 15:57:52 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "timeblocks"."busy_range" FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1623)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1704)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 14.4ms | Allocations: 15087)
+
+
+  
+ActionView::Template::Error (undefined method `id' for 1996-01-07 11:13:00 UTC..1996-01-07 17:13:00 UTC:Range):
+    17:                     <%= timeblock.begin.hour %>:<%= timeblock.begin.min %> - <%= timeblock.last.hour %>:<%= timeblock.last.min %>
+    18:                 </th>
+    19:                 <td class="py-4 px-6">
+    20:                     <%= button_to "Remove", remove_timeblock_path(timeblock.id),  method: :get , :class => 'font-medium text-red-600 dark:text-red-500 hover:underline' %>
+    21:                 </td>
+    22:                 </tr>
+    23:             <% end %>
+  
+app/views/students/show_schedule.html.erb:20
+app/views/students/show_schedule.html.erb:14:in `each'
+app/views/students/show_schedule.html.erb:14
+app/views/students/show_schedule.html.erb:4:in `each'
+app/views/students/show_schedule.html.erb:4
+Started GET "/student_profile" for ::1 at 2022-11-11 16:02:51 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 3.0ms | Allocations: 211)
+  Rendered layouts/_flash.erb (Duration: 0.7ms | Allocations: 165)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 20104)
+Completed 200 OK in 55ms (Views: 37.7ms | ActiveRecord: 7.2ms | Allocations: 26407)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:02:53 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (1.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2978)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3058)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 6.8ms | Allocations: 11206)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `busy_range' for #<ActionView::Base:0x007fe59dc26b38>):
+    14:             <% @schedule[day].each do |timeblock| %>
+    15:                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+    16:                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    17:                     <%= timeblock[:busy_range].begin.hour %>:<%= timeblock[:busy_range].begin.min %> - <%= timeblock[:busy_range].last.hour %>:<%= timeblock[busy_range].last.min %>
+    18:                 </th>
+    19:                 <td class="py-4 px-6">
+    20:                     <%= button_to "Remove", remove_timeblock_path(timeblock),  method: :get , :class => 'font-medium text-red-600 dark:text-red-500 hover:underline' %>
+  
+app/views/students/show_schedule.html.erb:17
+app/views/students/show_schedule.html.erb:14
+app/views/students/show_schedule.html.erb:4:in `each'
+app/views/students/show_schedule.html.erb:4
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:04:40 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2966)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3047)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.2ms | Allocations: 7363)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `busy_range' for #<ActionView::Base:0x007fe59ba429b8>):
+    14:             <% @schedule[day].each do |block| %>
+    15:                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+    16:                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    17:                     <%= block[:busy_range].begin.hour %>:<%= block[:busy_range].begin.min %> - <%= block[:busy_range].last.hour %>:<%= block[busy_range].last.min %>
+    18:                 </th>
+    19:                 <td class="py-4 px-6">
+    20:                     <%= button_to "Remove", remove_timeblock_path(block),  method: :get , :class => 'font-medium text-red-600 dark:text-red-500 hover:underline' %>
+  
+app/views/students/show_schedule.html.erb:17
+app/views/students/show_schedule.html.erb:14
+app/views/students/show_schedule.html.erb:4:in `each'
+app/views/students/show_schedule.html.erb:4
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:05:27 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (1.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.9ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (1.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (1.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (2.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (1.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (1.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (1.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (1.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (1.1ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.7ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1969)
+  Rendered layouts/_flash.erb (Duration: 1.2ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 21759)
+Completed 200 OK in 55ms (Views: 26.2ms | ActiveRecord: 16.8ms | Allocations: 26103)
+
+
+Started GET "/remove_timeblock/1" for ::1 at 2022-11-11 16:05:30 -0500
+Processing by StudentsController#remove_timeblock as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND "timeblocks"."id" = $2 LIMIT $3[0m  [["student_id", 5], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTimeblock Update All (6.9ms)[0m  [1m[33mUPDATE "timeblocks" SET "student_id" = $1 WHERE "timeblocks"."student_id" = $2 AND "timeblocks"."id" = $3[0m  [["student_id", nil], ["student_id", 5], ["id", 1]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/edit_schedule
+Completed 302 Found in 15ms (ActiveRecord: 10.3ms | Allocations: 1257)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-11 16:05:30 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2835)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2915)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.3ms | Allocations: 6490)
+
+
+  
+ActionView::Template::Error (undefined method `begin' for #<Timeblock:0x00007fe59a51dda8>):
+    3:   <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Sunday</h2>
+    4:   <div>
+    5:     <% @schedule[:sun].each do |period| %>
+    6:          <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
+    7:     <% end %>
+    8:   </div>
+    9:   <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Monday</h2>
+  
+app/views/students/edit_schedule.html.erb:6
+app/views/students/edit_schedule.html.erb:5
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:10:07 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1906)
+  Rendered layouts/_flash.erb (Duration: 0.6ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 21696)
+Completed 200 OK in 43ms (Views: 31.8ms | ActiveRecord: 3.7ms | Allocations: 25926)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:10:34 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1897)
+  Rendered layouts/_flash.erb (Duration: 0.7ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 21680)
+Completed 200 OK in 40ms (Views: 28.7ms | ActiveRecord: 4.0ms | Allocations: 25881)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:11:00 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (1.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (1.8ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1906)
+  Rendered layouts/_flash.erb (Duration: 0.7ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 21689)
+Completed 200 OK in 49ms (Views: 33.9ms | ActiveRecord: 6.5ms | Allocations: 25890)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:11:01 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1594)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 20862)
+Completed 200 OK in 41ms (Views: 31.2ms | ActiveRecord: 3.4ms | Allocations: 24337)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:11:03 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1588)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 20853)
+Completed 200 OK in 30ms (Views: 20.0ms | ActiveRecord: 3.3ms | Allocations: 24327)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:12:08 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1917)
+  Rendered layouts/_flash.erb (Duration: 0.8ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 21706)
+Completed 200 OK in 38ms (Views: 27.4ms | ActiveRecord: 3.5ms | Allocations: 25936)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:12:26 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.9ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1910)
+  Rendered layouts/_flash.erb (Duration: 0.7ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 21693)
+Completed 200 OK in 41ms (Views: 28.9ms | ActiveRecord: 4.2ms | Allocations: 25894)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:12:43 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (1.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1914)
+  Rendered layouts/_flash.erb (Duration: 4.7ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 21699)
+Completed 200 OK in 48ms (Views: 24.8ms | ActiveRecord: 4.4ms | Allocations: 25905)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:12:56 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1909)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 21692)
+Completed 200 OK in 36ms (Views: 27.0ms | ActiveRecord: 2.9ms | Allocations: 25893)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:13:06 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.9ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1909)
+  Rendered layouts/_flash.erb (Duration: 1.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 21692)
+Completed 200 OK in 37ms (Views: 25.4ms | ActiveRecord: 4.2ms | Allocations: 25893)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-11 16:13:35 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1908)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 162)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 21694)
+Completed 200 OK in 48ms (Views: 37.8ms | ActiveRecord: 3.4ms | Allocations: 25895)
+
+
+Started GET "/remove_timeblock/2" for ::1 at 2022-11-11 16:13:36 -0500
+Processing by StudentsController#remove_timeblock as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND "timeblocks"."id" = $2 LIMIT $3[0m  [["student_id", 5], ["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTimeblock Update All (0.4ms)[0m  [1m[33mUPDATE "timeblocks" SET "student_id" = $1 WHERE "timeblocks"."student_id" = $2 AND "timeblocks"."id" = $3[0m  [["student_id", nil], ["student_id", 5], ["id", 2]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/edit_schedule
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms | Allocations: 1188)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-11 16:13:36 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 34.4ms | Allocations: 5011)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 46.6ms | Allocations: 24274)
+Completed 200 OK in 56ms (Views: 45.6ms | ActiveRecord: 3.2ms | Allocations: 27761)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-11 16:14:45 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4478)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 110.0ms | Allocations: 24266)
+Completed 200 OK in 121ms (Views: 110.0ms | ActiveRecord: 3.6ms | Allocations: 28381)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-11 16:15:00 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 23.6ms | Allocations: 4479)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 85.6ms | Allocations: 24262)
+Completed 200 OK in 104ms (Views: 86.3ms | ActiveRecord: 3.7ms | Allocations: 28349)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-11 16:15:11 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) /* loading for inspect */ LIMIT $2[0m  [["student_id", 5], ["LIMIT", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999'))[0m  [["student_id", 5]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999'))[0m  [["student_id", 5]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 8.0ms | Allocations: 4483)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 24268)
+Completed 200 OK in 62ms (Views: 23.5ms | ActiveRecord: 3.6ms | Allocations: 28360)
+
+

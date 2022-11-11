@@ -1,47 +1,32 @@
 <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900">Edit My Schedule</h2>
 
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Sunday</h2>
   <div>
-    <% @schedule[:sun].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
+    <% {:sun => "Sunday", :mon => "Monday", :tue => "Tuesday", :wed => "Wednesday", :thu => "Thursday", :fri => "Friday", :sat => "Saturday"}.each do |day, name| %>
+        <h2 class="mt-6 text-2xl tracking-tight text-gray-900"><%=name%></h2>
+        <div class="mt-2 overflow-x-auto relative shadow-md sm:rounded-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="events">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="py-3 px-6">Busy Hours</th>
+                    <th scope="col" class="py-3 px-6">Remove from Schedule</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @schedule[day].each do |block| %>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <%= block.busy_range.begin.hour %>:<%= block.busy_range.begin.min %> - <%= block.busy_range.last.hour %>:<%= block.busy_range.last.min %>
+                    </th>
+                    <td class="py-4 px-6">
+                        <%= button_to "Remove", remove_timeblock_path(block),  method: :get , :class => 'font-medium text-red-600 dark:text-red-500 hover:underline' %>
+                    </td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
     <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Monday</h2>
-  <div>
-    <% @schedule[:mon].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Tuesday</h2>
-  <div>
-    <% @schedule[:tue].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Wednesday</h2>
-  <div>
-    <% @schedule[:wed].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Thursday</h2>
-  <div>
-    <% @schedule[:thu].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Friday</h2>
-  <div>
-    <% @schedule[:fri].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Saturday</h2>
-  <div>
-    <% @schedule[:sat].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
+</div>
 
   <div class="mt-5 md:col-span-2 md:mt-0">
     <%= form_tag update_schedule_path(), :class => 'form' do %>
@@ -65,10 +50,10 @@
         </div>
         <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
           <%= submit_tag 'Add Busy Timeblock', :class => 'inline-flex justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2' %>
-          <%= link_to 'Done', show_schedule_path(), :class => 'inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2' %>
-        </div>
       </div>
     <% end %>
   </div>
+  <%= link_to 'Done', show_schedule_path(), :class => 'inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2' %>
+        </div>
 </div>
 <%= link_to "Logout", organization_logout_path, 'data-method' => 'post', :class => "text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-6 mr-2 mb-4 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"%>

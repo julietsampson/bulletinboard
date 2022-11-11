@@ -1,47 +1,32 @@
 <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900">My Schedule</h2>
 
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Sunday</h2>
-  <div>
-    <% @schedule[:sun].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
+<div>
+    <% {:sun => "Sunday", :mon => "Monday", :tue => "Tuesday", :wed => "Wednesday", :thu => "Thursday", :fri => "Friday", :sat => "Saturday"}.each do |day, name| %>
+        <h2 class="mt-6 text-2xl tracking-tight text-gray-900"><%=name%></h2>
+        <div class="mt-2 overflow-x-auto relative shadow-md sm:rounded-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="events">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="py-3 px-6">Busy Hours</th>
+                    <th scope="col" class="py-3 px-6">Remove from Schedule</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @schedule[day].each do |block| %>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <%= block.busy_range.begin.hour %>:<%= block.busy_range.begin.min %> - <%= block.busy_range.last.hour %>:<%= block.busy_range.last.min %>
+                    </th>
+                    <td class="py-4 px-6">
+                        <%= button_to "Remove", remove_timeblock_path(block),  method: :get , :class => 'font-medium text-red-600 dark:text-red-500 hover:underline' %>
+                    </td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
     <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Monday</h2>
-  <div>
-    <% @schedule[:mon].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Tuesday</h2>
-  <div>
-    <% @schedule[:tue].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Wednesday</h2>
-  <div>
-    <% @schedule[:wed].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Thursday</h2>
-  <div>
-    <% @schedule[:thu].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Friday</h2>
-  <div>
-    <% @schedule[:fri].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
-  <h2 class="mt-6 text-2xl tracking-tight text-gray-900">Saturday</h2>
-  <div>
-    <% @schedule[:sat].each do |period| %>
-         <li><%= period.begin.hour %>:<%= period.begin.min %> - <%= period.last.hour %>:<%= period.last.min %></li>
-    <% end %>
-  </div>
+</div>
 
 <div class="mt-3 inline-flex">
   <%= link_to "Edit Schedule", edit_schedule_path, class: "focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" %>
