@@ -13,9 +13,26 @@ class EventsController < ApplicationController
   end
 
   def index
-    id = session[:student_id]
-    @student = Student.find(id)
-    @events = Event.all
+    student_id = session[:student_id]
+    id = params[:id]
+    @student = Student.find(student_id)
+    @all_tags = Event.all_tags
+    @events = Event.with_tags(tags_list, sort_by)
+    @tags_to_show_hash = tags_hash
+    @sort_by = sort_by
+
+    session['tags'] = tags_list
+    session['sort_by'] = @sort_by
+  end
+
+  def tags_list
+    params[:tags]&.keys || session[:tags] || Event.all_tags
+  end
+  def tags_hash
+     Hash[tags_list.collect { |item| [item, "1"] }]
+  end
+  def sort_by
+    params[:sort_by] || session[:sort_by] || 'id'
   end
 
   def organizer_index
@@ -77,6 +94,8 @@ class EventsController < ApplicationController
     redirect_to organizer_events_path('organizer_id': @organizer.id)
   end
 
+  
+
   private
   # Making "internal" methods private is not required, but is a common practice.
   # This helps make clear which methods respond to requests, and which ones do not.
@@ -134,4 +153,5 @@ class EventsController < ApplicationController
   def day_date_mapping
     {:mon => "01-Jan-1996 ", :tue => "02-Jan-1996 ", :wed => "03-Jan-1996 ", :thu => "04-Jan-1996 ", :fri => "05-Jan-1996 ", :sat => "06-Jan-1996 ", :sun => "07-Jan-1996 "}
   end 
+  
 end

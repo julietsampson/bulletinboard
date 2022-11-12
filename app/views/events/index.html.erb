@@ -7,6 +7,18 @@
 
 <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900"> All Events </h2>
 
+<%= form_tag events_path, method: :get, id: 'tags_form' do %>
+  <%= hidden_field_tag 'sort_by', @sort_by %>
+  Include:
+  <% @all_tags.each do |tag| %>
+    <div class="form-check  form-check-inline">
+      <%= label_tag "tags[#{tag}]", tag, class: 'form-check-label' %>
+      <%= check_box_tag "tags[#{tag}]", "1",  @tags_to_show_hash.include?(tag), class: 'form-check-input' %>
+    </div>
+  <% end %>
+  <%= submit_tag 'Refresh', id: 'tags_submit', :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' %>
+<% end %>
+
 <div class="mt-2 overflow-x-auto relative shadow-md sm:rounded-lg">
   <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="events">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -31,9 +43,7 @@
             <%= event.location %>
           </td>
           <td class="py-4 px-6">
-            <% event.tags.each do |tag| %>
-              <%= tag %>,
-            <% end %>
+            <%= event.tags.map{|item|%Q{#{item}}}.join(', ') %>
           </td>
           <td class="py-4 px-6">
             <%= button_to "Learn More", about_event_path(event), method: :get, :class => 'font-medium text-blue-600 dark:text-blue-500 hover:underline' %>
