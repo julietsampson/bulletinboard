@@ -2027,3 +2027,156 @@ Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da7
 Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2022-11-01 17:36:51 -0400
 Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2022-11-01 17:36:51 -0400
 Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2022-11-01 17:36:51 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7564000917792374370)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7564000917792374370)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-11-12 12:04:54 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2842)
+  Rendered layouts/_flash.erb (Duration: 0.2ms | Allocations: 172)
+  Rendered layout layouts/application.html.erb (Duration: 294.6ms | Allocations: 356530)
+Completed 200 OK in 311ms (Views: 297.2ms | Allocations: 360244)
+
+
+Started POST "/student_login" for ::1 at 2022-11-12 12:05:01 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A0vM6acG2wmD3iUEu5trT9ZcnRzZxasTZetrZtCX6nsjgdGVXmSSjWRfQUlhSVjbsGguzBtvsoFMBaO3ZkQoAw==", "student"=>{"name"=>"a", "uni"=>"", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", ""], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 66ms (ActiveRecord: 10.0ms | Allocations: 31113)
+
+
+Started GET "/events" for ::1 at 2022-11-12 12:05:01 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4460)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 20652)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 3.1ms | Allocations: 23691)
+
+
+Started GET "/about_event/1" for ::1 at 2022-11-12 12:06:15 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 411)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 16400)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.3ms | Allocations: 17070)
+
+
+Started GET "/events" for ::1 at 2022-11-12 12:06:16 -0500
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 290)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 16274)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.2ms | Allocations: 16561)
+
+
+Started GET "/my_events" for ::1 at 2022-11-12 12:06:18 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 12.7ms | Allocations: 3754)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 19499)
+Completed 200 OK in 48ms (Views: 25.4ms | ActiveRecord: 1.9ms | Allocations: 24781)
+
+
+Started POST "/organization_logout" for ::1 at 2022-11-12 12:06:20 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"4FRwl4pwuvXjXWENiJXoaU9L3t0cos2fqk7wVL+JDKrAnm3rcxLzcQTcBUBSR9v9KX9tDd4I1A2DoDiFCVrO0g=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 398)
+
+
+Started GET "/" for ::1 at 2022-11-12 12:06:20 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1279)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 17025)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 17537)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-12 12:06:28 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CxES3/M7CKKIk8zaRwy2ivbMBOCF6mdBqU/cAhR1sbevGjCtUznDnMS5QHdA//tigSiCXyyUfJMPb0PDdNakeQ==", "organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "all"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms | Allocations: 1913)
+
+
+Started GET "/" for ::1 at 2022-11-12 12:06:28 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1263)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 17010)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 17537)
+
+
+Started POST "/new_organization" for ::1 at 2022-11-12 12:06:34 -0500
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RzKGLraHuXhbt0OgBxwgtI10U5oGB+4jjs9QP8IjwgjjOaRcFoVyRhedzw0A721c+pDVJa959fEo78/+ooDXxg==", "organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Create (0.5ms)[0m  [1m[32mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "all"], ["email", "all"], ["password", "pass"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=2
+Completed 302 Found in 9ms (ActiveRecord: 2.9ms | Allocations: 2829)
+
+
+Started GET "/org_events?organizer_id=2" for ::1 at 2022-11-12 12:06:34 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 2]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 509)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 16504)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.2ms | Allocations: 16954)
+
+
+Started GET "/events/new" for ::1 at 2022-11-12 12:06:36 -0500
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 5687)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 21430)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 21832)
+
+
+Started POST "/organization_logout" for ::1 at 2022-11-12 12:06:40 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"8yokso4jLmgrScLiucweRWtZIoeFFQCiG9XCHnUJNK5XIQbALiHlVmdjTk++P1OtHL2kOCxrG3C99V3fFaohYA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 394)
+
+
+Started GET "/" for ::1 at 2022-11-12 12:06:40 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1277)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 17022)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 17534)
+
+
