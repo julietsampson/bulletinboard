@@ -1,0 +1,44 @@
+<div class="md:grid md:grid-cols-3 md:gap-6">
+  <div class="mt-5 md:col-span-1">
+    <div class="px-4 sm:px-0">
+      <h3 class="text-lg font-medium leading-6 text-gray-900">Hi <%= @student.name %>!</h3>
+      <p class="mt-1 text-sm text-gray-600">Feel free to update the tags associated with your profile.</p>
+    </div>
+  </div>
+  <div class="mt-5 md:col-span-2 md:mt-0">
+    <%= form_tag student_update_path(@student), :method => :post, :class => 'form' do %>
+      <div class="overflow-hidden shadow sm:rounded-md">
+        <div class="bg-white px-4 py-5 sm:p-6">
+          <div class="grid grid-cols-6 gap-6">
+            <div class="col-span-6 sm:col-span-3">
+              <%= label :student, :name, 'Name', :class => 'block text-sm font-medium text-gray-700' %>
+              <%= text_field :student, :name, :disabled => true, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm' %>
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+              <%= label :student, :uni, 'UNI', :class => 'block text-sm font-medium text-gray-700' %>
+              <%= text_field :student, :uni, :disabled => true, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm' %>
+            </div>
+
+            <div class="col-span-6">
+              <% @all_tags.each do |tag| %>
+                <div class="form-check  form-check-inline">
+                  <%= label_tag "tags[#{tag}]", tag, class: 'form-check-label' %>
+                  <%= check_box_tag "tags[#{tag}]", "1",  @tags_to_show.include?(tag), class: 'form-check-input' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
+          <%= submit_tag 'Update Student Info', :class => 'inline-flex justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="mt-3 inline-flex">
+  <%= button_to "Back to All Events", events_path, method: :get, :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'%>
+  <%= link_to "Logout", organization_logout_path, 'data-method' => 'post', :class => "text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"%>
+</div>

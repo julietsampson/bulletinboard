@@ -13,6 +13,8 @@ class EventsController < ApplicationController
   end
 
   def index
+    id = session[:student_id]
+    @student = Student.find(id)
     @events = Event.all
   end
 
@@ -22,6 +24,8 @@ class EventsController < ApplicationController
 
   def new
     # default: render 'new' template
+    @all_tags = Event.all_tags
+    @tags_to_show = []
   end
 
   # def create
@@ -31,19 +35,39 @@ class EventsController < ApplicationController
   # end
 
   def create
+    tags_array = []
+    if (params[:tags])
+      params_array = params[:tags].keys
+      for tag in params_array
+        tags_array.append(tag)
+      end
+    end
+    attributes = event_params.clone
+    attributes[:tags] = tags_array
     @organizer = Organizer.find_by(id: session[:organizer_id])
-    @event = @organizer.events.create(event_params)
+    @event = @organizer.events.create(attributes)
     flash[:notice] = "#{@event.name} was successfully created."
     redirect_to organizer_events_path('organizer_id': @organizer.id)
   end
 
   def edit
     @event = Event.find params[:id]
+    @all_tags = Event.all_tags
+    @tags_to_show = @event.tags
   end
 
   def update
+    tags_array = []
+    if (params[:tags])
+      params_array = params[:tags].keys
+      for tag in params_array
+        tags_array.append(tag)
+      end
+    end
+    attributes = event_params.clone
+    attributes[:tags] = tags_array
     @event = Event.find params[:id]
-    @event.update(event_params)
+    @event.update(attributes)
     flash[:notice] = "#{@event.name} was successfully updated."
     redirect_to event_path(@event)
   end

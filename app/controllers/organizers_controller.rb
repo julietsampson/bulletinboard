@@ -1,9 +1,18 @@
 class OrganizersController < ApplicationController
     def create
+      @existing_org = Organizer.find_by(email: params[:organization][:email])
+      if (params[:organization][:name] == "" || params[:organization][:email] == "" || params[:organization][:password] == "")
+        flash[:notice] = "Please fill out all of the fields."
+        redirect_to root_path
+      elsif (@existing_org != nil)
+        flash[:notice] = "An account with this UNI already exists. Please login instead. "
+        redirect_to root_path
+      else
         @organization = Organizer.create!(organization_params)
         flash[:notice] = "Welcome #{@organization.name}!"
         session[:organizer_id] = @organization.id
         redirect_to organizer_events_path('organizer_id': @organization.id)
+      end
     end
     
     def logout
