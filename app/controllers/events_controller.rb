@@ -28,12 +28,6 @@ class EventsController < ApplicationController
     @tags_to_show = []
   end
 
-  # def create
-  #   @event = Event.create!(event_params)
-  #   flash[:notice] = "#{@event.name} was successfully created."
-  #   redirect_to organizer_events_path
-  # end
-
   def create
     tags_array = []
     if (params[:tags])
@@ -54,6 +48,9 @@ class EventsController < ApplicationController
     @event = Event.find params[:id]
     @all_tags = Event.all_tags
     @tags_to_show = @event.tags
+    relevant_tags = @tags_to_show - ["Free Food"]
+    @total_students = Student.where(:tags => relevant_tags).count
+    @scheduling_options = best_scheduling_options(relevant_tags)
   end
 
   def update
@@ -86,4 +83,55 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :datetime, :location, :description, :tags)
   end
+
+  def best_scheduling_options(relevant_tags)
+    relevant_students = Student.where(:tags => relevant_tags)
+    sched_map = {:mon => Array.new(15, 0), :tue => Array.new(15, 0), :wed => Array.new(15, 0), :thu => Array.new(15, 0), :fri => Array.new(15, 0), :sat => Array.new(15, 0), :sun => Array.new(15, 0)}
+    for student in relevant_students
+      for day in student.weekday_schedule.keys
+        for hour in 1..15 do
+          free = true
+          for tb in student.weekday_schedule[day]
+            t_str =  day_date_mapping[day] + (hour + 7).to_s + ":0-:00 +0"
+            t = DateTime.parse(t_str)
+            if (t.between?(tb[:busy_range].begin, tb[:busy_range].end))
+              free = false
+              break
+            end
+          end
+          if (free)
+            sched_map[day][hour - 1] += 1
+          end
+        end
+      end
+    end
+
+    best_three = {:first => {:day => "", :hour => -1, :num_available => -1}, :second => {:day => "", :hour => -1, :num_available => -1}, :third => {:day => "", :hour => -1, :num_available => -1}}
+    for day in sched_map.keys
+      for hour in 1..15 do
+        if (sched_map[day][hour - 1] > best_three[:first][:num_available])
+          best_three[:first][:day] = day_abbrev_map[day]
+          best_three[:first][:hour] = hour + 7
+          best_three[:first][:num_available] = sched_map[day][hour - 1]
+        elsif (sched_map[day][hour - 1] > best_three[:second][:num_available])
+          best_three[:second][:day] = day_abbrev_map[day]
+          best_three[:second][:hour] = hour + 7
+          best_three[:second][:num_available] = sched_map[day][hour - 1]
+        elsif (sched_map[day][hour - 1] > best_three[:third][:num_available])
+          best_three[:third][:day] = day_abbrev_map[day]
+          best_three[:third][:hour] = hour + 7
+          best_three[:third][:num_available] = sched_map[day][hour - 1]
+        end
+      end
+    end
+    return best_three
+  end
+
+  def day_abbrev_map
+    {:mon => "Monday", :tue => "Tuesday", :wed => "Wednesday", :thu => "Thursday", :fri => "Friday", :sat => "Saturday", :sun => "Sunday"}
+  end
+
+  def day_date_mapping
+    {:mon => "01-Jan-1996 ", :tue => "02-Jan-1996 ", :wed => "03-Jan-1996 ", :thu => "04-Jan-1996 ", :fri => "05-Jan-1996 ", :sat => "06-Jan-1996 ", :sun => "07-Jan-1996 "}
+  end 
 end

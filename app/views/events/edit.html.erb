@@ -3,6 +3,21 @@
     <div class="px-4 sm:px-0">
       <h3 class="text-lg font-medium leading-6 text-gray-900">Edit Existing Event</h3>
       <p class="mt-1 text-sm text-gray-600">Edit your event, then click update to save, or cancel to go back.</p>
+
+      <% if @scheduling_options[:first][:num_available] != -1 && @total_students != 0%>
+      <p class="mt-5 text-sm text-danger">Need help scheduling your event for optimal turnout?</p>
+      <p class="mt-1 text-sm text-gray-600">  We took a look at all the schedules of all <%= @total_students %> students in our database whose profiles indicate they might be interested in your event. Here are when they're most free (in military time): </p>
+
+      <ul class="mt-2">
+        <% @scheduling_options.each do |opt| %>
+        <% if opt[1][:num_available] != -1 %>
+          <li class="mt-1 text-sm text-gray-600">
+          <%= opt[1][:num_available] %> students are available for an event held on <%= opt[1][:day] %> at <%= opt[1][:hour] %> o'clock EST.
+          </li>
+        <% end %> 
+        <% end %>
+      <ul>
+      <% end %>
     </div>
   </div>
   <div class="mt-5 md:col-span-2 md:mt-0">

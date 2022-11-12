@@ -6,7 +6,6 @@ Rottenpotatoes::Application.routes.draw do
   post 'organization_login' =>'organizers#login', as: :organization_login
   post 'organization_logout' =>'organizers#logout', as: :organization_logout
   post 'new_organization' =>'organizers#create', as: :organization_create_account
-  get 'student_profile/:id' => 'students#show', as: :student_tag_profile
   post 'student_update_path/:id' => 'students#update', as: :student_update
 
   resources :events

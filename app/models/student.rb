@@ -19,6 +19,7 @@ class Student < ActiveRecord::Base
         sun_sched = self.timeblocks.where("busy_range && tsrange(?, ?)", sun.beginning_of_day, sun.end_of_day).order('lower(busy_range)')
         schedule = {:mon => mon_sched, :tue => tue_sched, :wed => wed_sched, :thu => thu_sched, :fri => fri_sched, :sat => sat_sched, :sun => sun_sched}
         return schedule
+    end
 
     def self.all_tags
         return ["Freshman", "Sophomore", "Junior", "Senior", "STEM", "Humanities"]

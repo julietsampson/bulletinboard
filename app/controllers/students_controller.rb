@@ -1,12 +1,4 @@
 class StudentsController < ApplicationController
-  
-    def show
-      id = params[:id] # retrieve event ID from URI route
-      @student = Student.find(id) # look up event by unique ID
-      @all_tags = Student.all_tags
-      @tags_to_show = @student.tags
-      # will render app/views/events/show.<extension> by default
-    end
 
     def create
       @existing_student = Student.find_by(uni: params[:student][:uni])
@@ -65,6 +57,8 @@ class StudentsController < ApplicationController
 
     def my_profile
       @student = Student.find(session[:student_id])
+      @all_tags = Student.all_tags
+      @tags_to_show = @student.tags
     end
 
     def show_schedule
@@ -124,7 +118,7 @@ class StudentsController < ApplicationController
       end
       @student.update(:tags => tags_array)
       flash[:notice] = "You successfully updated your profile."
-      redirect_to student_tag_profile_path(@student)
+      redirect_to student_profile_path(@student)
     end
   
   
