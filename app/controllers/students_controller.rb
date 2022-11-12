@@ -1,10 +1,19 @@
 class StudentsController < ApplicationController
-  
+
     def create
-      @student = Student.create!(student_params)
-      flash[:notice] = "Welcome #{@student.name}!"
-      session[:student_id] = @student.id
-      redirect_to events_path
+      @existing_student = Student.find_by(uni: params[:student][:uni])
+      if (params[:student][:uni] == "" || params[:student][:name] == "" || params[:student][:password] == "")
+        flash[:notice] = "Please fill out all of the fields."
+        redirect_to root_path
+      elsif (@existing_student != nil)
+        flash[:notice] = "An account with this UNI already exists. Please login instead. "
+        redirect_to root_path
+      else
+        @student = Student.create!(student_params)
+        flash[:notice] = "Welcome #{@student.name}!"
+        session[:student_id] = @student.id
+        redirect_to events_path
+      end
     end
   
     def login
@@ -45,6 +54,72 @@ class StudentsController < ApplicationController
       @student = Student.find(session[:student_id])
       @events = @student.events
     end
+
+    def my_profile
+      @student = Student.find(session[:student_id])
+      @all_tags = Student.all_tags
+      @tags_to_show = @student.tags
+    end
+
+    def show_schedule
+      @student = Student.find(session[:student_id])
+      @schedule = @student.weekday_schedule  # gets hash with day of the week as key and list of time ranges as values
+    end
+
+    def edit_schedule
+      @student = Student.find(session[:student_id])
+      @schedule = @student.weekday_schedule
+    end
+
+    def update_schedule
+      @student = Student.find(session[:student_id])
+      weekday = timeblock_params[:weekday]
+      start_hour = timeblock_params["busy_start(4i)"]
+      start_min = timeblock_params["busy_start(5i)"]
+      end_hour = timeblock_params["busy_end(4i)"]
+      end_min =  timeblock_params["busy_end(5i)"]
+      if weekday == "Monday"
+        d = Date.new(1996,1,1)
+      elsif weekday == "Tuesday"
+        d = Date.new(1996,1,2)
+      elsif weekday == "Wednesday"
+        d = Date.new(1996,1,3)
+      elsif weekday == "Thursday"
+        d = Date.new(1996,1,4)
+      elsif weekday == "Friday"
+        d = Date.new(1996,1,5)
+      elsif weekday == "Saturday"
+        d = Date.new(1996,1,6)
+      else
+        d = Date.new(1996,1,7)
+      end
+      start_datetime = DateTime.new(d.year, d.month, d.day, start_hour.to_i, start_min.to_i)
+      end_datetime = DateTime.new(d.year, d.month, d.day, end_hour.to_i, end_min.to_i)
+      @student.timeblocks.create(busy_range: (start_datetime..end_datetime))
+      # convert this to start and end time on those dates, save it as a datetime range create new timeblock for student
+      flash[:notice] = "Schedule was successfully updated."
+      redirect_to edit_schedule_path()
+    end
+
+    def remove_timeblock
+      @student = Student.find(session[:student_id])
+      @timeblock = @student.timeblocks.find(params[:id])
+      @student.timeblocks.delete(@timeblock)
+      redirect_to edit_schedule_path()
+    end
+    def update
+      @student = Student.find(params[:id])
+      tags_array = []
+      if (params[:tags])
+        params_array = params[:tags].keys
+        for tag in params_array
+          tags_array.append(tag)
+        end
+      end
+      @student.update(:tags => tags_array)
+      flash[:notice] = "You successfully updated your profile."
+      redirect_to student_profile_path(@student)
+    end
   
   
     private
@@ -52,6 +127,10 @@ class StudentsController < ApplicationController
     # This helps make clear which methods respond to requests, and which ones do not.
     def student_params
       params.require(:student).permit(:name, :uni, :password)
+    end
+
+    def timeblock_params
+      params.require(:timeblock).permit(:weekday, :busy_start, :busy_end)
     end
   end
   

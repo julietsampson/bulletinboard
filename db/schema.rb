@@ -10,47 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_29_174535) do
+ActiveRecord::Schema.define(version: 2022_11_12_012033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.datetime "datetime"
-    t.string "location"
+    t.text "location"
     t.text "description"
-    t.string "tags", default: "--- []\n"
-    t.integer "organizer_id"
+    t.text "tags", default: [], array: true
+    t.bigint "organizer_id"
     t.index ["organizer_id"], name: "index_events_on_organizer_id"
   end
 
   create_table "events_students", id: false, force: :cascade do |t|
-    t.integer "student_id", null: false
-    t.integer "event_id", null: false
+    t.bigint "student_id", null: false
+    t.bigint "event_id", null: false
     t.index ["event_id"], name: "index_events_students_on_event_id"
     t.index ["student_id"], name: "index_events_students_on_student_id"
   end
 
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.string "rating"
-    t.text "description"
-    t.datetime "release_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "organizers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
+    t.text "name"
+    t.text "email", null: false
+    t.text "password", null: false
+    t.index ["email"], name: "index_organizers_on_email", unique: true
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "uni"
-    t.string "name"
-    t.string "password"
+    t.text "uni", null: false
+    t.text "name"
+    t.text "password", null: false
+    t.text "tags", default: [], array: true
+    t.index ["uni"], name: "index_students_on_uni", unique: true
   end
 
+  create_table "timeblocks", force: :cascade do |t|
+    t.tsrange "busy_range"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "student_id"
+    t.index ["student_id"], name: "index_timeblocks_on_student_id"
+  end
+
+  add_foreign_key "events", "organizers"
+  add_foreign_key "timeblocks", "students"
 end

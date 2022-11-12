@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe StudentsController do
+
+    student = Student.create({name: "sk", uni: "sk4699", password: "password"})
     
     describe 'POST #create' do
         it 'creates a new student' do
@@ -30,15 +32,15 @@ describe StudentsController do
     describe 'POST add_event' do
         event = Event.create(:name => "test event")
         it 'should add an event to the student\'s event list if the event is not already on their list' do
-            request.session[:student_id] = 1
+            request.session[:student_id] = Student.first.id
             
             expect {post :add_event, params: {:id => event.id}}.to change {Student.first.events.count}.by(1)
-            expect(response).to redirect_to(student_events_path('student_id': 1))
+            expect(response).to redirect_to(student_events_path('student_id': Student.first.id))
         end
 
         it 'should not add an event to a student\'s list if the event is already on their list' do
             event = Student.first.events.create(:name => "tester event")
-            request.session[:student_id] = 1
+            request.session[:student_id] = Student.first.id
             expect {post :add_event, params: {:id => event.id}}.to change {Student.first.events.count}.by(0)
             expect(response).to redirect_to(events_path)
         end
@@ -47,15 +49,15 @@ describe StudentsController do
     describe 'POST remove_event' do
         event =  Student.first.events.create(:name => "tester event")
         it 'should remove an event from the student\'s event list' do
-            request.session[:student_id] = 1
+            request.session[:student_id] = Student.first.id
             expect {post :remove_event, params: {:id => event.id}}.to change {Student.first.events.count}.by(-1)
-            expect(response).to redirect_to(student_events_path('student_id': 1))
+            expect(response).to redirect_to(student_events_path('student_id': Student.first.id))
         end
     end
 
     describe 'GET my_events' do
         it 'should render the my_events template' do
-          request.session[:student_id] = 1
+          request.session[:student_id] = Student.first.id
           get :my_events
           expect(response).to render_template('my_events')
         end

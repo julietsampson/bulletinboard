@@ -3,10 +3,25 @@
     <div class="px-4 sm:px-0">
       <h3 class="text-lg font-medium leading-6 text-gray-900">Edit Existing Event</h3>
       <p class="mt-1 text-sm text-gray-600">Edit your event, then click update to save, or cancel to go back.</p>
+
+      <% if @scheduling_options[:first][:num_available] != -1 && @total_students != 0%>
+      <p class="mt-5 text-sm text-danger">Need help scheduling your event for optimal turnout?</p>
+      <p class="mt-1 text-sm text-gray-600">  We took a look at all the schedules of all <%= @total_students %> students in our database whose profiles indicate they might be interested in your event. Here are when they're most free (in military time): </p>
+
+      <ul class="mt-2">
+        <% @scheduling_options.each do |opt| %>
+        <% if opt[1][:num_available] != -1 %>
+          <li class="mt-1 text-sm text-gray-600">
+          <%= opt[1][:num_available] %> students are available for an event held on <%= opt[1][:day] %> at <%= opt[1][:hour] %> o'clock EST.
+          </li>
+        <% end %> 
+        <% end %>
+      <ul>
+      <% end %>
     </div>
   </div>
   <div class="mt-5 md:col-span-2 md:mt-0">
-    <%= form_tag events_path, :class => 'form' do %>
+    <%= form_tag event_path(@event), :method => :put, :class => 'form' do %>
       <div class="overflow-hidden shadow sm:rounded-md">
         <div class="bg-white px-4 py-5 sm:p-6">
           <div class="grid grid-cols-6 gap-6">
@@ -25,9 +40,13 @@
               <%= text_field :event, :location, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm' %>
             </div>
 
-            <div class="col-span-6 sm:col-span-3">
-              <%= label :event, :tags, 'Tags', :class => 'block text-sm font-medium text-gray-700' %>
-              <%= text_field :event, 'tags', :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm' %>
+            <div class="col-span-6">
+              <% @all_tags.each do |tag| %>
+                <div class="form-check  form-check-inline">
+                  <%= label_tag "tags[#{tag}]", tag, class: 'form-check-label' %>
+                  <%= check_box_tag "tags[#{tag}]", "1",  @tags_to_show.include?(tag), class: 'form-check-input' %>
+                </div>
+              <% end %>
             </div>
 
             <div class="col-span-6">

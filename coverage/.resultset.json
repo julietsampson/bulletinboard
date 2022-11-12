@@ -85,6 +85,14 @@
           null
         ]
       },
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/event.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/organizer.rb": {
         "lines": [
           1,
@@ -211,16 +219,8 @@
           1,
           null
         ]
-      },
-      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/event.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1667342233
+    "timestamp": 1668126472
   }
 }

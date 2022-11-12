@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 describe EventsController do
+    test_event = Event.create(:name => "spec testing event")
+    test_org = Organizer.create(:name => "spec testing organizer",  :email => "spectestorg@gmail.com", :password => "pass")
+    test_org.events << test_event
+
     describe 'GET index' do
         it 'should render the index template' do
           get :index
@@ -28,38 +32,37 @@ describe EventsController do
       
     describe 'GET show' do
         it 'should render the show template' do
-          get :show, params: {id: "1"}
+          get :show, params: {id: Event.first.id.to_s}
           expect(response).to render_template('show')
         end
     end
 
     describe 'GET student_show' do
         it 'should render the student_show template' do
-          get :student_show, params: {id: "1"}
+          get :student_show, params: {id: Event.first.id.to_s}
           expect(response).to render_template('student_show')
         end
     end
     
     describe 'GET organizer_index' do
         it 'should render the organizer_index template' do
-          get :organizer_index, params: {id: "1"}
+          get :organizer_index, params: {id: Organizer.first.id.to_s}
           expect(response).to render_template('organizer_index')
         end
     end
 
     describe 'POST #create' do
         it 'creates a new event' do
-          request.session[:organizer_id] = 1
+          request.session[:organizer_id] = Organizer.first.id
           expect {post :create, params: {event: {name: "New event"}}}.to change {Event.count}.by(1)
         end
     end
     
     describe 'DELETE #destroy' do
-        organizer = Organizer.find_by(:id => "1")
         # byebug
         it 'destroys movie' do
-          request.session[:organizer_id] = 1
-          expect {delete :destroy, params: {id: organizer.events.first.id}}.to change{Event.count}.by(-1)
+          request.session[:organizer_id] = test_org.id
+          expect {delete :destroy, params: {id: test_org.events.first.id}}.to change{Event.count}.by(-1)
         end
     end
 end
