@@ -1,5 +1,13 @@
 class StudentsController < ApplicationController
   
+    def show
+      id = params[:id] # retrieve event ID from URI route
+      @student = Student.find(id) # look up event by unique ID
+      @all_tags = Student.all_tags
+      @tags_to_show = @student.tags
+      # will render app/views/events/show.<extension> by default
+    end
+
     def create
       @existing_student = Student.find_by(uni: params[:student][:uni])
       if (params[:student][:uni] == "" || params[:student][:name] == "" || params[:student][:password] == "")
@@ -53,6 +61,20 @@ class StudentsController < ApplicationController
     def my_events
       @student = Student.find(session[:student_id])
       @events = @student.events
+    end
+
+    def update
+      @student = Student.find(params[:id])
+      tags_array = []
+      if (params[:tags])
+        params_array = params[:tags].keys
+        for tag in params_array
+          tags_array.append(tag)
+        end
+      end
+      @student.update(:tags => tags_array)
+      flash[:notice] = "You successfully updated your profile."
+      redirect_to student_profile_path(@student)
     end
   
   

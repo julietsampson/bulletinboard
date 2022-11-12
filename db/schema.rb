@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_11_214938) do
+ActiveRecord::Schema.define(version: 2022_11_12_012033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2022_11_11_214938) do
     t.text "name"
     t.text "password", null: false
     t.integer "points"
+    t.text "tags", default: [], array: true
     t.index ["uni"], name: "index_students_on_uni", unique: true
   end
 
