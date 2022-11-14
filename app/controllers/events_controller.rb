@@ -66,7 +66,7 @@ class EventsController < ApplicationController
     @all_tags = Event.all_tags
     @tags_to_show = @event.tags
     relevant_tags = @tags_to_show - ["Free Food"]
-    @total_students = Student.where(:tags => relevant_tags).count
+    @total_students = Student.where('tags && array[?]', relevant_tags).count
     @scheduling_options = best_scheduling_options(relevant_tags)
   end
 
@@ -104,7 +104,7 @@ class EventsController < ApplicationController
   end
 
   def best_scheduling_options(relevant_tags)
-    relevant_students = Student.where(:tags => relevant_tags)
+    relevant_students = Student.where('tags && array[?]', relevant_tags)
     sched_map = {:mon => Array.new(15, 0), :tue => Array.new(15, 0), :wed => Array.new(15, 0), :thu => Array.new(15, 0), :fri => Array.new(15, 0), :sat => Array.new(15, 0), :sun => Array.new(15, 0)}
     for student in relevant_students
       for day in student.weekday_schedule.keys

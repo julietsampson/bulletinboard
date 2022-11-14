@@ -18,6 +18,6 @@ Then /I should see all my created events/ do
   end
 
   Then /the location of "(.*)" should be "(.*)"/ do |event_name, place|
-    step %{I should be on the info page for "#{event_name}"}
+    step %{I am on the info page for "#{event_name}"}
     page.find('#location').should have_text(place)
   end

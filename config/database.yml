@@ -16,7 +16,7 @@ development:
   # username: postgres
   # password: password
   timeout: 5000
-  port: 5433
+  # port: 5433
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,7 +29,7 @@ test: &test
   # password: password
   pool: 5
   timeout: 5000
-  port: 5433
+  # port: 5433
 
 production:
   adapter: postgresql
@@ -39,7 +39,7 @@ production:
   # password: password
   pool: 5
   timeout: 5000
-  port: 5433
+  # port: 5433
 
 cucumber:
   <<: *test

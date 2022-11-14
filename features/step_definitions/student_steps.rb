@@ -36,3 +36,8 @@ Then /my event list should be updated/ do
     rows = page.all('tbody tr').count
     expect(rows).to eq @student.events.count
   end
+
+When /^(?:|I )click "([^"]*)" for "([^"]*)"$/ do |button, event_name|
+    event_id = Event.find_by(:name => event_name).id
+    click_button(event_id.to_s)
+end
