@@ -14,6 +14,9 @@ Given /the following events exist/ do |events_table|
   })
 
   events_table.hashes.each do |event|
+    puts "HEREEE"
+    event["tags"] = event["tags"].split(/\s*,\s*/)
+    puts event
     to_add = @organization.events.create(event)
   end
 end
