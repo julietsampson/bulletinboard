@@ -1,5 +1,7 @@
 class OrganizersController < ApplicationController
     def create
+      puts "PARAMS"
+      puts params
       @existing_org = Organizer.find_by(email: params[:organization][:email])
       if (params[:organization][:name] == "" || params[:organization][:email] == "" || params[:organization][:password] == "")
         flash[:notice] = "Please fill out all of the fields."
