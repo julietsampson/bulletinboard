@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 describe StudentsController do
-
-    student = Student.create({name: "sk", uni: "sk4699", password: "password"})
+    student = Student.find_by(:uni => "sk4699")
+    if (student == nil)
+        student = Student.create({name: "sk", uni: "sk4699", password: "password"})
+    end
     
     describe 'POST #create' do
         it 'creates a new student' do

@@ -3,8 +3,13 @@ require 'rails_helper'
 describe OrganizersController do
     
     describe 'POST #create' do
-        it 'creates a new organizer' do
+        it 'refuses to create an organizer without all fields filled out' do
+            expect {post :create, params: {organization: {name: "New org", email: "", password: ""}}}.to change {Organizer.count}.by(0)
+        end
+
+        it 'creates a new organizer when given all params, and only if an account with this email does not already exist' do
             expect {post :create, params: {organization: {name: "New org", email: "neworg@gmail.com", password: "password"}}}.to change {Organizer.count}.by(1)
+            expect {post :create, params: {organization: {name: "New org", email: "neworg@gmail.com", password: "password"}}}.to change {Organizer.count}.by(0)
         end
     end
 
