@@ -25,7 +25,7 @@ Scenario: Organization tries to sign in with incorrect password
   And I fill in 'Org Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'bla'
   When I press "Organization Login"
-  Then I should see "Username or password incorrect. Please try again!"
+  Then I should see "Name or password incorrect. Please try again!"
 
 Scenario: Organization tries to sign in with incorrect organization name
 
@@ -34,7 +34,7 @@ Scenario: Organization tries to sign in with incorrect organization name
   And I fill in 'Org Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'pass'
   And I press "Organization Login"
-  Then I should see "Username or password incorrect. Please try again!"
+  Then I should see "Name or password incorrect. Please try again!"
 
 Scenario: Organization tries to sign in with unknown email
 
@@ -60,7 +60,7 @@ Scenario: Organization tries to create an account with a preexisting email
   And I fill in 'Org Email?' with 'ab@columbia.edu'
   And I fill in 'Org Password?' with 'pass'
   When I press "Create Organizer Account"
-  Then I should see "An account with this UNI already exists. Please login instead. "
+  Then I should see "An account with this email already exists. Please login instead. "
 
 Scenario: Organization creates an account
   When I go to sign in page

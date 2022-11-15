@@ -1,8 +1,8 @@
 class StudentsController < ApplicationController
 
     def create
-      @existing_student = Student.find_by(uni: params[:student][:uni])
-      if (params[:student][:uni] == "" || params[:student][:name] == "" || params[:student][:password] == "")
+      @existing_student = Student.find_by(uni: params[:create_student][:uni])
+      if (params[:create_student][:uni] == "" || params[:create_student][:name] == "" || params[:create_student][:password] == "")
         flash[:notice] = "Please fill out all of the fields."
         redirect_to root_path
       elsif (@existing_student != nil)
@@ -21,9 +21,9 @@ class StudentsController < ApplicationController
       if (@student == nil)
         flash[:notice] = "User not found-- please create an account!"
         redirect_to root_path
-      elsif (@student.password != params[:student][:password])
-        flash[:notice] = "Password incorrect. Please try again!"
-        redirect_to root_path()
+      elsif (@student.name != params[:student][:name] || @student.password != params[:student][:password])
+        flash[:notice] = "Name or password incorrect. Please try again!"
+        redirect_to root_path
       else
         flash[:notice] = "Welcome back #{@student.name}!"
         session[:student_id] = @student.id
@@ -126,7 +126,7 @@ class StudentsController < ApplicationController
     # Making "internal" methods private is not required, but is a common practice.
     # This helps make clear which methods respond to requests, and which ones do not.
     def student_params
-      params.require(:student).permit(:name, :uni, :password)
+      params.require(:create_student).permit(:name, :uni, :password)
     end
 
     def timeblock_params

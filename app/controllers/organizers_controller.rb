@@ -5,7 +5,7 @@ class OrganizersController < ApplicationController
         flash[:notice] = "Please fill out all of the fields."
         redirect_to root_path
       elsif (@existing_org != nil)
-        flash[:notice] = "An account with this UNI already exists. Please login instead. "
+        flash[:notice] = "An account with this email already exists. Please login instead. "
         redirect_to root_path
       else
         @organization = Organizer.create!(organization_params)
@@ -26,7 +26,7 @@ class OrganizersController < ApplicationController
         flash[:notice] = "Organization not found-- please create an account!"
         redirect_to root_path
       elsif (@organization.name != params[:organization][:name] || @organization.password != params[:organization][:password])
-        flash[:notice] = "Username or password incorrect. Please try again!"
+        flash[:notice] = "Name or password incorrect. Please try again!"
         redirect_to root_path
       else 
         flash[:notice] = "Welcome back #{@organization.name}!"
