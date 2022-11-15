@@ -20,7 +20,7 @@ Given("the student with uni {string} is busy on {string} from {int}:{int} to {in
   date_map = {"Monday" => "01-Jan-1996 ", "Tuesday" => "02-Jan-1996 ", "Wednesday" => "03-Jan-1996 ", "Thursday" => "04-Jan-1996 ", "Friday" => "05-Jan-1996 ", "Saturday" => "06-Jan-1996 ", "Sunday" => "07-Jan-1996 "}
   date = date_map[day]
   start_datetime = date + " " + start_hour.to_s + ":" + start_min.to_s + " " + "0000"
-  end_datetime = date + " " + end_hour.to_s + ":" + end_min + " " + "+0000"
+  end_datetime = date + " " + end_hour.to_s + ":" + end_min.to_s + " " + "+0000"
   @student.timeblocks.create(busy_range: (start_datetime.to_datetime..end_datetime.to_datetime))
 end
 

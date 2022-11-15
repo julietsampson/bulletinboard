@@ -67,7 +67,7 @@ Scenario: Organization creates an account
   And I fill in 'Org Email?' with 'swe@columbia.edu'
   And I fill in 'Org Password?' with 'pass'
   And I press "Create Organizer Account"
-  Then I should be on org events page
+  Then I should be on org events page for "User User"
   And I should see "Welcome User User!"
 
 Scenario: Organization logs out
