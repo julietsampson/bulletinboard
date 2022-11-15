@@ -68,12 +68,3 @@ Scenario: Student creates an account
   And I fill in 'Password?' with 'pass'
   And I press "Create Student Account"
   Then I should see "Welcome User User!"
-
-Scenario: Student logs out
-  When I go to sign in page
-  And I fill in 'Name' with 'CucumberTestStudent'
-  And I fill in 'UNI' with 'ab1234'
-  And I fill in 'Password' with 'pass'
-  And I press "Student Login"
-  And I follow "Log Out"
-  Then I should be on sign in page
