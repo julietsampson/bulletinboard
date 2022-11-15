@@ -84,14 +84,18 @@ describe EventsController do
     end
 
     describe 'best_scheduling options works as intended' do
+      Timeblock.delete_all
+      Student.delete_all
+      student = Student.create({name: "sk", uni: "sk4699_tag_test", password: "password", tags: ["Freshman", "STEM"]})
+      student2 = Student.create({name: "sv", uni: "sv2611_tag_test", password: "password", tags: ["Sophomore", "STEM"]})
       student = Student.find_by(:uni => "sk4699_tag_test")
-      if (student == nil)
-        student = Student.create({name: "sk", uni: "sk4699_tag_test", password: "password", tags: ["Freshman", "STEM"]})
-      end
-      student2 = Student.find_by(:uni => "sv2611_tag_test")
-      if (student2 == nil)
-        student2 = Student.create({name: "sv", uni: "sv2611_tag_test", password: "password", tags: ["Sophomore", "STEM"]})
-      end
+      # if (student == nil)
+      #   student = Student.create({name: "sk", uni: "sk4699_tag_test", password: "password", tags: ["Freshman", "STEM"]})
+      # end
+      # student2 = Student.find_by(:uni => "sv2611_tag_test")
+      # if (student2 == nil)
+      #   student2 = Student.create({name: "sv", uni: "sv2611_tag_test", password: "password", tags: ["Sophomore", "STEM"]})
+      # end
       d = Date.new(1996,1,2)
       start_datetime = DateTime.new(d.year, d.month, d.day, 9, 30)
       end_datetime = DateTime.new(d.year, d.month, d.day, 12, 30)
@@ -100,7 +104,7 @@ describe EventsController do
        it 'finds the appropriate scheduling options' do
         controller = EventsController.new
         result = controller.send(:best_scheduling_options, test_event[:tags])
-        expect(result).to eq({:first => {:day => "Monday", :hour => 8, :num_available => 2}, :second => {:day => "Monday", :hour => 9, :num_available => 2}, :third => {:day => "Monday", :hour => 10, :num_available => 2}})
+        expect(result).to eq({:first => {:day => "Monday", :hour => 8, :num_available => 2}, :second => {:day => "Monday", :hour => 9, :num_available => 2}, :third => {:day => "Monday", :hour => 13, :num_available => 2}})
       end
 
       it 'uses the appropriate day date map' do
