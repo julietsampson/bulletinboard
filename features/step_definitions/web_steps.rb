@@ -116,9 +116,10 @@ end
 When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
   select(value, :from => field)
 end
-When /^(?:|I )select datetime "([^:]*):([^"]*)" from "([^"]*)"$/ do |hour, minute, field|
-  select date.strftime("%H"),  from: "#{field}_1i" # Hour.
-  select date.strftime("%M"),  from: "#{field}_2i" # Minutesend
+
+When /^(?:|I )select time "([^:]*):([^"]*)" from "([^"]*)"$/ do |hour, minute, field|
+  select(hour,  from: "#{field}_4i") # Hour.
+  select(minute,  from: "#{field}_5i")# Minutesend
 end
 
 When /I check the following tags: (.*)/ do |tags_list|

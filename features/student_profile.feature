@@ -34,35 +34,38 @@ Scenario: View and update schedule
     Then I should go to edit schedule page
     Given I am on edit schedule page
     When I select "Monday" from "Day"
-    And I select datetime "      - 01:15" from "Start time"
-    And I select datetime "01:15" from "End time"
+    And I select time "01 AM:15" from "timeblock_busy_start"
+    And I select time "02 AM:15" from "timeblock_busy_end"
     And I press "Add"
     When I select "Tuesday" from "Day"
-    And I select datetime "      - 01:15" from "Start time"
-    And I select datetime "01 AM:15" from "End time"
+    And I select time "01 AM:15" from "timeblock_busy_start"
+    And I select time "02 AM:15" from "timeblock_busy_end"
     And I press "Add"
     When I select "Wednesday" from "Day"
-    And I select time "01 AM:15" from "Start time"
-    And I select time "01 AM:15" from "End time"
+    And I select time "01 AM:15" from "timeblock_busy_start"
+    And I select time "02 AM:15" from "timeblock_busy_end"
     And I press "Add"
     When I select "Thursday" from "Day"
-    And I select time "01 AM:15" from "Start time"
-    And I select time "01 AM:15" from "End time"
+    And I select time "01 AM:15" from "timeblock_busy_start"
+    And I select time "02 AM:15" from "timeblock_busy_end"
     And I press "Add"
     When I select "Friday" from "Day"
-    And I select time "01 AM:15" from "Start time"
-    And I select time "01 AM:15" from "End time"
+    And I select time "01 AM:15" from "timeblock_busy_start"
+    And I select time "02 AM:15" from "timeblock_busy_end"
     And I press "Add"
     When I select "Saturday" from "Day"
-    And I select time "01 AM:15" from "Start time"
-    And I select time "01 AM:15" from "End time"
+    And I select time "01 AM:15" from "timeblock_busy_start"
+    And I select time "02 AM:15" from "timeblock_busy_end"
     And I press "Add"
     When I select "Sunday" from "Day"
-    And I select time "01 AM:15" from "Start time"
-    And I select time "01 AM:15" from "End time"
+    And I select time "01 AM:15" from "timeblock_busy_start"
+    And I select time "02 AM:15" from "timeblock_busy_end"
     And I press "Add"
     
     Then I should see "Schedule was successfully updated."
+
+    
+
 
 
 
