@@ -66,7 +66,7 @@ class EventsController < ApplicationController
     @all_tags = Event.all_tags
     @tags_to_show = @event.tags
     relevant_tags = @tags_to_show - ["Free Food"]
-    @total_students = Student.where('tags && array[?]', relevant_tags).count 
+    @total_students = Student.where('tags && array[?]', relevant_tags).count
     @scheduling_options = best_scheduling_options(relevant_tags)
   end
 

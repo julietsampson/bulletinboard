@@ -8,12 +8,12 @@ Background:
   And I am on the sign in page
   And the following events exist:
     | name                   | datetime    | location    | description | tags |
-    | pumpkin carving        | 31-Oct-2022 | East Campus | Fun!        | food |
-    | movie night            | 30-Oct-2022 | Lerner      | Marvel marathon | popcorn |
+    | pumpkin carving        | 31-Oct-2022 | East Campus | Fun!        | Senior, Humanities |
+    | movie night            | 30-Oct-2022 | Lerner      | Marvel marathon | Free Food |
   And the following events are on my events list:
     | name                   | datetime    | location    | description     | tags |
-    | movie night            | 30-Oct-2022 | Lerner      | Marvel marathon | popcorn |
-  And I fill in 'Name' with 'User User'
+    | movie night            | 30-Oct-2022 | Lerner      | Marvel marathon | Free Food |
+  And I fill in 'Name' with 'CucumberTestStudent'
   And I fill in 'UNI' with 'ab1234'
   And I fill in 'Password' with 'pass'
   And I press "Student Login"
@@ -30,4 +30,3 @@ Scenario: Add event to my event list
   And my event list should be updated
   And I should see "pumpkin carving"
 
-  

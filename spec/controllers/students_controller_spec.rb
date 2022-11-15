@@ -9,12 +9,12 @@ describe StudentsController do
     
     describe 'POST #create' do
         it 'refuses to create a student without all fields filled out' do
-            expect {post :create, params: {student: {name: "New student", uni: "", password: ""}}}.to change {Student.count}.by(0)
+            expect {post :create, params: {create_student: {name: "New student", uni: "", password: ""}}}.to change {Student.count}.by(0)
         end
 
         it 'creates a new student when given all params, and only if an account with this uni does not already exist' do
-            expect {post :create, params: {student: {name: "New stud", uni: "XXXX", password: "password"}}}.to change {Student.count}.by(1)
-            expect {post :create, params: {student: {name: "New student", uni: "XXXX", password: "password"}}}.to change {Organizer.count}.by(0)
+            expect {post :create, params: {create_student: {name: "New stud", uni: "XXXX", password: "password"}}}.to change {Student.count}.by(1)
+            expect {post :create, params: {create_student: {name: "New student", uni: "XXXX", password: "password"}}}.to change {Organizer.count}.by(0)
         end
     end
 
@@ -22,17 +22,17 @@ describe StudentsController do
         student = Student.first
         count = Student.count
         it 'should login an existing student that provides the correct password' do
-          post :login, params: {student: {uni: student.uni, password: student.password}}
+          post :login, params: {student: {name: student.name, uni: student.uni, password: student.password}}
           expect(response).to redirect_to(events_path)
         end
 
         it 'should not login a student that provides an incorrect password' do
-            post :login, params: {student: {:uni => student.uni, :password => ""}}
+            post :login, params: {student: {:name => student.name, :uni => student.uni, :password => ""}}
             expect(response).to redirect_to(root_path)
         end
 
         it 'should not login an student that has not created an account' do
-            post :login, params: {student: {:uni => "fake1234", :password => ""}}
+            post :login, params: {student: {:name => student.name, :uni => "fake1234", :password => ""}}
             expect(response).to redirect_to(root_path)
         end
     end
