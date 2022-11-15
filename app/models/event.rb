@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
         if tags_list.nil?
           return Event.all
         else
-          Event.where('tags && array[?]', tags_list)
+          Event.where('array_length(tags, 1) is NULL OR tags && array[?]', tags_list)
         end
       end
 end
