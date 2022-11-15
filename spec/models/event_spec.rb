@@ -10,12 +10,6 @@ describe Event do
     end
     test_org.events << test_event
 
-    it 'returns a list of all Events when no tags are specified' do
-        tags_list = nil
-        sort_by = nil
-        expect(Event.with_tags(tags_list, sort_by)).to eq(Event.all)
-    end
-
     it 'returns only Events with matching tags when tags are specified' do
         tags_list = ["Freshman", "STEM"]
         sort_by = nil

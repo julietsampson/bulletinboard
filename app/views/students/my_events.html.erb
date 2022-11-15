@@ -37,7 +37,7 @@
             <% end %>
           </td>
           <td class="py-4 px-6">
-            <%= button_to "Remove", remove_event_path(event), id: event.id.to_s, method: :get , :class => 'font-medium text-red-600 dark:text-red-500 hover:underline' %>
+            <%= button_to "Remove #{event.name}", remove_event_path(event),  method: :get , :class => 'font-medium text-red-600 dark:text-red-500 hover:underline' %>
           </td>
         </tr>
       <% end %>

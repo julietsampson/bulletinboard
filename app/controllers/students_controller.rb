@@ -19,7 +19,7 @@ class StudentsController < ApplicationController
     def login
       @student = Student.find_by(uni: params[:student][:uni])
       if (@student == nil)
-        flash[:notice] = "User not found-- please create an account!"
+        flash[:notice] = "User not found-- please try again or create an account!"
         redirect_to root_path
       elsif (@student.name != params[:student][:name] || @student.password != params[:student][:password])
         flash[:notice] = "Name or password incorrect. Please try again!"

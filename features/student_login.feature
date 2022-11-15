@@ -42,7 +42,7 @@ Scenario: Student tries to sign in with unknown uni
   And I fill in 'UNI' with 'ab0000'
   And I fill in 'Password' with 'pass'
   And I press "Student Login"
-  Then I should see "User not found-- please create an account!"
+  Then I should see "User not found-- please try again or create an account!"
 
 
 Scenario: Student does not fill out all fields to create an account

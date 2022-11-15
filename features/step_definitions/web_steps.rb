@@ -117,6 +117,29 @@ When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
   select(value, :from => field)
 end
 
+When /^(?:|I )select time "([^:]*):([^"]*)" from "([^"]*)"$/ do |hour, minute, field|
+  select(hour,  from: "#{field}_4i") # Hour.
+  select(minute,  from: "#{field}_5i")# Minutesend
+end
+
+When /I check the following tags: (.*)/ do |tags_list|
+  # HINT: use String#split to split up the rating_list, then
+  #   iterate over the ratings and reuse the "When I check..." or
+  #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
+  tags_list.split(',').each do |tag|
+      check("tags_#{tag}")
+  end
+end
+
+When /I uncheck the following tags: (.*)/ do |tags_list|
+  # HINT: use String#split to split up the rating_list, then
+  #   iterate over the ratings and reuse the "When I check..." or
+  #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
+  tags_list.split(',').each do |tag|
+      uncheck("tags_#{tag}")
+  end
+end
+
 When /^(?:|I )check (?:the\s+)?"([^"]*)"(?:\s*checkbox)?$/ do |field|
   check(field)
 end
