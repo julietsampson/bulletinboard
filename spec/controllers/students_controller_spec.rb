@@ -62,4 +62,39 @@ describe StudentsController do
           expect(response).to render_template('my_events')
         end
     end
+
+    describe 'GET show_schedule' do
+        it 'should render the show_schedule template' do
+            request.session[:student_id] = Student.first.id
+            get :show_schedule
+            expect(response).to render_template('show_schedule')
+        end
+    end
+
+    describe 'GET edit_schedule' do
+        it 'should render the edit_schedule template' do
+            request.session[:student_id] = Student.first.id
+            get :edit_schedule
+            expect(response).to render_template('edit_schedule')
+        end
+    end
+
+    describe 'POST update_schedule' do
+        timeblock = {:weekday => "Monday", :busy_start => mon.beginning_of_day, :busy_end => mon.end_of_day}
+        it 'should add a new timeblock to the student\'s schedule' do
+            request.session[:student_id] = Student.first.id
+            expect {post :update_schedule, params: {:timeblock => timeblock}}.to change {Student.first.timeblocks.count}.by(1)
+            expect(response).to redirect_to(edit_schedule_path())
+        end
+    end
+
+    describe 'GET remove_timeblock' do
+        timeblock = {:weekday => "Monday", :busy_start => mon.beginning_of_day, :busy_end => mon.end_of_day}
+        Student.first.timeblock.create(busy_range: (mon.beginning_of_day..mon.end_of_day))
+        it 'should remove a given timeblock from the student\'s schedule' do
+            request.session[:student_id] = Student.first.id
+            expect {get :remove_timeblock, params: {:id => 1}}.to change {Student.first.timeblocks.count}.by(-1)
+            expect(response).to redirect_to(edit_schedule_path())
+        end
+    end
 end
