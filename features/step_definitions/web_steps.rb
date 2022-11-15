@@ -209,11 +209,18 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
 end
 
 Then /^I should be on (.+)$/ do |page_name|
-  puts "PAGE path"
-  puts path_to(page_name)
-  current_path = URI.parse(current_url).path
-  puts current_path
-  assert_equal path_to(page_name), current_path
+  expect(page).to have_current_path(path_to(page_name))
+
+  # puts "page path"
+  # puts path_to(page_name)
+  # puts current_url
+  # current_url = URI.parse(current_url)
+  # puts "current url"
+  # current_url
+  # current_path = "/" + current_url.split('/')[-1] 
+  # puts "current path"
+  # puts current_path
+  # assert_equal path_to(page_name), current_path
 end
 
 Then /^(?:|I )should have the following query string:$/ do |expected_pairs|

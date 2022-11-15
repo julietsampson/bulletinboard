@@ -2,8 +2,8 @@ class OrganizersController < ApplicationController
     def create
       puts "ENTERING CREATE"
       puts params
-      @existing_org = Organizer.find_by(email: params[:organization][:email])
-      if (params[:organization][:name] == "" || params[:organization][:email] == "" || params[:organization][:password] == "")
+      @existing_org = Organizer.find_by(email: params[:create_organization][:email])
+      if (params[:create_organization][:name] == "" || params[:create_organization][:email] == "" || params[:create_organization][:password] == "")
         puts "FIELD EMPTY"
         flash[:notice] = "Please fill out all of the fields."
         redirect_to root_path
@@ -49,8 +49,9 @@ class OrganizersController < ApplicationController
       private
       # Making "internal" methods private is not required, but is a common practice.
       # This helps make clear which methods respond to requests, and which ones do not.
+      
       def organization_params
-        params.require(:organization).permit(:name, :email, :password)
+        params.require(:create_organization).permit(:name, :email, :password)
       end
     end
     

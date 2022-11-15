@@ -14456,3 +14456,99 @@ Completed 200 OK in 190ms (Views: 177.6ms | Allocations: 324013)
 Started GET "/assets/tailwind.self-c2fa0103f83ef3ea27aeea9452cac956a9fa6e18d025072972fa0b57c4101d27.css?body=1" for ::1 at 2022-11-14 21:39:12 -0500
 Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-14 21:39:12 -0500
 Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-11-14 21:39:12 -0500
+Started GET "/" for ::1 at 2022-11-15 11:08:09 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2843)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 160.2ms | Allocations: 320315)
+Completed 200 OK in 174ms (Views: 163.6ms | Allocations: 324023)
+
+
+Started GET "/assets/tailwind.self-c2fa0103f83ef3ea27aeea9452cac956a9fa6e18d025072972fa0b57c4101d27.css?body=1" for ::1 at 2022-11-15 11:08:09 -0500
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2022-11-15 11:08:09 -0500
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-15 11:08:09 -0500
+Started GET "/assets/inter-font.self-b09c62c2a5577703b8b6c61fe76b6169c89d746dbe28f44da83161702a0d90ef.css?body=1" for ::1 at 2022-11-15 11:08:09 -0500
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2022-11-15 11:08:09 -0500
+Started GET "/" for ::1 at 2022-11-15 11:36:43 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2131)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 21892)
+Completed 200 OK in 22ms (Views: 20.9ms | Allocations: 23180)
+
+
+Started GET "/org_events" for ::1 at 2022-11-15 11:36:47 -0500
+Processing by EventsController#organizer_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" IS NULL[0m
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1592)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 21071)
+Completed 200 OK in 86ms (Views: 16.8ms | ActiveRecord: 9.9ms | Allocations: 49761)
+
+
+Started POST "/new_organization" for ::1 at 2022-11-15 11:37:15 -0500
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ilk7qNbZUwAc17EWAY58Y7dORTxsQsJ24xBf0UQWwjt+kWjs8lecRU3cjiFliORlQkuYpW1J3kw4ajrkeoVZPw==", "create_organization"=>{"name"=>"SK", "email"=>"sinkris1h@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Organizer Account"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "sinkris1h@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Create (0.5ms)[0m  [1m[32mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "SK"], ["email", "sinkris1h@gmail.com"], ["password", "pass"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1400
+Completed 302 Found in 12ms (ActiveRecord: 5.0ms | Allocations: 4722)
+
+
+Started GET "/org_events?organizer_id=1400" for ::1 at 2022-11-15 11:37:15 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1400"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1400]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 214)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 19706)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.2ms | Allocations: 20029)
+
+
+Started GET "/org_events/1400" for ::1 at 2022-11-15 11:40:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/org_events/1400"):
+  
+Started POST "/student_login" for ::1 at 2022-11-15 12:09:17 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v0lys5/Mciny3boOkYIeY+OA+e3sqOonIY9X6PAwMWhLgSH3u0K9bKPWhTn1hIZlFoUkdO2j9h369TLdzqOqbA==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 27ms (ActiveRecord: 9.0ms | Allocations: 10383)
+
+
+Started GET "/events" for ::1 at 2022-11-15 12:09:17 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1265)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 20606)
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 0.9ms | Allocations: 21689)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&commit=Refresh" for ::1 at 2022-11-15 12:09:26 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 682)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 19923)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.5ms | Allocations: 20695)
+
+
