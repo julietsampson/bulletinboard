@@ -50,7 +50,7 @@
             <div class="-space-y-px rounded-md shadow-sm">
                 <%= label :organization, :name, 'Org Name', :class => 'sr-only' %>
                 <%= text_field :organization, :name, :placeholder => "Name", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
-                <%= label :organization, :email, 'Email', :class => 'sr-only' %>
+                <%= label :organization, :email, 'Org Email', :class => 'sr-only' %>
                 <%= text_field :organization, :email, :placeholder => "Email", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
                 <%= label :organization, :password, 'Org Password', :class => 'sr-only' %>
                 <%= text_field :organization, :password, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
@@ -65,11 +65,11 @@
         <h3 class="mt-2 text-center text-lg font-bold tracking-tight text-gray-900"> Or Create an Account: </h3>
         <%= form_tag organization_create_account_path, :class => 'mt-8 space-y-6' do %>
             <div class="-space-y-px rounded-md shadow-sm">
-                <%= label :create_organization, :name, 'Org Name Input', :class => 'sr-only' %>
+                <%= label :create_organization, :name, 'Org Name?', :class => 'sr-only' %>
                 <%= text_field :create_organization, :name, :placeholder => "Name", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
-                <%= label :create_organization, :email, 'Org Email Input', :class => 'sr-only' %>
+                <%= label :create_organization, :email, 'Org Email?', :class => 'sr-only' %>
                 <%= text_field :create_organization, :email, :placeholder => "Email", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
-                <%= label :create_organization, :password, 'Org Password Input', :class => 'sr-only' %>
+                <%= label :create_organization, :password, 'Org Password?', :class => 'sr-only' %>
                 <%= text_field :create_organization, :password, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
             </div>
             <br/>
