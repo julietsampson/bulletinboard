@@ -14,12 +14,12 @@ Background:
   And I fill in 'Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'pass'
   And I press "Organization Login"
-  Then I am on the org events page
+  Then I am on org events page for "CucumberTestUser"
 
 
 Scenario: Organization can see all events they have created
 
-  Given I am on the org events page
+  Given I am on org events page for "CucumberTestUser"
   Then  I should see all my created events
 
 Scenario: Organization can create an event
@@ -30,14 +30,14 @@ Scenario: Organization can create an event
   And I check the "Senior" checkbox
   And I fill in 'Description' with 'Come join us for fun'
   When I press "Save Changes"
-  Then I should go to org events page
+  Then I should go to org events page for "CucumberTestUser"
   And I should see "Party!"
 
 Scenario: Organization can delete an event
   When I follow "More about pumpkin carving"
   Then I should go to the info page for "pumpkin carving"
   When I follow "Delete"
-  And I go to org events page
+  And I go to org events page for "CucumberTestUser"
   Then I should not see "pumpkin carving"
 
 Scenario: Organization can edit an event

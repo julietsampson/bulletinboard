@@ -15,7 +15,8 @@ Scenario: Organization signs in with correct credentials
   And I fill in 'Org Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'pass'
   When I press "Organization Login"
-  Then I should see "Welcome back CucumberTestUser!"
+  Then I should be on org events page for "CucumberTestUser"
+  And I should see "Welcome back CucumberTestUser!"
   
 Scenario: Organization tries to sign in with incorrect password
 
@@ -71,6 +72,6 @@ Scenario: Organization creates an account
   And I should see "Welcome User User!"
 
 Scenario: Organization logs out
-  Given I am on org events page
+  Given I am on org events page for "CucumberTestUser"
   When I follow "Logout"
   Then I should be on sign in page

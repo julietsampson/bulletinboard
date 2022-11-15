@@ -17,7 +17,7 @@ Background:
   And I fill in 'Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'pass'
   And I press "Organization Login"
-  Then I am on the org events page
+  Then I am on org events page for "CucumberTestUser"
 
 Scenario:
     When I go to the edit page for "pumpkin carving"

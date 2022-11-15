@@ -30,9 +30,3 @@ Scenario: Add event to my event list
   And my event list should be updated
   And I should see "pumpkin carving"
 
-  Scenario: Remove event from my event list
-  When I go to my event list page
-  And I click "Remove" for "movie night"
-  Then I should go to my event list page
-  And my event list should be updated
-  And I should not see "movie night"

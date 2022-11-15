@@ -134,7 +134,6 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
-  puts URI.parse(current_url).path
   expect(page).to have_content(text)
 end
 
@@ -210,17 +209,6 @@ end
 
 Then /^I should be on (.+)$/ do |page_name|
   expect(page).to have_current_path(path_to(page_name))
-
-  # puts "page path"
-  # puts path_to(page_name)
-  # puts current_url
-  # current_url = URI.parse(current_url)
-  # puts "current url"
-  # current_url
-  # current_path = "/" + current_url.split('/')[-1] 
-  # puts "current path"
-  # puts current_path
-  # assert_equal path_to(page_name), current_path
 end
 
 Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
