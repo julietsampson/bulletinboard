@@ -97,4 +97,28 @@ describe StudentsController do
             expect(response).to redirect_to(edit_schedule_path())
         end
     end
+
+    describe 'GET student_profile' do
+        it 'should render the my_profile template' do
+            request.session[:student_id] = Student.first.id
+            get :student_profile
+            expect(response).to render_template('my_profile')
+        end
+    end
+
+    describe 'POST student_update' do
+        tags = {"Senior" => 1, "STEM" => 1}
+        Student.first.update(:tags => ["Senior"])
+        it 'should update the student\'s tags if new ones are provided' do
+            request.session[:student_id] = Student.first.id
+            expect {post :student_update, params: {:id => Student.first.id, :tags => tags}}.to change {Student.first.tags.count}.by(1)
+            expect(response).to redirect_to(student_profile_path('student_id': Student.first.id))
+        end
+        Student.first.update(:tags => ["Senior", "STEM"])
+        it 'should not increase the student\'s tags if no new ones are provided' do
+            request.session[:student_id] = Student.first.id
+            expect {post :student_update, params: {:id => Student.first.id, :tags => tags}}.to change {Student.first.tags.count}.by(0)
+            expect(response).to redirect_to(student_profile_path('student_id': Student.first.id))
+        end
+    end
 end
