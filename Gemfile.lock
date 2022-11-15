@@ -224,12 +224,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    tailwindcss-rails (2.0.16)
-      railties (>= 6.0.0)
-    tailwindcss-rails (2.0.16-x86_64-darwin)
-      railties (>= 6.0.0)
-    tailwindcss-rails (2.0.16-x86_64-linux)
-      railties (>= 6.0.0)
     thor (1.2.1)
     tilt (2.0.11)
     tzinfo (2.0.5)
@@ -264,11 +258,10 @@ DEPENDENCIES
   rspec-rails (= 5.0.1)
   sass-rails (~> 5.0.3)
   simplecov
-  tailwindcss-rails (~> 2.0)
   uglifier (>= 2.7.1)
 
 RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.3.24
+   2.3.25

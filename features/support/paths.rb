@@ -24,6 +24,10 @@ module NavigationHelpers
     # when /info page/ then '/events/'+@organization.events.find_by(:name => 'pumpkin carving').id.to_s
     when /^the (about )?page\s?for\s?\"(.*)"$/ then '/about_event/'+Event.find_by(:name => ($2)).id.to_s
     when /my event list page/ then '/my_events'
+
+    when /my profile page/ then '/student_profile?'
+    when /my schedule page/ then '/show_schedule'
+    when /edit schedule page/ then '/edit_schedule'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
