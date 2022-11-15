@@ -14188,3 +14188,271 @@ Processing by PagesController#index as HTML
 Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 21042)
 
 
+Started GET "/" for ::1 at 2022-11-14 17:05:42 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2843)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 182.1ms | Allocations: 324461)
+Completed 200 OK in 197ms (Views: 185.7ms | Allocations: 328160)
+
+
+Started GET "/assets/tailwind.self-c2fa0103f83ef3ea27aeea9452cac956a9fa6e18d025072972fa0b57c4101d27.css?body=1" for ::1 at 2022-11-14 17:05:42 -0500
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-14 17:05:42 -0500
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-11-14 17:05:42 -0500
+Started POST "/organization_login" for ::1 at 2022-11-14 17:05:52 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZLM7/BSEvIME0qCwmFjaErCU3zPQVlC3Y8X0A/bNlYF1972WLSe9tKNkcEcx4Dczy2zmteDJErPjnfPdbQADtQ==", "organization"=>{"name"=>"SK", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/org_events?organizer_id=55
+Completed 302 Found in 103ms (ActiveRecord: 10.3ms | Allocations: 29100)
+
+
+Started GET "/org_events?organizer_id=55" for ::1 at 2022-11-14 17:05:52 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"55"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 55]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 580)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 20070)
+Completed 200 OK in 25ms (Views: 14.5ms | ActiveRecord: 2.0ms | Allocations: 24810)
+
+
+Started GET "/" for ::1 at 2022-11-14 17:52:02 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2843)
+  Rendered layouts/_flash.erb (Duration: 0.8ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 202.1ms | Allocations: 320313)
+Completed 200 OK in 219ms (Views: 206.4ms | Allocations: 324015)
+
+
+Started GET "/assets/tailwind.self-c2fa0103f83ef3ea27aeea9452cac956a9fa6e18d025072972fa0b57c4101d27.css?body=1" for ::1 at 2022-11-14 17:52:03 -0500
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-14 17:52:03 -0500
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-11-14 17:52:03 -0500
+Started GET "/org_events" for ::1 at 2022-11-14 17:52:10 -0500
+Processing by EventsController#organizer_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" IS NULL[0m
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1597)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 21075)
+Completed 200 OK in 260ms (Views: 28.5ms | ActiveRecord: 13.1ms | Allocations: 49777)
+
+
+Started POST "/new_organization" for ::1 at 2022-11-14 17:56:45 -0500
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F7DBAWFf/9o3oQ+uD+ZzP4z1GVNUN8LfAib71uiVn5oG9EdrWPz+7ZAX31mmXp4e9w0g1WSogNuCfvwIc1gJrg==", "organization"=>{"name"=>"SK", "email"=>"swe@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Organizer Account"}
+  [1m[36mOrganizer Load (0.9ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Create (0.4ms)[0m  [1m[32mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "SK"], ["email", "swe@gmail.com"], ["password", "pass"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=640
+Completed 302 Found in 82ms (ActiveRecord: 11.7ms | Allocations: 30982)
+
+
+Started GET "/org_events?organizer_id=640" for ::1 at 2022-11-14 17:56:46 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"640"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 640]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 793)
+  Rendered layouts/_flash.erb (Duration: 0.8ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 157.7ms | Allocations: 318513)
+Completed 200 OK in 174ms (Views: 161.0ms | ActiveRecord: 1.7ms | Allocations: 324670)
+
+
+Started POST "/organization_logout" for ::1 at 2022-11-14 18:25:43 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"0Odq6/Bd+4e4aM2YkeLixf3unHjgsFqhg2N6oMIjXa/Bo+yByf76sB/eHW84Wg/khhal/tAvGKUDO31+We7Lmw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (Allocations: 398)
+
+
+Started GET "/" for ::1 at 2022-11-14 18:25:43 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2602)
+  Rendered layouts/_flash.erb (Duration: 0.8ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 65.0ms | Allocations: 22366)
+Completed 200 OK in 72ms (Views: 68.6ms | Allocations: 23616)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-14 18:27:47 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kGz9JVyHKdyeRU6tjV97X6AdsRvKmwLBNEW3PDp37JtSHVEIZepGFSrelHz+skaGGJs0kDKxpZ37Tq9KFN6hJw==", "organization"=>{"name"=>"SK", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.6ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/org_events?organizer_id=55
+Completed 302 Found in 83ms (ActiveRecord: 11.3ms | Allocations: 4548)
+
+
+Started GET "/org_events?organizer_id=55" for ::1 at 2022-11-14 18:27:47 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"55"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 55]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 562)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 109.2ms | Allocations: 20058)
+Completed 200 OK in 115ms (Views: 110.0ms | ActiveRecord: 0.9ms | Allocations: 20900)
+
+
+Started POST "/organization_logout" for ::1 at 2022-11-14 19:25:14 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"MLaTPWewTck2HVY7JOQNc1blJlUrp16P56tBgYhDsBvyxz8QXt0iAIKGjOpXCTCq7mOj3tON+dMooFn3pur9pw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (Allocations: 395)
+
+
+Started GET "/" for ::1 at 2022-11-14 19:25:14 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 1277)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 129.7ms | Allocations: 20523)
+Completed 200 OK in 136ms (Views: 133.6ms | Allocations: 21037)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-14 19:25:40 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ky4nXvClmh3iYx1z1V16eZI3nyVGBT1mElFlrKCM8rGlncW8/uRAGQJpeGKAEbIYHHMultnHEEBjAMardIrpGA==", "organization"=>{"name"=>"test", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/org_events?organizer_id=55
+Completed 302 Found in 49ms (ActiveRecord: 4.4ms | Allocations: 4477)
+
+
+Started GET "/org_events?organizer_id=55" for ::1 at 2022-11-14 19:25:40 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"55"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 55]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 262)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 19754)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.3ms | Allocations: 20078)
+
+
+Started POST "/organization_logout" for ::1 at 2022-11-14 19:25:45 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"n4G6MncAYd1d/m8/0aVT0zKQe2vJfEhYALAdt5CrDEYRMljQeUG72b30Ci6E6ZuyvNTK2Fa+ZX5x4b6wRK0X7w=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 394)
+
+
+Started GET "/" for ::1 at 2022-11-14 19:25:45 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1267)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 20508)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 21019)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-14 19:25:55 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a41OxuOY82UFtpfIoPutLNhgG+7Rl7fz46YWy3ZFEifT4Ut626Dr6wrxRptPb4XTfq+7ZDi2hYW88Kn+7mlOuQ==", "organization"=>{"name"=>"dxcfhgvb", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/org_events?organizer_id=55
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms | Allocations: 645)
+
+
+Started GET "/org_events?organizer_id=55" for ::1 at 2022-11-14 19:25:55 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"55"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 55]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 209)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 19700)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms | Allocations: 20022)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-14 19:26:22 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a41OxuOY82UFtpfIoPutLNhgG+7Rl7fz46YWy3ZFEifT4Ut626Dr6wrxRptPb4XTfq+7ZDi2hYW88Kn+7mlOuQ==", "organization"=>{"name"=>"dxcfhgvb", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 568)
+
+
+Started GET "/" for ::1 at 2022-11-14 19:26:22 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1263)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 20506)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 21032)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-14 19:26:31 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W2F0HunPWc3IXVhn3SVL0qN/44ILDA6uzyHAdrNT9avjDXGi0fdBQ8caiTQysWMtBbBDCOItPNiQd39DK3+pNQ==", "organization"=>{"name"=>"SK", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 552)
+
+
+Started GET "/" for ::1 at 2022-11-14 19:26:31 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1263)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 20506)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 21033)
+
+
+Started GET "/" for ::1 at 2022-11-14 19:31:46 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1274)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 20520)
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 21211)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-14 19:31:52 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CYeMHW8RP2md+SeF9+r8AWfsYUWSU0fthBYhCOb8cQ6x64mhVykn55K+9tYYftT+wSPBz3tydZvbQJ49ftAtkA==", "organization"=>{"name"=>"sredthfyjuk", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 5.5ms | Allocations: 3810)
+
+
+Started GET "/" for ::1 at 2022-11-14 19:31:52 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1263)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 20506)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 21033)
+
+
+Started GET "/" for ::1 at 2022-11-14 21:39:12 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2844)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 173.8ms | Allocations: 320314)
+Completed 200 OK in 190ms (Views: 177.6ms | Allocations: 324013)
+
+
+Started GET "/assets/tailwind.self-c2fa0103f83ef3ea27aeea9452cac956a9fa6e18d025072972fa0b57c4101d27.css?body=1" for ::1 at 2022-11-14 21:39:12 -0500
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-14 21:39:12 -0500
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-11-14 21:39:12 -0500

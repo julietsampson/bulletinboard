@@ -6,6 +6,14 @@ Given /^a valid student user$/ do
       })
 end
 
+Given /^a valid student user with name "([^"]*)," uni "([^"]*)," and password "([^"]*)"$/ do |name, uni, pass|
+  @student = Student.create!({
+    :name => name,
+    :uni => uni,
+    :password => pass,
+  })
+end
+
 Given /the following events exist/ do |events_table|
   @organization = Organizer.create!({
     :name => "CucumberTestUser",

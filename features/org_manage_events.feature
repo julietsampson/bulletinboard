@@ -43,6 +43,7 @@ Scenario: Organization can delete an event
 Scenario: Organization can edit an event
   When I go to the edit page for "pumpkin carving"
   And I fill in 'Location' with 'Uris'
+  And I check the "Senior" checkbox
   And I press "Update Event Info"
   Then the location of "pumpkin carving" should be "Uris"
 

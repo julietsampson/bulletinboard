@@ -11,11 +11,11 @@ Background:
 Scenario: Organization signs in with correct credentials
 
   When I go to sign in page
-  And I fill in 'Org Name' with 'User User'
+  And I fill in 'Org Name' with 'CucumberTestUser'
   And I fill in 'Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'pass'
   When I press "Organization Login"
-  Then I should go to org events page
+  Then I should see "Welcome back CucumberTestUser!"
   
 Scenario: Organization tries to sign in with incorrect password
 
@@ -24,7 +24,26 @@ Scenario: Organization tries to sign in with incorrect password
   And I fill in 'Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'bla'
   When I press "Organization Login"
-  Then I should see "Password incorrect. Please try again!"
+  Then I should see "Username or password incorrect. Please try again!"
+
+Scenario: Organization tries to sign in with incorrect organization name
+
+  When I go to sign in page
+  And I fill in 'Org Name' with 'User'
+  And I fill in 'Email' with 'ab@columbia.edu'
+  And I fill in 'Org Password' with 'pass'
+  And I press "Organization Login"
+  Then I should see "Username or password incorrect. Please try again!"
+
+Scenario: Organization tries to sign in with unknown email
+
+  When I go to sign in page
+  And I fill in 'Org Name' with 'CucumberTestUser'
+  And I fill in 'Email' with 'test@columbia.edu'
+  And I fill in 'Org Password' with 'pass'
+  And I press "Organization Login"
+  Then I should see "Organization not found-- please create an account!"
+
 
 Scenario: Organization does not fill out all fields to create an account
   When I go to sign in page
@@ -45,7 +64,13 @@ Scenario: Organization tries to create an account with a preexisting email
 Scenario: Organization creates an account
   When I go to sign in page
   And I fill in 'Org Name?' with 'User User'
-  And I fill in 'Email?' with 'ab@columbia.edu'
+  And I fill in 'Org Email?' with 'swe@columbia.edu'
   And I fill in 'Org Password?' with 'pass'
-  When I press "Create Organizer Account"
-  Then I should go to org events page
+  And I press "Create Organizer Account"
+  Then I should be on org events page
+  And I should see "Welcome User User!"
+
+Scenario: Organization logs out
+  Given I am on org events page
+  When I follow "Logout"
+  Then I should be on sign in page

@@ -63,8 +63,6 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in '([^"]*)' with '([^"]*)'$/ do |field, value|
-  puts "VALUE"
-  puts value
   fill_in(field, :with => value, match: :prefer_exact)
 end
 
@@ -136,6 +134,7 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
+  puts URI.parse(current_url).path
   expect(page).to have_content(text)
 end
 
@@ -210,7 +209,10 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
 end
 
 Then /^I should be on (.+)$/ do |page_name|
+  puts "PAGE path"
+  puts path_to(page_name)
   current_path = URI.parse(current_url).path
+  puts current_path
   assert_equal path_to(page_name), current_path
 end
 

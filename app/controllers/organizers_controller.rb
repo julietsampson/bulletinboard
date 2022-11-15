@@ -1,15 +1,18 @@
 class OrganizersController < ApplicationController
     def create
-      puts "PARAMS"
+      puts "ENTERING CREATE"
       puts params
       @existing_org = Organizer.find_by(email: params[:organization][:email])
       if (params[:organization][:name] == "" || params[:organization][:email] == "" || params[:organization][:password] == "")
+        puts "FIELD EMPTY"
         flash[:notice] = "Please fill out all of the fields."
         redirect_to root_path
       elsif (@existing_org != nil)
+        puts "REPEATED ACCOUNT"
         flash[:notice] = "An account with this UNI already exists. Please login instead. "
         redirect_to root_path
       else
+        puts "CREATING THE ACCOUNT"
         @organization = Organizer.create!(organization_params)
         flash[:notice] = "Welcome #{@organization.name}!"
         session[:organizer_id] = @organization.id
@@ -23,16 +26,21 @@ class OrganizersController < ApplicationController
     end
     
     def login
+      puts "PARAMS"
+      puts params
       @organization = Organizer.find_by(email: params[:organization][:email])
       if (@organization == nil)
         flash[:notice] = "Organization not found-- please create an account!"
         redirect_to root_path
-      elsif (@organization.password != params[:organization][:password])
-        flash[:notice] = "Password incorrect. Please try again!"
+      elsif (@organization.name != params[:organization][:name] || @organization.password != params[:organization][:password])
+        flash[:notice] = "Username or password incorrect. Please try again!"
         redirect_to root_path
       else 
+        puts "LOGGING IN"
         flash[:notice] = "Welcome back #{@organization.name}!"
         session[:organizer_id] = @organization.id
+        puts "going to "
+        puts organizer_events_path('organizer_id': @organization.id)
         redirect_to organizer_events_path('organizer_id': @organization.id)
       end
     end

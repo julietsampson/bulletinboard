@@ -17,6 +17,7 @@ module NavigationHelpers
 
     when /sign in page/ then '/'
     when /event page/ then '/events?'
+    when /^(org events )?page\s?for\s?\"(.*)"$/ then '/events/' + Organizer.find_by(:name => ($2)).id.to_s
     when /org events page/ then '/org_events?organizer_id='+@organization.id.to_s
     when /event creation page/ then '/events/new'
     when /^the (edit )?page\s?for\s?\"(.*)"$/ then '/events/' + @organization.events.find_by(:name => ($2)).id.to_s + '/edit'
