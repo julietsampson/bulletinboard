@@ -122,6 +122,16 @@ When /^(?:|I )select time "([^:]*):([^"]*)" from "([^"]*)"$/ do |hour, minute, f
   select(minute,  from: "#{field}_5i")# Minutesend
 end
 
+When("I,{string}, click {string} for {string} from {int}:{int} to {int}:{int}") do |uni, button, day, start_hour, start_min, end_hour, end_min|
+  @student = Student.find_by(:uni => uni)
+  date_map = {"Monday" => "01-Jan-1996 ", "Tuesday" => "02-Jan-1996 ", "Wednesday" => "03-Jan-1996 ", "Thursday" => "04-Jan-1996 ", "Friday" => "05-Jan-1996 ", "Saturday" => "06-Jan-1996 ", "Sunday" => "07-Jan-1996 "}
+  date = date_map[day]
+  start_datetime = date + " " + start_hour.to_s + ":" + start_min.to_s
+  end_datetime = date + " " + end_hour.to_s + ":" + end_min.to_s
+  id = @student.timeblocks.find_by(busy_range: (start_datetime.to_datetime..end_datetime.to_datetime)).id
+  click_button(id.to_s)
+end
+
 When /I check the following tags: (.*)/ do |tags_list|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
