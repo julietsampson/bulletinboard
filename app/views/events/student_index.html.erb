@@ -1,0 +1,38 @@
+<!--  This file is app/views/events/student_index.html.erb -->
+<h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900">Your Events</h2>
+
+<div class="mt-2 overflow-x-auto relative shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="events">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="py-3 px-6">Event Name</th>
+        <th scope="col" class="py-3 px-6">Date and Time</th>
+        <th scope="col" class="py-3 px-6">Location</th>
+        <th scope="col" class="py-3 px-6">Tags</th>
+        <th scope="col" class="py-3 px-6">More Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <%= event.name %>
+          </th>
+          <td class="py-4 px-6">
+            <%= event.datetime %>
+          </td>
+          <td class="py-4 px-6">
+            <%= event.location %>
+          </td>
+          <td class="py-4 px-6">
+            <%= event.tags %>
+          </td>
+          <td class="py-4 px-6">
+            <%= link_to "More about #{event.name}", about_event_path(event), :class => 'font-medium text-blue-600 dark:text-blue-500 hover:underline' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</table>

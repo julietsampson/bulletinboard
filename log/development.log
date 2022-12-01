@@ -1,0 +1,817 @@
+Started GET "/" for 127.0.0.1 at 2022-11-15 16:58:07 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2908)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 330.4ms | Allocations: 356224)
+Completed 200 OK in 351ms (Views: 335.5ms | Allocations: 359938)
+
+
+Started GET "/assets/tailwind.self-39296d610a4e370f7a032b8e0c8c14cb7c47745b77398456eb31e016dc1546c6.css?body=1" for 127.0.0.1 at 2022-11-15 16:58:07 -0500
+Started POST "/student_login" for 127.0.0.1 at 2022-11-15 16:58:17 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z9S+MlzVQB0e9tR1lA1AfAk6mNl+MPmJJzkU16L6ttbXdkJ8tSfFbs91c5C6jq13JbQ059w47XWO50dNJ/abpg==", "student"=>{"name"=>"Shruti Verma", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sv2611"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 126ms (ActiveRecord: 11.0ms | Allocations: 32440)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-11-15 16:58:17 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 5285)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 21474)
+Completed 200 OK in 26ms (Views: 17.8ms | ActiveRecord: 3.3ms | Allocations: 25149)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-15 16:58:19 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1333)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 17323)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms | Allocations: 17852)
+
+
+Started POST "/organization_login" for 127.0.0.1 at 2022-11-15 16:58:26 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JqabgZnXUHpG9exxihWldalPkBuG+70ne/4IUDZcmgI+BGfPcCXVCZd2S5Sklkh+hcE8JSTzqdvSIFvKs1C3cg==", "organization"=>{"name"=>"SWE", "email"=>"swe@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 12ms (ActiveRecord: 2.7ms | Allocations: 3722)
+
+
+Started GET "/org_events?organizer_id=1" for 127.0.0.1 at 2022-11-15 16:58:26 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 714)
+  Rendered layouts/_flash.erb (Duration: 0.6ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 16961)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.2ms | Allocations: 17411)
+
+
+Started POST "/organization_logout" for 127.0.0.1 at 2022-11-15 16:58:28 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"zriq1ZzKsAOTmi8VM3Dm++E+pUPiVqEOPXfEM4/sZQXWGlabdTg1cEIZiPAd8wvwzbAJfUBetfKUqZepCuBIdQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 404)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-15 16:58:28 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1339)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 17329)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.0ms | Allocations: 17841)
+
+
+Started POST "/student_login" for 127.0.0.1 at 2022-11-15 16:58:47 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qn5CZQaymZa9TGjZKzyoCuqOVeO4wB3AGgen3yV3BJ7KDRqcp8bw9zZa4DHTOjsas2dZT70Rr6VHb0DOhpCOVw==", "student"=>{"name"=>"Shruti Verma", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sv2611"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 556)
+
+
+Started GET "/events" for 127.0.0.1 at 2022-11-15 16:58:47 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 929)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 16922)
+Completed 200 OK in 48ms (Views: 21.1ms | ActiveRecord: 0.6ms | Allocations: 17727)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFree+Food%5D=1&commit=Refresh" for 127.0.0.1 at 2022-11-15 16:59:00 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Free Food"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 918)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 16908)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.6ms | Allocations: 17656)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&commit=Refresh" for 127.0.0.1 at 2022-11-15 16:59:02 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 918)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 16908)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.6ms | Allocations: 17652)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-15 16:59:04 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1323)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 17313)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 17840)
+
+
+Started GET "/" for ::1 at 2022-11-15 19:25:31 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2908)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 370.9ms | Allocations: 369431)
+Completed 200 OK in 385ms (Views: 374.1ms | Allocations: 373143)
+
+
+Started GET "/assets/tailwind.self-39296d610a4e370f7a032b8e0c8c14cb7c47745b77398456eb31e016dc1546c6.css?body=1" for ::1 at 2022-11-15 19:25:31 -0500
+Started POST "/student_login" for ::1 at 2022-11-15 19:25:39 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZtQaFSFrVKWaMXct5cvQUOVGG38UKjTQE03skCFgWOJTXrGX4nVe/Unzn2Igo2hD8ywpC2QigKf9ycZ5pu0GLw==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 67ms (ActiveRecord: 9.1ms | Allocations: 32428)
+
+
+Started GET "/" for ::1 at 2022-11-15 19:25:40 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1333)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 19852)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 20394)
+
+
+Started POST "/new_student" for ::1 at 2022-11-15 19:25:48 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tNzcDVLoim6eQcFPQgwkHNWUGBPgOd2Q36lrt6cV59KBVnePkfaANk2DKQCHZJwPw/4qZ5AxaecxLUFeIJi5Hw==", "create_student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 565)
+
+
+Started GET "/" for ::1 at 2022-11-15 19:25:48 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1323)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 19830)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 20371)
+
+
+Started POST "/student_login" for ::1 at 2022-11-15 19:25:56 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+hdhyQEF0gA17vIoLDscUba0fpupIgtDrnG/llcCm5/PncpLwhvYWOYsGmfpU6RCoN5M79kqvzRA9ZV/0I/FUg==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 559)
+
+
+Started GET "/" for ::1 at 2022-11-15 19:25:56 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1323)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 19831)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 20370)
+
+
+Started POST "/student_login" for ::1 at 2022-11-15 19:26:01 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mubujE7+jgLwTaJL/W8fHyWxZiBkovFZFQbhV6cjpZivbEUOjeCEWiOPSgQ4B6cMM9tUVBSqRS77gsu+IK77VQ==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms | Allocations: 559)
+
+
+Started GET "/" for ::1 at 2022-11-15 19:26:01 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1323)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 19830)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 20369)
+
+
+Started POST "/new_student" for ::1 at 2022-11-15 19:26:13 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cgj/whXzqBZ8ppRpxDlSIBZ3DRD6yuU7ELG9SLiB0Sc/glRA1u2iTq9kfCYBUeozAB0/ZIrCUUz+NZehPwyP6g==", "create_student"=>{"name"=>"SK_2", "uni"=>"uni", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "uni"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("uni", "name", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["uni", "uni"], ["name", "SK_2"], ["password", "pass"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms | Allocations: 1252)
+
+
+Started GET "/events" for ::1 at 2022-11-15 19:26:13 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1012], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 5471)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 23977)
+Completed 200 OK in 47ms (Views: 38.6ms | ActiveRecord: 3.7ms | Allocations: 27660)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-15 19:26:17 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1012], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1208)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 19711)
+Completed 200 OK in 38ms (Views: 35.7ms | ActiveRecord: 0.2ms | Allocations: 20904)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-15 19:26:20 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1012], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.9ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1649)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 20155)
+Completed 200 OK in 55ms (Views: 34.9ms | ActiveRecord: 3.8ms | Allocations: 26599)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-15 19:26:23 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1012], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4740)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 23243)
+Completed 200 OK in 23ms (Views: 18.0ms | ActiveRecord: 1.9ms | Allocations: 25066)
+
+
+Started POST "/update_schedule" for ::1 at 2022-11-15 19:26:29 -0500
+Processing by StudentsController#update_schedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dG1QrYlLgQIGvcRtokekA6xyDtpzOGbnQnll2LNChDMWx7AdTskXNvYH15z4aaDGNv6TxnEVexzjc9+5UBU3Q==", "timeblock"=>{"weekday"=>"Sunday", "busy_start(1i)"=>"2022", "busy_start(2i)"=>"11", "busy_start(3i)"=>"16", "busy_start(4i)"=>"01", "busy_start(5i)"=>"26", "busy_end(1i)"=>"2022", "busy_end(2i)"=>"11", "busy_end(3i)"=>"16", "busy_end(4i)"=>"02", "busy_end(5i)"=>"26"}, "commit"=>"Add"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1012], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTimeblock Create (0.7ms)[0m  [1m[32mINSERT INTO "timeblocks" ("busy_range", "created_at", "updated_at", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["busy_range", "[1996-01-07 01:26:00,1996-01-07 02:26:00]"], ["created_at", "2022-11-16 00:26:29.798348"], ["updated_at", "2022-11-16 00:26:29.798348"], ["student_id", 1012]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/edit_schedule
+Completed 302 Found in 12ms (ActiveRecord: 2.7ms | Allocations: 5001)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-15 19:26:29 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1012], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1012]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3725)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 22232)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 2.2ms | Allocations: 23939)
+
+
+Started GET "/" for ::1 at 2022-11-30 21:48:21 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2908)
+  Rendered layouts/_flash.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 325.0ms | Allocations: 358983)
+Completed 200 OK in 338ms (Views: 328.7ms | Allocations: 362693)
+
+
+Started GET "/ws" for ::1 at 2022-11-30 21:48:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started POST "/student_login" for ::1 at 2022-11-30 21:48:23 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wvxQ7L30TmIDCE1q2y0SlB2HZu3xWzvozaC09YOTKpFF4tliu7juFAdUcfvFo0ynHoNDEf23ENPD2ldK9VxU6w==", "student"=>{"name"=>"a", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+Completed 500 Internal Server Error in 34ms (Allocations: 22050)
+
+
+  
+ActiveRecord::ConnectionNotEstablished (connection to server on socket "/tmp/.s.PGSQL.5433" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+):
+  
+app/controllers/students_controller.rb:20:in `login'
+Started GET "/ws" for ::1 at 2022-11-30 21:50:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2022-11-30 21:54:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+  [1m[35m (97.1ms)[0m  [1m[35mCREATE DATABASE "postgres_dev" ENCODING = 'unicode'[0m
+  [1m[35m (64.9ms)[0m  [1m[35mCREATE DATABASE "postgres_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221112012033)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221029144918),
+(20221029145149),
+(20221029145320),
+(20221029170936),
+(20221029170949),
+(20221029174053),
+(20221029174535),
+(20221111080137),
+(20221111080500),
+(20221111213200),
+(20221111214938),
+(20221111230740);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-01 03:02:36.562973"], ["updated_at", "2022-12-01 03:02:36.562973"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "83397f6f0a42dcb75694ec45217ff2902dc2c387"], ["created_at", "2022-12-01 03:02:36.566013"], ["updated_at", "2022-12-01 03:02:36.566013"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221112012033)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221029144918),
+(20221029145149),
+(20221029145320),
+(20221029170936),
+(20221029170949),
+(20221029174053),
+(20221029174535),
+(20221111080137),
+(20221111080500),
+(20221111213200),
+(20221111214938),
+(20221111230740);
+
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-01 03:02:36.605867"], ["updated_at", "2022-12-01 03:02:36.605867"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-01 03:02:36.607000"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "83397f6f0a42dcb75694ec45217ff2902dc2c387"], ["created_at", "2022-12-01 03:02:36.607893"], ["updated_at", "2022-12-01 03:02:36.607893"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(768269023652745930)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(768269023652745930)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/student_login" for ::1 at 2022-11-30 22:03:21 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wvxQ7L30TmIDCE1q2y0SlB2HZu3xWzvozaC09YOTKpFF4tliu7juFAdUcfvFo0ynHoNDEf23ENPD2ldK9VxU6w==", "student"=>{"name"=>"a", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "a"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 6.9ms | Allocations: 11842)
+
+
+Started GET "/" for ::1 at 2022-11-30 22:03:21 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1358)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 17808)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 18539)
+
+
+Started GET "/ws" for ::1 at 2022-11-30 22:03:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started POST "/new_student" for ::1 at 2022-11-30 22:03:59 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZIZHQrLNmzfgRq0sJ4y02hYTV/586EwcHd0euOR+t7jjmM7MtIE7QeQakb05AurpFRdyAnAEZycTp/0HkrHJwg==", "create_student"=>{"name"=>"a", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "a"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (1.1ms)[0m  [1m[32mINSERT INTO "students" ("uni", "name", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["uni", "a"], ["name", "a"], ["password", "a"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 12ms (ActiveRecord: 5.2ms | Allocations: 3728)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:04:00 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Computer Science'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1836)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 17998)
+Completed 200 OK in 20ms (Views: 11.2ms | ActiveRecord: 2.0ms | Allocations: 21660)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:04:02 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Computer Science'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 675)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 16831)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.5ms | Allocations: 17584)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:04:03 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Computer Science'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 675)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 16832)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.5ms | Allocations: 17584)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-30 22:04:04 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1212)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 17366)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.2ms | Allocations: 18557)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:04:04 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Computer Science'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 683)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 16841)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.5ms | Allocations: 17594)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-30 22:04:11 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 1.2ms | Allocations: 719)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 16875)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.2ms | Allocations: 17547)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:04:15 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Computer Science'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 675)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 16831)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.4ms | Allocations: 17583)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(768269023652745930)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(768269023652745930)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-11-30 22:36:13 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2908)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 121.4ms | Allocations: 315905)
+Completed 200 OK in 133ms (Views: 124.2ms | Allocations: 319615)
+
+
+Started POST "/student_login" for ::1 at 2022-11-30 22:36:15 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"goSV/iznwoxZOxBarRZ3XO5dXP7Mtt3DpzkVOpOiRD4FmhxwKqti+l1nLMuzmClv7Vl5AsBa9vipQ/aF5W06RA==", "student"=>{"name"=>"aa", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "a"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 11.8ms | Allocations: 32430)
+
+
+Started GET "/" for ::1 at 2022-11-30 22:36:15 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1333)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 17492)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms | Allocations: 18028)
+
+
+Started POST "/new_student" for ::1 at 2022-11-30 22:36:19 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QVM89q2HZnPOhguVm0x5oFaA/fjJzKd+4mKM0SNGsn7GTbV4q8vGBcraNwSFwieTVYTYBMUgjEXsGG9uVYnMBA==", "create_student"=>{"name"=>"a", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "a"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 563)
+
+
+Started GET "/" for ::1 at 2022-11-30 22:36:19 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1323)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 17481)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 18016)
+
+
+Started POST "/student_login" for ::1 at 2022-11-30 22:36:22 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7O3NVHonRjXSGTd8oXnhsnndKVm3aLc1svTUKgPyHFBr80TafGvmQ9ZFC+2/97+BetkMpbuEnA68jjeVdT1iKg==", "student"=>{"name"=>"a", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "a"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 569)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:36:22 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Computer Science'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1846)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 18003)
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 2.1ms | Allocations: 21656)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:36:25 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Computer Science'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 675)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 16831)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.5ms | Allocations: 17584)
+
+
+Started GET "/my_events" for ::1 at 2022-11-30 22:36:25 -0500
+Processing by StudentsController#my_events as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_events.html.erb within layouts/application
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "events_students" ON "events"."id" = "events_students"."event_id" WHERE "events_students"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/my_events.html.erb within layouts/application (Duration: 12.0ms | Allocations: 3913)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 20069)
+Completed 200 OK in 37ms (Views: 16.1ms | ActiveRecord: 4.4ms | Allocations: 25267)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-30 22:36:26 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1210)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 17364)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.2ms | Allocations: 18164)
+
+
+Started POST "/organization_logout" for ::1 at 2022-11-30 22:36:27 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"V8KQngX6dLmTMf867asWG2w7uTlEh9gYlC9NXSJQZcbQ3BkQA7bUz5dtw6vzJUgobz+cxUhr8yOaVa7iVJ8bvA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 406)
+
+
+Started GET "/" for ::1 at 2022-11-30 22:36:27 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1339)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 17496)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 18008)
+
+
+Started POST "/organization_login" for ::1 at 2022-11-30 22:36:31 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nBdYxDDDmJf/42Y+fP151cCYAje8jChory1q6iqRGgbWuV22WM8wAN7ZCXF1DQTtfct6SBGrxv2Gc0iIB9V6dQ==", "organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.6ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "all"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms | Allocations: 1913)
+
+
+Started GET "/" for ::1 at 2022-11-30 22:36:31 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1323)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 17481)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 18008)
+
+
+Started POST "/new_organization" for ::1 at 2022-11-30 22:36:35 -0500
+Processing by OrganizersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C6iF2uO3gh38FDBopgvc1nUTr8H5kB6tbMyV/Acu3hlBBoCoi7sqit0uXyev+6HuyEDXvlS38DhFkreeKmq+ag==", "create_organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Create Organizer Account"}
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "all"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganizer Create (1.4ms)[0m  [1m[32mINSERT INTO "organizers" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "all"], ["email", "all"], ["password", "pass"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 10ms (ActiveRecord: 3.8ms | Allocations: 2951)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-30 22:36:35 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 525)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 16931)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.2ms | Allocations: 17380)
+
+
+Started GET "/events/new" for ::1 at 2022-11-30 22:36:36 -0500
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 5948)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 22102)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 22517)
+
+
+Started POST "/events" for ::1 at 2022-11-30 22:36:38 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cPaio8Db20LNPErBZXILeLsVPmlNLj9koOaUvZsH6DI6WKfRqNdz1ewGJY5sgnZABkZGFuAJ0fGJuLbftkOIQQ==", "event"=>{"name"=>"", "datetime(1i)"=>"2022", "datetime(2i)"=>"12", "datetime(3i)"=>"1", "datetime(4i)"=>"03", "datetime(5i)"=>"36", "location"=>"", "description"=>""}, "commit"=>"Save Changes"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (1.2ms)[0m  [1m[32mINSERT INTO "events" ("name", "datetime", "location", "description", "organizer_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", ""], ["datetime", "2022-12-01 03:36:00"], ["location", ""], ["description", ""], ["organizer_id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 16ms (ActiveRecord: 1.8ms | Allocations: 5090)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-30 22:36:38 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 280)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 16683)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.2ms | Allocations: 17006)
+
+
+Started GET "/events/1" for ::1 at 2022-11-30 22:36:40 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 896)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 17053)
+Completed 200 OK in 37ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 17698)
+
+
+Started DELETE "/events/1" for ::1 at 2022-11-30 22:36:43 -0500
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PEsl9pMzxPgEShr1i6g2+hz1LRpN6vxdk/92YL8lgqx25SCE+z9sbyVwdbqCWEvCoaZVZeDNEsi6oVQCkmHi3w==", "id"=>"1"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent::HABTM_Students Destroy (0.3ms)[0m  [1m[31mDELETE FROM "events_students" WHERE "events_students"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mEvent Destroy (0.2ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms | Allocations: 1234)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-11-30 22:36:43 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 210)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 16616)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 16939)
+
+
