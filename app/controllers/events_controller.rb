@@ -16,8 +16,28 @@ class EventsController < ApplicationController
     student_id = session[:student_id]
     id = params[:id]
     @student = Student.find(student_id)
-    @all_tags = Event.all_tags
-    @events = Event.with_tags(tags_list, sort_by)
+    @all_tags = Event.all_tags + ["During non-busy hours"]
+    relevant_events = Event.with_tags(tags_list, sort_by)
+    if (tags_list.include?("During non-busy hours")== false)
+      @events = relevant_events
+    else
+      @events = []
+      for event in relevant_events
+        day = day_order_list[event.datetime.wday]
+        free = true
+        for tb in @student.weekday_schedule[day]
+          t_str =  day_date_mapping[day] + event.datetime.to_s(:time)
+          t = DateTime.parse(t_str)
+          if (t.between?(tb[:busy_range].begin, tb[:busy_range].end))
+            free = false
+            break
+          end
+        end
+        if (free)
+          @events.append(event)
+        end
+      end
+    end
     @tags_to_show_hash = tags_hash
     @sort_by = sort_by
 
@@ -148,6 +168,10 @@ class EventsController < ApplicationController
 
   def day_abbrev_map
     {:mon => "Monday", :tue => "Tuesday", :wed => "Wednesday", :thu => "Thursday", :fri => "Friday", :sat => "Saturday", :sun => "Sunday"}
+  end
+
+  def day_order_list
+    [:sun, :mon, :tue, :wed, :thu, :fri, :sat]
   end
 
   def day_date_mapping

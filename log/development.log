@@ -314,3 +314,533 @@ Processing by StudentsController#edit_schedule as HTML
 Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 2.2ms | Allocations: 23939)
 
 
+Started GET "/" for ::1 at 2022-11-30 22:47:40 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2914)
+  Rendered layouts/_flash.erb (Duration: 1.2ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 373.4ms | Allocations: 358676)
+Completed 200 OK in 391ms (Views: 377.4ms | Allocations: 362209)
+
+
+Started GET "/assets/tailwind.self-39296d610a4e370f7a032b8e0c8c14cb7c47745b77398456eb31e016dc1546c6.css?body=1" for ::1 at 2022-11-30 22:47:41 -0500
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2022-11-30 22:47:41 -0500
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-11-30 22:47:41 -0500
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2022-11-30 22:47:41 -0500
+Started GET "/assets/inter-font.self-b09c62c2a5577703b8b6c61fe76b6169c89d746dbe28f44da83161702a0d90ef.css?body=1" for ::1 at 2022-11-30 22:47:41 -0500
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-11-30 22:47:41 -0500
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2022-11-30 22:47:41 -0500
+Started POST "/student_login" for ::1 at 2022-11-30 22:47:58 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Jc+vH62Py0QuTDXSrJgRNTcT9YI8u493EiavLnkDDdSgvZGHdPzwf3qJlivFgfVLIeImvpAgOOgLtiFt7LFHg==", "student"=>{"name"=>"Shruti Verma", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (10.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sv2611"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 240ms (ActiveRecord: 111.0ms | Allocations: 32433)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:47:58 -0500
+  
+SyntaxError (/Users/shrutiverma/bulletinboard/app/controllers/events_controller.rb:25: syntax error, unexpected ':', expecting ')'
+      for (event : relevant_events)
+                 ^):
+  
+app/controllers/events_controller.rb:25: syntax error, unexpected ':', expecting ')'
+app/controllers/events_controller.rb:25: syntax error, unexpected ':', expecting ')'
+Started POST "/student_login" for ::1 at 2022-11-30 22:48:34 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Jc+vH62Py0QuTDXSrJgRNTcT9YI8u493EiavLnkDDdSgvZGHdPzwf3qJlivFgfVLIeImvpAgOOgLtiFt7LFHg==", "student"=>{"name"=>"Shruti Verma", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sv2611"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 10ms (ActiveRecord: 2.6ms | Allocations: 6273)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:48:34 -0500
+  
+SyntaxError (/Users/shrutiverma/bulletinboard/app/controllers/events_controller.rb:174: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/events_controller.rb:174: syntax error, unexpected end-of-input, expecting end
+app/controllers/events_controller.rb:174: syntax error, unexpected end-of-input, expecting end
+Started POST "/student_login" for ::1 at 2022-11-30 22:49:14 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Jc+vH62Py0QuTDXSrJgRNTcT9YI8u493EiavLnkDDdSgvZGHdPzwf3qJlivFgfVLIeImvpAgOOgLtiFt7LFHg==", "student"=>{"name"=>"Shruti Verma", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sv2611"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 10ms (ActiveRecord: 2.4ms | Allocations: 5988)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:49:14 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.3ms | Allocations: 2993)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/events_controller.rb:21:in `[]'
+app/controllers/events_controller.rb:21:in `index'
+Started POST "/student_login" for ::1 at 2022-11-30 22:50:22 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Jc+vH62Py0QuTDXSrJgRNTcT9YI8u493EiavLnkDDdSgvZGHdPzwf3qJlivFgfVLIeImvpAgOOgLtiFt7LFHg==", "student"=>{"name"=>"Shruti Verma", "uni"=>"sv2611", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sv2611"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 29ms (ActiveRecord: 6.1ms | Allocations: 5984)
+
+
+Started GET "/events" for ::1 at 2022-11-30 22:50:22 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (6.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5351)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 21823)
+Completed 200 OK in 31ms (Views: 17.5ms | ActiveRecord: 8.7ms | Allocations: 25520)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:10:49 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 992)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 17177)
+Completed 200 OK in 28ms (Views: 13.6ms | ActiveRecord: 6.2ms | Allocations: 21901)
+
+
+Started GET "/student_profile" for ::1 at 2022-11-30 23:11:44 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1228)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 17411)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.3ms | Allocations: 18632)
+
+
+Started GET "/show_schedule" for ::1 at 2022-11-30 23:11:46 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (5.9ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (1.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 21.4ms | Allocations: 4896)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 21076)
+Completed 200 OK in 59ms (Views: 22.3ms | ActiveRecord: 15.2ms | Allocations: 27562)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-30 23:11:50 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 16.3ms | Allocations: 4837)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 21016)
+Completed 200 OK in 47ms (Views: 40.8ms | ActiveRecord: 2.6ms | Allocations: 22843)
+
+
+Started POST "/update_schedule" for ::1 at 2022-11-30 23:12:04 -0500
+Processing by StudentsController#update_schedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Uar/lthovPJ1D8np2nU10jvMCm9wBhdS5fo2zEpdRVjU2MEOARuHySHKahCzbNGsLT3ZU9ydoM38ariP3+8PA==", "timeblock"=>{"weekday"=>"Tuesday", "busy_start(1i)"=>"2022", "busy_start(2i)"=>"12", "busy_start(3i)"=>"1", "busy_start(4i)"=>"04", "busy_start(5i)"=>"00", "busy_end(1i)"=>"2022", "busy_end(2i)"=>"12", "busy_end(3i)"=>"1", "busy_end(4i)"=>"23", "busy_end(5i)"=>"59"}, "commit"=>"Add"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTimeblock Create (19.1ms)[0m  [1m[32mINSERT INTO "timeblocks" ("busy_range", "created_at", "updated_at", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["busy_range", "[1996-01-02 04:00:00,1996-01-02 23:59:00]"], ["created_at", "2022-12-01 04:12:04.887978"], ["updated_at", "2022-12-01 04:12:04.887978"], ["student_id", 1]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/edit_schedule
+Completed 302 Found in 32ms (ActiveRecord: 25.4ms | Allocations: 1976)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-11-30 23:12:04 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3814)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 19996)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 2.1ms | Allocations: 21706)
+
+
+Started GET "/events" for ::1 at 2022-11-30 23:12:06 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 980)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 17162)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.5ms | Allocations: 17959)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:12:08 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 971)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 17151)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.5ms | Allocations: 17938)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:12:11 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 971)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 17151)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 17938)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:12:26 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 4588)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 20771)
+Completed 200 OK in 41826ms (Views: 25.5ms | ActiveRecord: 7.2ms | Allocations: 79602)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:13:19 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+Completed 500 Internal Server Error in 6358ms (ActiveRecord: 7.5ms | Allocations: 16628)
+
+
+  
+NameError (undefined local variable or method `student' for #<EventsController:0x007ff1ed508ef8>
+Did you mean?  @student):
+  
+app/controllers/events_controller.rb:29:in `block in index'
+app/controllers/events_controller.rb:26:in `index'
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:13:57 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 5.1ms | Allocations: 14653)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/events_controller.rb:28:in `block in index'
+app/controllers/events_controller.rb:25:in `index'
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:14:10 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+Completed 500 Internal Server Error in 119816ms (ActiveRecord: 7.0ms | Allocations: 17343)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/events_controller.rb:29:in `block in index'
+app/controllers/events_controller.rb:25:in `index'
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:16:23 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.1ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 806)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 16993)
+Completed 200 OK in 38ms (Views: 9.4ms | ActiveRecord: 6.4ms | Allocations: 36454)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:16:26 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 792)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 16972)
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 1.1ms | Allocations: 21402)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:16:36 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (1.7ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) /* loading for inspect */ ORDER BY lower(busy_range) LIMIT $2[0m  [["student_id", 1], ["LIMIT", 11]]
+  [1m[36mTimeblock Load (0.8ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 806)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 16989)
+Completed 200 OK in 105275ms (Views: 20.4ms | ActiveRecord: 10.6ms | Allocations: 45658)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:18:32 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.8ms | Allocations: 16808)
+
+
+  
+TypeError (no implicit conversion of Time into String):
+  
+app/controllers/events_controller.rb:30:in `+'
+app/controllers/events_controller.rb:30:in `block (2 levels) in index'
+app/controllers/events_controller.rb:29:in `block in index'
+app/controllers/events_controller.rb:25:in `index'
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:19:21 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 10.1ms | Allocations: 18886)
+
+
+  
+NoMethodError (undefined method `str' for #<EventsController:0x007ff1f53b99c8>):
+  
+app/controllers/events_controller.rb:30:in `block (2 levels) in index'
+app/controllers/events_controller.rb:29:in `block in index'
+app/controllers/events_controller.rb:25:in `index'
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:19:53 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 6.6ms | Allocations: 16908)
+
+
+  
+TypeError (expected numeric):
+  
+app/controllers/events_controller.rb:31:in `block (2 levels) in index'
+app/controllers/events_controller.rb:29:in `block in index'
+app/controllers/events_controller.rb:25:in `index'
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:22:51 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 9.3ms | Allocations: 17859)
+
+
+  
+NoMethodError (undefined method `datetime' for Tue, 15 Nov 2022 17:07:00 +0000:DateTime):
+  
+app/controllers/events_controller.rb:32:in `block (2 levels) in index'
+app/controllers/events_controller.rb:29:in `block in index'
+app/controllers/events_controller.rb:25:in `index'
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:23:06 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 806)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 16993)
+Completed 200 OK in 85ms (Views: 38.0ms | ActiveRecord: 12.4ms | Allocations: 36576)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:23:09 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 792)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 16972)
+Completed 200 OK in 44ms (Views: 29.6ms | ActiveRecord: 0.9ms | Allocations: 21529)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:23:25 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 806)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 16989)
+Completed 200 OK in 20268ms (Views: 19.4ms | ActiveRecord: 7.3ms | Allocations: 46086)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:24:03 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 806)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 16989)
+Completed 200 OK in 12152ms (Views: 27.5ms | ActiveRecord: 6.6ms | Allocations: 46300)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:24:26 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 806)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 16988)
+Completed 200 OK in 119439ms (Views: 23.3ms | ActiveRecord: 6.5ms | Allocations: 45505)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:26:35 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 6.5ms | Allocations: 16858)
+
+
+  
+TypeError (no implicit conversion of ActiveSupport::TimeWithZone into String):
+  
+app/controllers/events_controller.rb:29:in `+'
+app/controllers/events_controller.rb:29:in `block (2 levels) in index'
+app/controllers/events_controller.rb:28:in `block in index'
+app/controllers/events_controller.rb:25:in `index'
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:26:42 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 613)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 16796)
+Completed 200 OK in 9360ms (Views: 47.2ms | ActiveRecord: 6.6ms | Allocations: 45276)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:26:55 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 975)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 17155)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.6ms | Allocations: 17937)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BDuring+non-busy+hours%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:26:57 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "During non-busy hours"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','During non-busy hours'])[0m
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mCACHE Timeblock Load (0.0ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 604)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 16785)
+Completed 200 OK in 7795ms (Views: 20.2ms | ActiveRecord: 1.2ms | Allocations: 30191)
+
+
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&commit=Refresh" for ::1 at 2022-11-30 23:27:15 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 4573)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 20755)
+Completed 200 OK in 30ms (Views: 14.1ms | ActiveRecord: 4.4ms | Allocations: 29274)
+
+
