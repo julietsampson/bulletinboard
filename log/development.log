@@ -815,3 +815,943 @@ Processing by EventsController#organizer_index as HTML
 Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 16939)
 
 
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-12-01 11:50:50 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1887)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 230.0ms | Allocations: 311021)
+Completed 200 OK in 310ms (Views: 233.1ms | ActiveRecord: 14.0ms | Allocations: 342350)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:50:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started POST "/organization_logout" for ::1 at 2022-12-01 11:50:54 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"jzwZT4qIinHVzGriT6aDSAm98C1aAsX3qOxnSkVYDuzFkhw94oQi5vT2Ba1GVv5wtO6IUvclK2KBskUoaBxunw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 472)
+
+
+Started GET "/" for ::1 at 2022-12-01 11:50:54 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2481)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 12111)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 13204)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:50:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started POST "/student_login" for ::1 at 2022-12-01 11:50:56 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DwvAqtZfB8gnE3GMPHC2NAiyqtXAeW0DR0XCQW92ivQBVT2O3AV8/2G/xIdO6qyMm2trtSvX6uSohOP4c9yOWA==", "student"=>{"name"=>"a", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "a"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 18ms (ActiveRecord: 5.9ms | Allocations: 6518)
+
+
+Started GET "/events" for ::1 at 2022-12-01 11:50:56 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1231)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 10701)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 1.0ms | Allocations: 11734)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:50:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/" for ::1 at 2022-12-01 11:50:59 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1333)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 10801)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 11331)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:50:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started POST "/student_login" for ::1 at 2022-12-01 11:54:47 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KDT3b3uveFW9wjMJ6ICJwWGp3tzDzV98TygeMMuKHH4magpLcfUDYvtuhgKaGpN58nAfvChj2Jug6T+J1yAY0g==", "student"=>{"name"=>"a", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "a"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 13ms (ActiveRecord: 3.6ms | Allocations: 5991)
+
+
+Started GET "/events" for ::1 at 2022-12-01 11:54:47 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1374)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 10850)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 1.6ms | Allocations: 14083)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:54:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BAcademic%5D=1&tags%5BProfessional%5D=1&tags%5BSocial%5D=1&commit=Refresh" for ::1 at 2022-12-01 11:54:51 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "Academic"=>"1", "Professional"=>"1", "Social"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 805)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 10273)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 0.6ms | Allocations: 11060)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:54:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/" for ::1 at 2022-12-01 11:54:54 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1333)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 10802)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 11478)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:54:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started POST "/organization_login" for ::1 at 2022-12-01 11:54:58 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ci1tqPlbjifEogxuX16X8q0RtPPU7sioEOA3X5M3v+l8c5CM8wH1EIIOuWUtxI1KPsh1kz9AT0//IRbmj527RQ==", "organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (1.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "all"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 4.0ms | Allocations: 3732)
+
+
+Started GET "/" for ::1 at 2022-12-01 11:54:58 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1323)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 10793)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 11333)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:54:58 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started POST "/organization_login" for ::1 at 2022-12-01 11:55:03 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lzefrc+Lvn45YKIk1FSlo5tiJ3pQ8TYfzpJZI9PoHlSZaWKJxdHFSX/MFy+mzr8bCLvmGrtfsfghU3iaz0Ia+A==", "organization"=>{"name"=>"all", "email"=>"all", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "all"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 604)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-12-01 11:55:03 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 213)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 9946)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 10268)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:55:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/new" for ::1 at 2022-12-01 11:55:04 -0500
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 6097)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 15564)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 15982)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:55:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started POST "/events" for ::1 at 2022-12-01 11:55:36 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eAPaSTtgWfkM3aNVL+4IzeI4euC5SVOrMmH8xQmB1yV2XSdtMToizkpxFl5ddBJ1ceG7gFLn1EzdoN18FSvTiQ==", "event"=>{"name"=>"Social gathering", "datetime(1i)"=>"2022", "datetime(2i)"=>"12", "datetime(3i)"=>"1", "datetime(4i)"=>"16", "datetime(5i)"=>"00", "location"=>"Mudd", "description"=>"Debug the fun"}, "tags"=>{"Senior"=>"1", "STEM"=>"1", "Free Food"=>"1", "Social"=>"1"}, "commit"=>"Save Changes"}
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "datetime", "location", "description", "tags", "organizer_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Social gathering"], ["datetime", "2022-12-01 16:00:00"], ["location", "Mudd"], ["description", "Debug the fun"], ["tags", "{Senior,STEM,\"Free Food\",Social}"], ["organizer_id", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 26ms (ActiveRecord: 3.8ms | Allocations: 8671)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-12-01 11:55:36 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 296)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 10031)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 10354)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:55:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2" for ::1 at 2022-12-01 11:55:40 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 919)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 10387)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.5ms | Allocations: 11033)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:55:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-12-01 11:55:47 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 282)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 10006)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 10329)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:55:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2" for ::1 at 2022-12-01 11:55:55 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 570)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 10039)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.5ms | Allocations: 10460)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:55:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-12-01 11:56:03 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 281)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 10005)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 10327)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:56:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2" for ::1 at 2022-12-01 11:57:03 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 570)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 10043)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 10481)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:57:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2/edit" for ::1 at 2022-12-01 11:57:14 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE (tags && array['Senior','STEM','Social'])[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (tags && array['Senior','STEM','Social'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3592)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2476892400 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 13058)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 1.7ms | Allocations: 14040)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:57:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-12-01 11:58:12 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 592)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2165594060 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 10842)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms | Allocations: 11910)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2" for ::1 at 2022-12-01 11:58:13 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 11.5ms | Allocations: 3475)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3555)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms | Allocations: 4083)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `event' for #<ActionView::Base:0x000001067db368>
+Did you mean?  @event):
+    22:       <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+    23:         <dt class="text-sm font-medium text-gray-500">Tags:</dt>
+    24:         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+    25:         <%= event.tags.map{|item|%Q{#{item}}}.join(', ') %>
+    26:         </dd>
+    27:       </div>
+    28:       <div class="bg-white px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+  
+app/views/events/show.html.erb:25
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2022-12-01 11:58:29 -0500
+Started GET "/events/2" for ::1 at 2022-12-01 11:58:30 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 877)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 10864)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.6ms | Allocations: 12020)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2/edit" for ::1 at 2022-12-01 11:58:37 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE (tags && array['Senior','STEM','Social'])[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (tags && array['Senior','STEM','Social'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3570)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 13036)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 1.1ms | Allocations: 13987)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started PUT "/events/2" for ::1 at 2022-12-01 11:58:41 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vDwepthCTvR1iWB3jlljkcEB19xYOjyQniNM8vCot0uyYuOC0hg1wzMl1Xz8w3kpUtgWvLOUu3dx4m1L7AKz5w==", "event"=>{"name"=>"Social gathering", "datetime(1i)"=>"2022", "datetime(2i)"=>"12", "datetime(3i)"=>"1", "datetime(4i)"=>"16", "datetime(5i)"=>"00", "location"=>"Mudd", "description"=>"Debug the fun"}, "tags"=>{"Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "Social"=>"1"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Update (0.6ms)[0m  [1m[33mUPDATE "events" SET "tags" = $1 WHERE "events"."id" = $2[0m  [["tags", "{Senior,STEM,Humanities,\"Free Food\",Social}"], ["id", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms | Allocations: 1324)
+
+
+Started GET "/events/2" for ::1 at 2022-12-01 11:58:41 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 583)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 10053)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 10475)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2/edit" for ::1 at 2022-12-01 11:58:46 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE (tags && array['Senior','STEM','Humanities','Social'])[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (tags && array['Senior','STEM','Humanities','Social'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2951)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 12420)
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.9ms | Allocations: 13249)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started PUT "/events/2" for ::1 at 2022-12-01 11:58:47 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wWVMT/xhPhjxe5zvCeUPokMKcaVkG/AmU8Jos40AwW3PO7Fr9jtFL7fXKeR7fxUa0NOwxY+1d8G8A0kKkarFwQ==", "event"=>{"name"=>"Social gathering", "datetime(1i)"=>"2022", "datetime(2i)"=>"12", "datetime(3i)"=>"1", "datetime(4i)"=>"16", "datetime(5i)"=>"00", "location"=>"Mudd", "description"=>"Debug the fun"}, "tags"=>{"Senior"=>"1", "STEM"=>"1", "Free Food"=>"1", "Social"=>"1"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Update (0.4ms)[0m  [1m[33mUPDATE "events" SET "tags" = $1 WHERE "events"."id" = $2[0m  [["tags", "{Senior,STEM,\"Free Food\",Social}"], ["id", 2]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms | Allocations: 1253)
+
+
+Started GET "/events/2" for ::1 at 2022-12-01 11:58:47 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 579)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 10049)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 10470)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2/edit" for ::1 at 2022-12-01 11:58:49 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE (tags && array['Senior','STEM','Social'])[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (tags && array['Senior','STEM','Social'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2950)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 12418)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 1.2ms | Allocations: 13238)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started PUT "/events/2" for ::1 at 2022-12-01 11:58:51 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZgiwuRqpeoRejkuIWooMCmrDN4XSvumxqSOyz33gAwZoVk2dEPMBsxgi/oMoEBay+Rr25TkQblZG4pN2YUoHqg==", "event"=>{"name"=>"Social gathering", "datetime(1i)"=>"2022", "datetime(2i)"=>"12", "datetime(3i)"=>"1", "datetime(4i)"=>"16", "datetime(5i)"=>"00", "location"=>"Mudd", "description"=>"Debug the fun"}, "tags"=>{"Senior"=>"1", "STEM"=>"1", "Free Food"=>"1", "Academic"=>"1", "Social"=>"1"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "tags" = $1 WHERE "events"."id" = $2[0m  [["tags", "{Senior,STEM,\"Free Food\",Academic,Social}"], ["id", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms | Allocations: 1251)
+
+
+Started GET "/events/2" for ::1 at 2022-12-01 11:58:51 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.1ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 582)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 10053)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.3ms | Allocations: 10474)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events/2/edit" for ::1 at 2022-12-01 11:58:53 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE (tags && array['Senior','STEM','Academic','Social'])[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (tags && array['Senior','STEM','Academic','Social'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2951)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 12419)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 1.0ms | Allocations: 13248)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started PUT "/events/2" for ::1 at 2022-12-01 11:58:55 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0rarFQnFrc+hmqUNuxynBuALEScil45zbbG9j2Qte8/c6FYxA5/W+Oc2EAbJhr2+c9LQR8k5CZSCcJw2eId/Yw==", "event"=>{"name"=>"Social gathering", "datetime(1i)"=>"2022", "datetime(2i)"=>"12", "datetime(3i)"=>"1", "datetime(4i)"=>"16", "datetime(5i)"=>"00", "location"=>"Mudd", "description"=>"Debug the fun"}, "tags"=>{"Senior"=>"1", "STEM"=>"1", "Free Food"=>"1", "Social"=>"1"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEvent Update (0.4ms)[0m  [1m[33mUPDATE "events" SET "tags" = $1 WHERE "events"."id" = $2[0m  [["tags", "{Senior,STEM,\"Free Food\",Social}"], ["id", 2]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms | Allocations: 1253)
+
+
+Started GET "/events/2" for ::1 at 2022-12-01 11:58:55 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mOrganizer Load (0.2ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 579)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 10049)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 10470)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started POST "/organization_logout" for ::1 at 2022-12-01 11:58:58 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"K/zcjBuz0holCy5VafwDN9lYiLVF2b4PzG+bPe7QxIYloiGoEempLWOnm14bZhmPSoFJ1a53OegjrrqE8nrAKg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 409)
+
+
+Started GET "/" for ::1 at 2022-12-01 11:58:58 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2154)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 11620)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 12651)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:58:58 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started POST "/student_login" for ::1 at 2022-12-01 11:59:00 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TIFH8uHXc2YGj5ePgfKL9Q0wcok3Ig4/noEg9MMAXuxOyOV1hUJdbPhyPH4t5OOeKzvBC+osAJWDay+6wABxMA==", "student"=>{"name"=>"a", "uni"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "a"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 556)
+
+
+Started GET "/events" for ::1 at 2022-12-01 11:59:00 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1398)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 10868)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 11818)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:59:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/about_event/2" for ::1 at 2022-12-01 11:59:02 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 634)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 10359)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.2ms | Allocations: 10908)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:59:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events" for ::1 at 2022-12-01 11:59:06 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"EqRImxo2aXVwZmsQsHyAtdq37+sUR6wklYhRgk9UIjAQ7eocfqNHf46bwOEcauje/LxcaclJoo6IYl7MTFQN7A=="}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 896)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 10364)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.6ms | Allocations: 11165)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:59:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/about_event/2" for ::1 at 2022-12-01 11:59:12 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 251)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2156376760 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 9976)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.2ms | Allocations: 10397)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:59:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events" for ::1 at 2022-12-01 11:59:35 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (3.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1397)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2172969880 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 11386)
+Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 4.0ms | Allocations: 12922)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:59:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/about_event/2" for ::1 at 2022-12-01 11:59:36 -0500
+Processing by EventsController#student_show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/student_show.html.erb within layouts/application
+  Rendered events/student_show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 596)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2172969880 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 10321)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 10870)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:59:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events" for ::1 at 2022-12-01 11:59:40 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"authenticity_token"=>"0d444OlwqOhYElbcOiY78E+uMH7UTdYb6c5F+4JsTGLTl5pnjeWG4qbv/S2WMFObaaWD/AlD2LH0JEq1gWxjvg=="}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 896)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2172969880 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 10364)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 11165)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:59:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
+Started GET "/events?utf8=%E2%9C%93&sort_by=id&tags%5BFreshman%5D=1&tags%5BSophomore%5D=1&tags%5BJunior%5D=1&tags%5BSenior%5D=1&tags%5BSTEM%5D=1&tags%5BHumanities%5D=1&tags%5BFree+Food%5D=1&tags%5BAcademic%5D=1&tags%5BProfessional%5D=1&tags%5BSocial%5D=1&commit=Refresh" for ::1 at 2022-12-01 11:59:55 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "sort_by"=>"id", "tags"=>{"Freshman"=>"1", "Sophomore"=>"1", "Junior"=>"1", "Senior"=>"1", "STEM"=>"1", "Humanities"=>"1", "Free Food"=>"1", "Academic"=>"1", "Professional"=>"1", "Social"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social'])[0m
+  Rendered events/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 894)
+DEPRECATION WARNING: The asset "inter-font.css" is not present in the asset pipeline.
+Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb___2949095285995074111_2172969880 at /Users/dhc/Downloads/bulletinboard/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 10362)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.5ms | Allocations: 11156)
+
+
+Started GET "/stylesheets/inter-font.css" for ::1 at 2022-12-01 11:59:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/inter-font.css"):
+  
