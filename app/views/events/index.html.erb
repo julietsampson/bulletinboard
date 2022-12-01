@@ -37,7 +37,7 @@
             <%= event.name %>
           </th>
           <td class="py-4 px-6">
-            <%= event.datetime %>
+            <%= event.datetime.strftime("%I:%M %p on %m/%d/%Y") %>
           </td>
           <td class="py-4 px-6">
             <%= event.location %>

@@ -18,11 +18,11 @@
         </div>
         <div class="col-span-6">
           <%= label :timeblock, :busy_start, 'Start time', :class => 'block text-sm font-medium text-gray-700' %>
-          <%= time_select :timeblock, :busy_start, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm', :ampm => true %>
+          <%= time_select :timeblock, :busy_start, :default => Time.now.beginning_of_day, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm', :ampm => true %>
         </div>
         <div class="col-span-6">
           <%= label :event, :busy_end, 'End time', :class => 'block text-sm font-medium text-gray-700' %>
-          <%= time_select :timeblock, :busy_end, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm', :ampm => true %>
+          <%= time_select :timeblock, :busy_end, :default => Time.now.beginning_of_day, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm', :ampm => true %>
         </div>
 
       </div>

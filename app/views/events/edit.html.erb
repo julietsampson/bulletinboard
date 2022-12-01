@@ -30,12 +30,12 @@
               <%= text_field :event, :name, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm' %>
             </div>
 
-            <div class="col-span-6 sm:col-span-3">
+            <div class="col-span-6 sm:col-span-4">
               <%= label :event, :datetime, 'Date and Time', :class => 'block text-sm font-medium text-gray-700' %>
-              <%= datetime_select :event, :datetime, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm' %>
+              <%= datetime_select :event, :datetime, :ampm => true, :order => [:day, :month, :year], :default => DateTime.now,:class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm' %>
             </div>
 
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-5">
               <%= label :event, :location, 'Location', :class => 'block text-sm font-medium text-gray-700' %>
               <%= text_field :event, :location, :class => 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm' %>
             </div>
