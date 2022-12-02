@@ -9,14 +9,13 @@
 
 <%= form_tag events_path, method: :get, id: 'tags_form' do %>
   <%= hidden_field_tag 'sort_by', @sort_by %>
-  Include:
   <% @all_tags.each do |tag| %>
     <div class="form-check  form-check-inline">
       <%= label_tag "tags[#{tag}]", tag, class: 'form-check-label' %>
       <%= check_box_tag "tags[#{tag}]", "1",  @tags_to_show_hash.include?(tag), class: 'form-check-input' %>
     </div>
   <% end %>
-  <%= submit_tag 'Refresh', id: 'tags_submit', :class => 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' %>
+  <%= submit_tag 'Filter', id: 'tags_submit', :class => 'text-blue-700 hover:text-white hover:bg-blue-800 border border-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2.5 mr-1 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' %>
 <% end %>
 
 <div class="mt-2 overflow-x-auto relative shadow-md sm:rounded-lg">
