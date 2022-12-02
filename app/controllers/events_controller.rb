@@ -66,19 +66,24 @@ class EventsController < ApplicationController
   end
 
   def create
-    tags_array = []
-    if (params[:tags])
-      params_array = params[:tags].keys
-      for tag in params_array
-        tags_array.append(tag)
+    if params[:event][:name].empty?
+      flash[:notice] = "Please fill in the required fields."
+      redirect_to new_event_path
+    else
+      tags_array = []
+      if (params[:tags])
+        params_array = params[:tags].keys
+        for tag in params_array
+          tags_array.append(tag)
+        end
       end
+      attributes = event_params.clone
+      attributes[:tags] = tags_array
+      @organizer = Organizer.find_by(id: session[:organizer_id])
+      @event = @organizer.events.create(attributes)
+      flash[:notice] = "#{@event.name} was successfully created."
+      redirect_to organizer_events_path('organizer_id': @organizer.id)
     end
-    attributes = event_params.clone
-    attributes[:tags] = tags_array
-    @organizer = Organizer.find_by(id: session[:organizer_id])
-    @event = @organizer.events.create(attributes)
-    flash[:notice] = "#{@event.name} was successfully created."
-    redirect_to organizer_events_path('organizer_id': @organizer.id)
   end
 
   def edit
@@ -91,19 +96,24 @@ class EventsController < ApplicationController
   end
 
   def update
-    tags_array = []
-    if (params[:tags])
-      params_array = params[:tags].keys
-      for tag in params_array
-        tags_array.append(tag)
+    if params[:event][:name].empty?
+      flash[:notice] = "Please fill in the required fields."
+      redirect_to edit_event_path(params[:id])
+    else
+      tags_array = []
+      if (params[:tags])
+        params_array = params[:tags].keys
+        for tag in params_array
+          tags_array.append(tag)
+        end
       end
+      attributes = event_params.clone
+      attributes[:tags] = tags_array
+      @event = Event.find params[:id]
+      @event.update(attributes)
+      flash[:notice] = "#{@event.name} was successfully updated."
+      redirect_to event_path(@event)
     end
-    attributes = event_params.clone
-    attributes[:tags] = tags_array
-    @event = Event.find params[:id]
-    @event.update(attributes)
-    flash[:notice] = "#{@event.name} was successfully updated."
-    redirect_to event_path(@event)
   end
 
   def destroy

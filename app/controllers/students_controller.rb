@@ -8,6 +8,9 @@ class StudentsController < ApplicationController
       elsif (@existing_student != nil)
         flash[:notice] = "An account with this UNI already exists. Please login instead. "
         redirect_to root_path
+      elsif (!params[:create_student][:uni].match?(/[a-z]+[0-9]+/))
+        flash[:notice] = "Please enter a valid UNI."
+        redirect_to root_path
       else
         @student = Student.create!(student_params)
         flash[:notice] = "Welcome #{@student.name}!"
@@ -95,9 +98,13 @@ class StudentsController < ApplicationController
       end
       start_datetime = DateTime.new(d.year, d.month, d.day, start_hour.to_i, start_min.to_i)
       end_datetime = DateTime.new(d.year, d.month, d.day, end_hour.to_i, end_min.to_i)
-      @student.timeblocks.create(busy_range: (start_datetime..end_datetime))
-      # convert this to start and end time on those dates, save it as a datetime range create new timeblock for student
-      flash[:notice] = "Schedule was successfully updated."
+      if start_datetime >= end_datetime
+        flash[:notice] = "Please enter a valid timeblock."
+      else
+        @student.timeblocks.create(busy_range: (start_datetime..end_datetime))
+        # convert this to start and end time on those dates, save it as a datetime range create new timeblock for student
+        flash[:notice] = "Schedule was successfully updated."
+      end
       redirect_to edit_schedule_path()
     end
 

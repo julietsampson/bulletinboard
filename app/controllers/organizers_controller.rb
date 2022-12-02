@@ -7,6 +7,9 @@ class OrganizersController < ApplicationController
       elsif (@existing_org != nil)
         flash[:notice] = "An account with this email already exists. Please login instead. "
         redirect_to root_path
+      elsif !URI::MailTo::EMAIL_REGEXP.match?(params[:create_organization][:email])
+        flash[:notice] = "Please enter a valid email."
+        redirect_to root_path
       else
         @organization = Organizer.create!(organization_params)
         flash[:notice] = "Welcome #{@organization.name}!"
