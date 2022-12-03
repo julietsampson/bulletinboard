@@ -9,8 +9,8 @@ Rottenpotatoes::Application.routes.draw do
   post 'student_update_path/:id' => 'students#update', as: :student_update
 
   resources :events
-  get 'student_login_page' => 'pages#student_login', as :student_login_page
-  get 'organizer_login_page' => 'pages#organizer_login' as :organizer_login_page
+  get 'student_login_page' => 'pages#student_login', as: :student_login_page
+  get 'organizer_login_page' => 'pages#organizer_login', as: :organizer_login_page
   get 'org_events' => 'events#organizer_index', as: :organizer_events
   get 'my_events' => 'students#my_events', as: :student_events
   get 'about_event/:id' => 'events#student_show', as: :about_event
