@@ -13,7 +13,7 @@
                   <%= label :student, :uni, 'UNI', :class => 'sr-only' %>
                   <%= text_field :student, :uni, :placeholder => "UNI", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
                   <%= label :student, :password, 'Password', :class => 'sr-only' %>
-                  <%= text_field :student, :password, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                  <%= password_field_tag "student[password]", nil, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500' %>
               </div>
               <br/>
               <%= submit_tag 'Student Login', :class => 'group relative flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>
@@ -30,7 +30,7 @@
                   <%= label :create_student, :uni, 'UNI?', :class => 'sr-only' %>
                   <%= text_field :create_student, :uni, :placeholder => "UNI", :class => 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
                   <%= label :create_student, :password, 'Password?', :class => 'sr-only' %>
-                  <%= text_field :create_student, :password, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
+                  <%= password_field_tag "create_student[password]", nil, :placeholder => "Password", :class => 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500' %>
               </div>
               <br/>
               <%= submit_tag 'Create Student Account', :class => 'group relative flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>
