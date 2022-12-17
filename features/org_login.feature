@@ -71,6 +71,14 @@ Scenario: Organization creates an account
   Then I should be on org events page for "User User"
   And I should see "Welcome User User!"
 
+Scenario: Organization creates an account with unsupported email
+  When I go to organizer sign in page
+  And I fill in 'Org Name?' with 'User User'
+  And I fill in 'Org Email?' with 'sedrft'
+  And I fill in 'Org Password?' with 'pass'
+  And I press "Create Organizer Account"
+  Then I should see "Please enter a valid email."
+
 Scenario: Organization logs out
   Given I am on org events page for "CucumberTestUser"
   When I follow "Logout"
