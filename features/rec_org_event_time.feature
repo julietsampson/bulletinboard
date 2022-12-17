@@ -12,7 +12,7 @@ Background:
   And a valid student with name "Abby", uni "a1234", password "pass", and tags "Junior", "Humanities"
   And a valid student with name "Bella", uni "b1234", password "pass", and tags "Junior", "Humanities"
   And the student with uni "a1234" is busy on "Monday" from 09:00 to 10:00
-  And I am on sign in page
+  And I am on organizer sign in page
   When I fill in 'Org Name' with 'CucumberTestUser'
   And I fill in 'Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'pass'

@@ -5,7 +5,7 @@ Feature: manage events as a student
 
 Background: 
   Given a valid student user
-  And I am on the sign in page
+  And I am on student sign in page
   And the following events exist:
     | name                   | datetime    | location    | description | tags |
     | pumpkin carving        | 31-Oct-2022 | East Campus | Fun!        | Freshman, STEM |
@@ -22,14 +22,14 @@ Background:
 Scenario: View all created events
   Given I check the following tags: Freshman,Sophomore,Junior,Senior,STEM,Humanities
   And I check "Free Food" checkbox
-  And I press "Refresh"
+  And I press "Filter"
   Then I should see all the events
 
 Scenario: Filter existing events
   When I check the following tags: Freshman,STEM
   And I uncheck the following tags: Sophomore,Junior,Senior,Humanities
   And I uncheck "Free Food" checkbox
-  When I press "Refresh" 
+  When I press "Filter" 
   Then I should see "pumpkin carving"
   Then I should not see "movie night"
 

@@ -10,7 +10,7 @@ Background:
 
 Scenario: Organization signs in with correct credentials
 
-  When I go to sign in page
+  When I go to organizer sign in page
   And I fill in 'Org Name' with 'CucumberTestUser'
   And I fill in 'Org Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'pass'
@@ -20,7 +20,7 @@ Scenario: Organization signs in with correct credentials
   
 Scenario: Organization tries to sign in with incorrect password
 
-  When I go to sign in page
+  When I go to organizer sign in page
   And I fill in 'Org Name' with 'CucumberTestUser'
   And I fill in 'Org Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'bla'
@@ -29,7 +29,7 @@ Scenario: Organization tries to sign in with incorrect password
 
 Scenario: Organization tries to sign in with incorrect organization name
 
-  When I go to sign in page
+  When I go to organizer sign in page
   And I fill in 'Org Name' with 'User'
   And I fill in 'Org Email' with 'ab@columbia.edu'
   And I fill in 'Org Password' with 'pass'
@@ -38,7 +38,7 @@ Scenario: Organization tries to sign in with incorrect organization name
 
 Scenario: Organization tries to sign in with unknown email
 
-  When I go to sign in page
+  When I go to organizer sign in page
   And I fill in 'Org Name' with 'CucumberTestUser'
   And I fill in 'Org Email' with 'test@columbia.edu'
   And I fill in 'Org Password' with 'pass'
@@ -47,7 +47,7 @@ Scenario: Organization tries to sign in with unknown email
 
 
 Scenario: Organization does not fill out all fields to create an account
-  When I go to sign in page
+  When I go to organizer sign in page
   And I fill in 'Org Name?' with ''
   And I fill in 'Org Email?' with 'ab@columbia.edu'
   And I fill in 'Org Password?' with 'bla'
@@ -55,7 +55,7 @@ Scenario: Organization does not fill out all fields to create an account
   Then I should see "Please fill out all of the fields."
 
 Scenario: Organization tries to create an account with a preexisting email
-  When I go to sign in page
+  When I go to organizer sign in page
   And I fill in 'Org Name?' with 'testing'
   And I fill in 'Org Email?' with 'ab@columbia.edu'
   And I fill in 'Org Password?' with 'pass'
@@ -63,7 +63,7 @@ Scenario: Organization tries to create an account with a preexisting email
   Then I should see "An account with this email already exists. Please login instead. "
 
 Scenario: Organization creates an account
-  When I go to sign in page
+  When I go to organizer sign in page
   And I fill in 'Org Name?' with 'User User'
   And I fill in 'Org Email?' with 'sedrft@columbia.edu'
   And I fill in 'Org Password?' with 'pass'
@@ -74,4 +74,4 @@ Scenario: Organization creates an account
 Scenario: Organization logs out
   Given I am on org events page for "CucumberTestUser"
   When I follow "Logout"
-  Then I should be on sign in page
+  Then I should be on start page

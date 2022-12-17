@@ -5,7 +5,7 @@ Feature: manage profile as a student
 
 Background: 
   Given a valid student user
-  And I am on the sign in page
+  And I am on student sign in page
   And the following events exist:
     | name                   | datetime    | location    | description | tags |
     | pumpkin carving        | 31-Oct-2022 | East Campus | Fun!        | Freshman, STEM |
