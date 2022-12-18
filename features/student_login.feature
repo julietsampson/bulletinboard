@@ -68,3 +68,11 @@ Scenario: Student creates an account
   And I fill in 'Password?' with 'pass'
   And I press "Create Student Account"
   Then I should see "Welcome User User!"
+
+Scenario: Student creates an account with unsupported uni
+  When I go to student sign in page
+  And I fill in 'Name?' with 'User User'
+  And I fill in 'UNI?' with 'sss'
+  And I fill in 'Password?' with 'pass'
+  And I press "Create Student Account"
+  Then I should see "Please enter a valid UNI."

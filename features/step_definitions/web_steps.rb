@@ -137,7 +137,7 @@ When /I check the following tags: (.*)/ do |tags_list|
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
   tags_list.split(',').each do |tag|
-      check("tags_#{tag}")
+      check("#{tag}")
   end
 end
 
@@ -146,7 +146,7 @@ When /I uncheck the following tags: (.*)/ do |tags_list|
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
   tags_list.split(',').each do |tag|
-      uncheck("tags_#{tag}")
+      uncheck("#{tag}")
   end
 end
 

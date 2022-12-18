@@ -33,6 +33,31 @@ Scenario: Filter existing events
   Then I should see "pumpkin carving"
   Then I should not see "movie night"
 
+Scenario: Filter based on availability
+  When I press "My Profile"
+  Then I should go to my profile page
+  When I follow "View Schedule"
+  Then I should go to my schedule page
+  When I follow "Edit Schedule"
+  Then I should go to edit schedule page
+  Given I am on edit schedule page
+  When I select "Sunday" from "Day"
+  And I select time "12 AM:00" from "timeblock_busy_start"
+  And I select time "11 PM:59" from "timeblock_busy_end"
+  And I press "Add"
+  Then I should see "Schedule was successfully updated."
+  And I press "All Events"
+  Then I am on event page
+  Given I check the following tags: Freshman,Sophomore,Junior,Senior,STEM,Humanities
+  And I uncheck the following tags: When I'm Free
+  And I press "Filter"
+  Then I should see all the events
+  When I check the following tags: When I'm Free
+  When I press "Filter" 
+  Then I should see "pumpkin carving"
+  Then I should not see "movie night"
+  
+
 Scenario: Add event to my event list and try readding and deleting it
   When I go to the about page for "pumpkin carving"
   When I follow "Add"

@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     student_id = session[:student_id]
     id = params[:id]
     @student = Student.find(student_id)
-    @all_tags = Event.all_tags + ["When I'm Free"]
+    @all_tags = Event.all_tags 
     relevant_events = Event.with_tags(tags_list, sort_by)
     if (tags_list.include?("When I'm Free")== false)
       @events = relevant_events
