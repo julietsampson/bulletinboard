@@ -23,18 +23,20 @@ class EventsController < ApplicationController
     else
       @events = []
       for event in relevant_events
-        day = day_order_list[event.datetime.wday]
-        free = true
-        for tb in @student.weekday_schedule[day]
-          t_str =  day_date_mapping[day] + event.datetime.to_s(:time)
-          t = DateTime.parse(t_str)
-          if (t.between?(tb[:busy_range].begin, tb[:busy_range].end))
-            free = false
-            break
+        if event.datetime
+          free = true
+          day = day_order_list[event.datetime.wday]
+          for tb in @student.weekday_schedule[day]
+            t_str =  day_date_mapping[day] + event.datetime.to_s(:time)
+            t = DateTime.parse(t_str)
+            if (t.between?(tb[:busy_range].begin, tb[:busy_range].end))
+              free = false
+              break
+            end
           end
-        end
-        if (free)
-          @events.append(event)
+          if (free)
+            @events.append(event)
+          end
         end
       end
     end
@@ -66,7 +68,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    if params[:event][:name].empty?
+    if params[:event][:name] && params[:event][:name].empty?
       flash[:notice] = "Please fill in the required fields."
       redirect_to new_event_path
     else
@@ -96,7 +98,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    if params[:event][:name].empty?
+    if params[:event][:name] && params[:event][:name].empty?
       flash[:notice] = "Please fill in the required fields."
       redirect_to edit_event_path(params[:id])
     else

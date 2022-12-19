@@ -7,6 +7,10 @@ describe OrganizersController do
             expect {post :create, params: {create_organization: {name: "New org", email: "", password: ""}}}.to change {Organizer.count}.by(0)
         end
 
+        it 'refuses to create an organizer with an invalid email' do
+            expect {post :create, params: {create_organization: {name: "New org", email: "not_an_email", password: "test"}}}.to change {Organizer.count}.by(0)
+        end
+
         it 'creates a new organizer when given all params, and only if an account with this email does not already exist' do
             expect {post :create, params: {create_organization: {name: "New org", email: "neworg@gmail.com", password: "password"}}}.to change {Organizer.count}.by(1)
             expect {post :create, params: {create_organization: {name: "New org", email: "neworg@gmail.com", password: "password"}}}.to change {Organizer.count}.by(0)

@@ -12,9 +12,13 @@ describe StudentsController do
             expect {post :create, params: {create_student: {name: "New student", uni: "", password: ""}}}.to change {Student.count}.by(0)
         end
 
+        it 'refuses to create a student with invalid UNI' do
+            expect {post :create, params: {create_student: {name: "New student", uni: "xxxxxx", password: "test"}}}.to change {Student.count}.by(0)
+        end
+
         it 'creates a new student when given all params, and only if an account with this uni does not already exist' do
-            expect {post :create, params: {create_student: {name: "New stud", uni: "XXXX", password: "password"}}}.to change {Student.count}.by(1)
-            expect {post :create, params: {create_student: {name: "New student", uni: "XXXX", password: "password"}}}.to change {Organizer.count}.by(0)
+            expect {post :create, params: {create_student: {name: "New stud", uni: "ab1234", password: "password"}}}.to change {Student.count}.by(1)
+            expect {post :create, params: {create_student: {name: "New student", uni: "ab1234", password: "password"}}}.to change {Organizer.count}.by(0)
         end
     end
 
@@ -88,6 +92,7 @@ describe StudentsController do
     end
 
     describe 'POST update_schedule' do
+        student = Student.create({name: "test", uni: "ab4699", password: "password"})
         d = Date.new(1996,1,1)
         timeblock1 = {:weekday => "Monday", :busy_start => d.beginning_of_day, :busy_end => d.end_of_day}
         timeblock2 = {:weekday => "Tuesday", :busy_start => d.beginning_of_day, :busy_end => d.end_of_day}
@@ -97,15 +102,21 @@ describe StudentsController do
         timeblock6 = {:weekday => "Saturday", :busy_start => d.beginning_of_day, :busy_end => d.end_of_day}
         timeblock7 = {:weekday => "Sunday", :busy_start => d.beginning_of_day, :busy_end => d.end_of_day}
         it 'should be able to add a new timeblock to the student\'s schedule for every day of the week' do
-            request.session[:student_id] = Student.first.id
-            expect {post :update_schedule, params: {:timeblock => timeblock1}}.to change {Student.first.timeblocks.count}.by(1)
-            expect {post :update_schedule, params: {:timeblock => timeblock2}}.to change {Student.first.timeblocks.count}.by(1)
-            expect {post :update_schedule, params: {:timeblock => timeblock3}}.to change {Student.first.timeblocks.count}.by(1)
-            expect {post :update_schedule, params: {:timeblock => timeblock4}}.to change {Student.first.timeblocks.count}.by(1)
-            expect {post :update_schedule, params: {:timeblock => timeblock5}}.to change {Student.first.timeblocks.count}.by(1)
-            expect {post :update_schedule, params: {:timeblock => timeblock6}}.to change {Student.first.timeblocks.count}.by(1)
-            expect {post :update_schedule, params: {:timeblock => timeblock7}}.to change {Student.first.timeblocks.count}.by(1)
+            request.session[:student_id] = student.id
+            expect {post :update_schedule, params: {:timeblock => timeblock1}}.to change {student.timeblocks.count}.by(1)
+            expect {post :update_schedule, params: {:timeblock => timeblock2}}.to change {student.timeblocks.count}.by(1)
+            expect {post :update_schedule, params: {:timeblock => timeblock3}}.to change {student.timeblocks.count}.by(1)
+            expect {post :update_schedule, params: {:timeblock => timeblock4}}.to change {student.timeblocks.count}.by(1)
+            expect {post :update_schedule, params: {:timeblock => timeblock5}}.to change {student.timeblocks.count}.by(1)
+            expect {post :update_schedule, params: {:timeblock => timeblock6}}.to change {student.timeblocks.count}.by(1)
+            expect {post :update_schedule, params: {:timeblock => timeblock7}}.to change {student.timeblocks.count}.by(1)
+            post :update_schedule, params: {:timeblock => timeblock1}
             expect(response).to redirect_to(edit_schedule_path())
+        end
+        bad_timeblock = {:weekday => "Monday", :busy_start => d.beginning_of_day, :busy_end => d.beginning_of_day}
+        it 'should not add a timeblock with invalid times to the student\'s schedule' do
+            request.session[:student_id] = student.id
+            expect {post :update_schedule, params: {:timeblock => bad_timeblock}}.to change {student.timeblocks.count}.by(0)
         end
     end
 
