@@ -2674,3 +2674,290 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 27ms (Views: 18.3ms | ActiveRecord: 2.9ms | Allocations: 27567)
 
 
+Started GET "/" for ::1 at 2022-12-18 11:14:05 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 486)
+  Rendered layouts/_flash.erb (Duration: 0.7ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 162.2ms | Allocations: 316702)
+Completed 200 OK in 178ms (Views: 166.3ms | Allocations: 320232)
+
+
+Started GET "/assets/tailwind.self-0b53a3269849392c285a9bd860fcc923ecebcf8c0b93877cd37a592db2e66cba.css?body=1" for ::1 at 2022-12-18 11:14:06 -0500
+Started GET "/assets/inter-font.self-b09c62c2a5577703b8b6c61fe76b6169c89d746dbe28f44da83161702a0d90ef.css?body=1" for ::1 at 2022-12-18 11:14:06 -0500
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-12-18 11:14:06 -0500
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-12-18 11:14:06 -0500
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2022-12-18 11:14:06 -0500
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2022-12-18 11:14:06 -0500
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2022-12-18 11:14:06 -0500
+Started GET "/student_login_page" for ::1 at 2022-12-18 11:14:07 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 33.1ms | Allocations: 1852)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 46.0ms | Allocations: 20350)
+Completed 200 OK in 47ms (Views: 46.4ms | Allocations: 20724)
+
+
+Started POST "/student_login" for ::1 at 2022-12-18 11:14:22 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYrewO80Kix7E2wLcgKAzW9c1nBm54wFxJos0idT9TLTqNF5VPXgmMVhfrFBB7yxOmrIb1yxmi6XL6jNsfsaqw==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+Completed 500 Internal Server Error in 46ms (Allocations: 22006)
+
+
+  
+ActiveRecord::ConnectionNotEstablished (connection to server on socket "/tmp/.s.PGSQL.5433" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+):
+  
+app/controllers/students_controller.rb:23:in `login'
+Started POST "/student_login" for ::1 at 2022-12-18 11:15:27 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YYrewO80Kix7E2wLcgKAzW9c1nBm54wFxJos0idT9TLTqNF5VPXgmMVhfrFBB7yxOmrIb1yxmi6XL6jNsfsaqw==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+Completed 500 Internal Server Error in 1ms (Allocations: 1310)
+
+
+  
+ActiveRecord::ConnectionNotEstablished (connection to server on socket "/tmp/.s.PGSQL.5433" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+):
+  
+app/controllers/students_controller.rb:23:in `login'
+Started GET "/student_login_page" for ::1 at 2022-12-18 11:15:41 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2122)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 136.9ms | Allocations: 318322)
+Completed 200 OK in 146ms (Views: 140.3ms | Allocations: 321309)
+
+
+Started POST "/student_login" for ::1 at 2022-12-18 11:15:47 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r/9/lgRfnfZYTDmPVz9OvumO26zX47fK3HiVzVUab9cd3XAvv55XQuY+KzVkOnLCvLjFs+21oeGPzRHSw7KATg==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (2.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 146ms (ActiveRecord: 69.0ms | Allocations: 32427)
+
+
+Started GET "/events" for ::1 at 2022-12-18 11:15:47 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (6.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social','When I''m Free'])[0m
+  [1m[36mTimeblock Load (3.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1338)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 19846)
+Completed 200 OK in 84ms (Views: 14.8ms | ActiveRecord: 14.2ms | Allocations: 33408)
+
+
+Started GET "/" for ::1 at 2022-12-18 11:15:52 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 245)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 18751)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 19405)
+
+
+Started GET "/organizer_login_page" for ::1 at 2022-12-18 11:15:54 -0500
+Processing by PagesController#organizer_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/organizer_login.html.erb within layouts/application
+  Rendered pages/organizer_login.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1383)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 19887)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 20261)
+
+
+Started POST "/organization_login" for ::1 at 2022-12-18 11:16:11 -0500
+Processing by OrganizersController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rDC5cCT7XnpILWFOTsRWq+XCTLockAqrybnRRGKCzn8eErbJnzqUzvZfc/R9wWrXsPRSpSbGHICaDFVb9Coh5g==", "organization"=>{"name"=>"swe", "email"=>"swe@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Organization Login"}
+  [1m[36mOrganizer Load (1.6ms)[0m  [1m[34mSELECT "organizers".* FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "swe@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/org_events?organizer_id=1
+Completed 302 Found in 9ms (ActiveRecord: 3.5ms | Allocations: 3771)
+
+
+Started GET "/org_events?organizer_id=1" for ::1 at 2022-12-18 11:16:11 -0500
+Processing by EventsController#organizer_index as HTML
+  Parameters: {"organizer_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering events/organizer_index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  Rendered events/organizer_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 597)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 19365)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms | Allocations: 19814)
+
+
+Started POST "/organization_logout" for ::1 at 2022-12-18 11:16:13 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"81nSxf6mvkA96PnQTna63kPL10eBRh68BDZ4As61y0RBe918RWd09IOa62p9c4aiFv3JWLsQCJdXg/wdWB0k3Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 413)
+
+
+Started GET "/" for ::1 at 2022-12-18 11:16:13 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 102)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 18616)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 19128)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-18 11:16:16 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 890)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 19397)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.0ms | Allocations: 19671)
+
+
+Started POST "/new_student" for ::1 at 2022-12-18 11:22:34 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2i2a6sDDPnhUdpvcfQskZ4kU6qqZRehrg1X7DtC479rJiIIEwAJHUmfuE7waqc3saLXMhMAgUHjAqfUSBQsjeA==", "create_student"=>{"name"=>"SK_3", "uni"=>"uni", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "uni"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 73ms (ActiveRecord: 7.0ms | Allocations: 31212)
+
+
+Started GET "/" for ::1 at 2022-12-18 11:22:34 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 470)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 140.7ms | Allocations: 316669)
+Completed 200 OK in 146ms (Views: 144.0ms | ActiveRecord: 0.0ms | Allocations: 319136)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-18 11:22:44 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1841)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 20345)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 20719)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-18 11:26:19 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1352)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 20383)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 21341)
+
+
+Started POST "/new_student" for ::1 at 2022-12-18 11:26:55 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/qHn4MvyDLLLRrQ6EpvQsQpJCHOfmUC6bTbrtS42dYntBP8OyzN1mPjePFp1OTk66+guXcb8+KkuyuWp+4W5Kw==", "create_student"=>{"name"=>"SK", "uni"=>"sk4666", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4666"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms | Allocations: 3713)
+
+
+Started GET "/" for ::1 at 2022-12-18 11:26:55 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 236)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 18749)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 19403)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-18 11:26:59 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 890)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 19396)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 19671)
+
+
+Started POST "/new_student" for ::1 at 2022-12-18 11:27:11 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j4nP35dy2wqkq6cTvk5PaSSOIsdxZR5kB6F+crhHLJScLNcxl7OiIJczL3PZ7KbixS8E6SgApndEXXBubfTgNg==", "create_student"=>{"name"=>"SK", "uni"=>"email1@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "email1@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (1.4ms)[0m  [1m[32mINSERT INTO "students" ("uni", "name", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["uni", "email1@columbia.edu"], ["name", "SK"], ["password", "pass"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 10ms (ActiveRecord: 4.8ms | Allocations: 3703)
+
+
+Started GET "/events" for ::1 at 2022-12-18 11:27:11 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social','When I''m Free'])[0m
+  [1m[36mTimeblock Load (0.8ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 140]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1330)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 19837)
+Completed 200 OK in 55ms (Views: 27.2ms | ActiveRecord: 5.4ms | Allocations: 33392)
+
+
+Started GET "/" for ::1 at 2022-12-18 11:27:13 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 102)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 18611)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 19145)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-18 11:27:15 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 906)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 19412)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 19686)
+
+
+Started POST "/new_student" for ::1 at 2022-12-18 11:27:21 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"15lt4WNKTBWtD/8PTsKO0HZKb7JrPeVuN8kQ6uk1THLEPHUPY4s1P56Xd28pYGdbl+tJnDJYXX10NR72PIaA0A==", "create_student"=>{"name"=>"SK", "uni"=>"fytguhi", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "fytguhi"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms | Allocations: 560)
+
+
+Started GET "/" for ::1 at 2022-12-18 11:27:21 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 18605)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 19148)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-18 11:27:22 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 903)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 19409)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 19683)
+
+

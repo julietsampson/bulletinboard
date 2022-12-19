@@ -14,7 +14,7 @@ Background:
     | name                   | datetime    | location    | description     | tags |
     | movie night            | 30-Oct-2022 | Lerner      | Marvel marathon | popcorn |
   And I fill in 'Name' with 'CucumberTestStudent'
-  And I fill in 'UNI' with 'ab1234'
+  And I fill in 'UNI' with 'ab1234@columbia.edu'
   And I fill in 'Password' with 'pass'
   And I press "Student Login"
   Then I am on event page
@@ -67,7 +67,7 @@ Scenario: View and update schedule
     And I select time "04 AM:15" from "timeblock_busy_end"
     And I press "Add"
     Then I should see "Schedule was successfully updated."
-    When I,"ab1234", click "Remove" for "Monday" from 01:15 to 02:15
+    When I,"ab1234@columbia.edu", click "Remove" for "Monday" from 01:15 to 02:15
     Then I should not see "1:15 AM - 2:15 AM"
     
 

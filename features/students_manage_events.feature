@@ -14,7 +14,7 @@ Background:
     | name                   | datetime    | location    | description     | tags |
     | movie night            | 30-Oct-2022 | Lerner      | Marvel marathon | Junior, Humanities, Free Food |
   And I fill in 'Name' with 'CucumberTestStudent'
-  And I fill in 'UNI' with 'ab1234'
+  And I fill in 'UNI' with 'ab1234@columbia.edu'
   And I fill in 'Password' with 'pass'
   And I press "Student Login"
   Then I am on event page

@@ -1,7 +1,7 @@
 Given /^a valid student user$/ do
   @student = Student.create!({
         :name => "CucumberTestStudent",
-        :uni => "ab1234",
+        :uni => "ab1234@columbia.edu",
         :password => "pass",
       })
 end

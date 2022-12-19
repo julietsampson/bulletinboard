@@ -6,10 +6,10 @@ class StudentsController < ApplicationController
         flash[:notice] = "Please fill out all of the fields."
         redirect_to root_path
       elsif (@existing_student != nil)
-        flash[:notice] = "An account with this UNI already exists. Please login instead. "
+        flash[:notice] = "An account with this email already exists. Please login instead. "
         redirect_to root_path
-      elsif (!params[:create_student][:uni].match?(/[a-z]+[0-9]+/))
-        flash[:notice] = "Please enter a valid UNI."
+      elsif (!params[:create_student][:uni].match?(/[a-z]+[0-9]+@columbia.edu/))
+        flash[:notice] = "Please enter a valid Columbia student email."
         redirect_to root_path
       else
         @student = Student.create!(student_params)

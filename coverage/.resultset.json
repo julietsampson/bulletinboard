@@ -1,36 +1,36 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/dhc/Downloads/bulletinboard/app/models/organizer.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/organizer.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/models/student.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/student.rb": {
         "lines": [
           1,
           1,
           1,
           null,
           1,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
-          267,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
+          288,
           null,
           null,
           1,
@@ -39,7 +39,7 @@
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/controllers/pages_controller.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/pages_controller.rb": {
         "lines": [
           1,
           1,
@@ -50,7 +50,7 @@
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/controllers/application_controller.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -59,13 +59,13 @@
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/helpers/application_helper.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/controllers/organizers_controller.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/organizers_controller.rb": {
         "lines": [
           1,
           1,
@@ -119,7 +119,7 @@
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/controllers/events_controller.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/events_controller.rb": {
         "lines": [
           1,
           null,
@@ -146,9 +146,9 @@
           null,
           21,
           21,
-          35,
-          35,
-          35,
+          56,
+          56,
+          56,
           3,
           3,
           3,
@@ -156,8 +156,8 @@
           3,
           null,
           null,
-          35,
-          32,
+          56,
+          53,
           null,
           null,
           null,
@@ -304,7 +304,7 @@
           null,
           null,
           1,
-          35,
+          56,
           null,
           null,
           1,
@@ -314,7 +314,7 @@
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/models/event.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/event.rb": {
         "lines": [
           1,
           1,
@@ -329,14 +329,14 @@
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/models/timeblock.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/models/timeblock.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/dhc/Downloads/bulletinboard/app/controllers/students_controller.rb": {
+      "/Users/sindhukrishnamurthy/Documents/Columbia University/Senior Year/bulletinboard/app/controllers/students_controller.rb": {
         "lines": [
           1,
           null,
@@ -484,7 +484,7 @@
         ]
       }
     },
-    "timestamp": 1671245530
+    "timestamp": 1671381509
   },
   "RSpec": {
     "coverage": {
