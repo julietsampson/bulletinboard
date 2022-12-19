@@ -23,18 +23,20 @@ class EventsController < ApplicationController
     else
       @events = []
       for event in relevant_events
-        day = day_order_list[event.datetime.wday]
-        free = true
-        for tb in @student.weekday_schedule[day]
-          t_str =  day_date_mapping[day] + event.datetime.to_s(:time)
-          t = DateTime.parse(t_str)
-          if (t.between?(tb[:busy_range].begin, tb[:busy_range].end))
-            free = false
-            break
+        if event.datetime
+          free = true
+          day = day_order_list[event.datetime.wday]
+          for tb in @student.weekday_schedule[day]
+            t_str =  day_date_mapping[day] + event.datetime.to_s(:time)
+            t = DateTime.parse(t_str)
+            if (t.between?(tb[:busy_range].begin, tb[:busy_range].end))
+              free = false
+              break
+            end
           end
-        end
-        if (free)
-          @events.append(event)
+          if (free)
+            @events.append(event)
+          end
         end
       end
     end

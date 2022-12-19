@@ -19,6 +19,22 @@ describe EventsController do
           get :index
           expect(response).to render_template('index')
         end
+        it 'should only show events that the student is free for if requested' do
+          d = Date.new(1996,1,2)
+          start_datetime = DateTime.new(d.year, d.month, d.day, 9, 30)
+          end_datetime = DateTime.new(d.year, d.month, d.day, 12, 30)
+          good_datetime = DateTime.new(d.year, d.month, d.day, 8, 30)
+          bad_datetime = DateTime.new(d.year, d.month, d.day, 10, 30)
+          event1 = Event.create(:name => "convenient", :datetime => good_datetime)
+          event2 = Event.create(:name => "inconvenient", :datetime => bad_datetime)
+          student.timeblocks.create(busy_range: (start_datetime..end_datetime))
+          student.update!(:tags => ["When I'm Free"])
+          student.reload
+          request.session[:student_id] = student.id
+          get :index, params: {tags: {"When I'm Free" => 1}}
+          assigns(:events).should eq([event1])
+          expect(response).to render_template('index')
+        end
     end
 
     describe 'GET new' do
@@ -37,6 +53,14 @@ describe EventsController do
     end
 
     describe 'POST update' do
+        it 'does not update an event without the required fields completed' do
+          new_event = Event.create(:name => "test event")
+          new_attr = {:name => "", :location => 'Butler'}
+          put :update, params: {id: new_event.id, event: new_attr, tags: {"Sophomore" => 1, "Humanities" => 1}}
+          new_event.reload
+          expect(new_event.location).to_not eq('Butler')
+          expect(new_event.tags).to_not eq(["Humanities", "Sophomore"])
+        end
         it 'saves an event\'s updated details' do
             new_event = Event.create(:name => "test event")
             new_attr = {:location => 'Butler'}
@@ -69,7 +93,11 @@ describe EventsController do
     end
 
     describe 'POST #create' do
-        it 'creates a new event' do
+        it 'refuses to create an event without the required fields completed' do
+          request.session[:organizer_id] = Organizer.first.id
+          expect {post :create, params: {event: {name: ""}, tags: {"Freshman" => 1, "STEM" => 1}}}.to change {Event.count}.by(0)
+        end
+        it 'creates a new event when all required fields are completed' do
           request.session[:organizer_id] = Organizer.first.id
           expect {post :create, params: {event: {name: "New event"}, tags: {"Freshman" => 1, "STEM" => 1}}}.to change {Event.count}.by(1)
         end
