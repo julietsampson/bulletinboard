@@ -66,7 +66,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    if params[:event][:name].empty?
+    if params[:event][:name] && params[:event][:name].empty?
       flash[:notice] = "Please fill in the required fields."
       redirect_to new_event_path
     else
@@ -96,7 +96,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    if params[:event][:name].empty?
+    if params[:event][:name] && params[:event][:name].empty?
       flash[:notice] = "Please fill in the required fields."
       redirect_to edit_event_path(params[:id])
     else

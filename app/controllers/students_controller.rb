@@ -77,10 +77,10 @@ class StudentsController < ApplicationController
     def update_schedule
       @student = Student.find(session[:student_id])
       weekday = timeblock_params[:weekday]
-      start_hour = timeblock_params["busy_start(4i)"]
-      start_min = timeblock_params["busy_start(5i)"]
-      end_hour = timeblock_params["busy_end(4i)"]
-      end_min =  timeblock_params["busy_end(5i)"]
+      start_hour = timeblock_params[:busy_start][11,2]
+      start_min = timeblock_params[:busy_start][14,2]
+      end_hour = timeblock_params[:busy_end][11,2]
+      end_min =  timeblock_params[:busy_end][14,2]
       if weekday == "Monday"
         d = Date.new(1996,1,1)
       elsif weekday == "Tuesday"
