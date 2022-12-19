@@ -2961,3 +2961,898 @@ Processing by PagesController#student_login as HTML
 Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 19683)
 
 
+Started GET "/" for ::1 at 2022-12-19 14:54:04 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 486)
+  Rendered layouts/_flash.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 142.5ms | Allocations: 316695)
+Completed 200 OK in 158ms (Views: 146.1ms | Allocations: 320411)
+
+
+Started GET "/assets/tailwind.self-0b53a3269849392c285a9bd860fcc923ecebcf8c0b93877cd37a592db2e66cba.css?body=1" for ::1 at 2022-12-19 14:54:04 -0500
+Started GET "/assets/inter-font.self-b09c62c2a5577703b8b6c61fe76b6169c89d746dbe28f44da83161702a0d90ef.css?body=1" for ::1 at 2022-12-19 14:54:04 -0500
+Started GET "/assets/application.tailwind.self-be8f2baffd65c491f65f5a5d6adf46da746581842856e0051c6713498d6c2065.css?body=1" for ::1 at 2022-12-19 14:54:04 -0500
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2022-12-19 14:54:04 -0500
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2022-12-19 14:54:04 -0500
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2022-12-19 14:54:04 -0500
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2022-12-19 14:54:04 -0500
+Started GET "/student_login_page" for ::1 at 2022-12-19 14:54:17 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1866)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 20363)
+Completed 200 OK in 20ms (Views: 19.1ms | Allocations: 20738)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 15:29:59 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2140)
+  Rendered layouts/_flash.erb (Duration: 0.4ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 132.8ms | Allocations: 318340)
+Completed 200 OK in 144ms (Views: 135.9ms | Allocations: 321327)
+
+
+Started POST "/student_login" for ::1 at 2022-12-19 15:30:04 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L7yjHDW7ZXO6TVQBHISv62yu1uKBrgEaVEiGaVRdKJE8GbvyNXocWYnV3GF7JkZgjQ/wzNjLuQkXtIh1ge7kMw==", "student"=>{"name"=>"SK", "uni"=>"sk4699", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 6.7ms | Allocations: 29946)
+
+
+Started GET "/" for ::1 at 2022-12-19 15:30:04 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 252)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 18760)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 19434)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 15:30:23 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 906)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 19413)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms | Allocations: 19688)
+
+
+Started POST "/student_login" for ::1 at 2022-12-19 15:30:31 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pycaj59GXACzqkkizYFYtJmUDg9lkz9lVyxpZ6+WH7O0ggJhn4clKoAywUKqI7E/eDUoITz2h3YU0Gd7eiXTEQ==", "student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 3.3ms | Allocations: 3035)
+
+
+Started GET "/" for ::1 at 2022-12-19 15:30:31 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 18605)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 19150)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 15:30:37 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 903)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 19409)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 19683)
+
+
+Started POST "/student_login" for ::1 at 2022-12-19 15:30:58 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7QpVpfq6P0cc4sasHQoIh83qxe909DmS+qRHoMdQXUD+r01L+ntGbS96Tsx6qOEMLEvjwS2RgYG5WEm8EuOR4g==", "student"=>{"name"=>"SK", "uni"=>"uni1", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "uni1"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 549)
+
+
+Started GET "/" for ::1 at 2022-12-19 15:30:58 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 18605)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.0ms | Allocations: 19150)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2022-12-19 20:32:02.666458"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (3.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (21.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-19 20:32:12.210735"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+Started GET "/student_login_page" for ::1 at 2022-12-19 15:32:37 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2140)
+  Rendered layouts/_flash.erb (Duration: 0.7ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 134.2ms | Allocations: 318340)
+Completed 200 OK in 144ms (Views: 138.2ms | Allocations: 321327)
+
+
+Started POST "/student_login" for ::1 at 2022-12-19 15:32:44 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iJtOBfTBN0reg2TjUlb64Xqrr4qdHM/PuiF4Ll7iD/qbPlbr9ABOYO0b7IM19BNqmwqJpMR5d9z53XYyi1HDWA==", "student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 101ms (ActiveRecord: 6.7ms | Allocations: 29947)
+
+
+Started GET "/" for ::1 at 2022-12-19 15:32:44 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 253)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 18762)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 19437)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 15:32:47 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 906)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 19412)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 19687)
+
+
+Started POST "/new_student" for ::1 at 2022-12-19 15:32:54 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4m4ytZK2y5naPvDKPO9mhDsrDBhP2hKqjSAu++jOkcXxyypbkneys+mmeKpbTY8P2ooqNha/qrnO3CDnPX1dZw==", "create_student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("uni", "name", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["uni", "sk4699@columbia.edu"], ["name", "SK"], ["password", "pass"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 10ms (ActiveRecord: 4.3ms | Allocations: 3718)
+
+
+Started GET "/events" for ::1 at 2022-12-19 15:32:54 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social','When I''m Free'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1254)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 19761)
+Completed 200 OK in 23ms (Views: 14.4ms | ActiveRecord: 2.3ms | Allocations: 24248)
+
+
+Started GET "/student_profile" for ::1 at 2022-12-19 15:32:59 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1208)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 19712)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.2ms | Allocations: 20909)
+
+
+Started GET "/show_schedule" for ::1 at 2022-12-19 15:33:04 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (1.6ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.5ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1654)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 20161)
+Completed 200 OK in 52ms (Views: 17.2ms | ActiveRecord: 5.1ms | Allocations: 26610)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-12-19 15:33:08 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.1ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 8.5ms | Allocations: 4729)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 23233)
+Completed 200 OK in 23ms (Views: 18.4ms | ActiveRecord: 1.6ms | Allocations: 25060)
+
+
+Started POST "/update_schedule" for ::1 at 2022-12-19 15:33:12 -0500
+Processing by StudentsController#update_schedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fosfv3gzp0Mk8coBju7KDirjkba9y7w3PLzaDnkddsBtLgdRePLeaRdpQmHpTCOFy0K3mOSuBCR/QNQSrK66Yg==", "timeblock"=>{"weekday"=>"Sunday", "busy_start(1i)"=>"2022", "busy_start(2i)"=>"12", "busy_start(3i)"=>"19", "busy_start(4i)"=>"00", "busy_start(5i)"=>"00", "busy_end(1i)"=>"2022", "busy_end(2i)"=>"12", "busy_end(3i)"=>"19", "busy_end(4i)"=>"00", "busy_end(5i)"=>"00"}, "commit"=>"Add"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 1190)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/students_controller.rb:80:in `update_schedule'
+Started POST "/update_schedule" for ::1 at 2022-12-19 15:37:17 -0500
+Processing by StudentsController#update_schedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fosfv3gzp0Mk8coBju7KDirjkba9y7w3PLzaDnkddsBtLgdRePLeaRdpQmHpTCOFy0K3mOSuBCR/QNQSrK66Yg==", "timeblock"=>{"weekday"=>"Sunday", "busy_start(1i)"=>"2022", "busy_start(2i)"=>"12", "busy_start(3i)"=>"19", "busy_start(4i)"=>"00", "busy_start(5i)"=>"00", "busy_end(1i)"=>"2022", "busy_end(2i)"=>"12", "busy_end(3i)"=>"19", "busy_end(4i)"=>"01", "busy_end(5i)"=>"00"}, "commit"=>"Add"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1321)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/students_controller.rb:80:in `update_schedule'
+Started POST "/update_schedule" for ::1 at 2022-12-19 16:21:20 -0500
+Processing by StudentsController#update_schedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fosfv3gzp0Mk8coBju7KDirjkba9y7w3PLzaDnkddsBtLgdRePLeaRdpQmHpTCOFy0K3mOSuBCR/QNQSrK66Yg==", "timeblock"=>{"weekday"=>"Sunday", "busy_start(1i)"=>"2022", "busy_start(2i)"=>"12", "busy_start(3i)"=>"19", "busy_start(4i)"=>"10", "busy_start(5i)"=>"00", "busy_end(1i)"=>"2022", "busy_end(2i)"=>"12", "busy_end(3i)"=>"19", "busy_end(4i)"=>"05", "busy_end(5i)"=>"00"}, "commit"=>"Add"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 92ms (ActiveRecord: 12.9ms | Allocations: 31268)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=1):
+  
+app/controllers/students_controller.rb:78:in `update_schedule'
+Started GET "/" for ::1 at 2022-12-19 16:21:34 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 265)
+  Rendered layouts/_flash.erb (Duration: 0.5ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 212.1ms | Allocations: 316468)
+Completed 200 OK in 215ms (Views: 213.6ms | ActiveRecord: 0.0ms | Allocations: 317839)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 16:21:35 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1862)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 20366)
+Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 20740)
+
+
+Started POST "/student_login" for ::1 at 2022-12-19 16:21:44 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wMdIMKOWVt9yPVowDvWuRWSyCbwhBbwqlUtT3MoK85DTYlDeo1cv9UGl0lBpV0fOhRMvknhgBDnWt13AH7k/Mg==", "student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 3162)
+
+
+Started GET "/" for ::1 at 2022-12-19 16:21:45 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 99)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 18607)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 19151)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 16:21:46 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 903)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 19409)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 19683)
+
+
+Started POST "/new_student" for ::1 at 2022-12-19 16:21:58 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QuE0jT1xq5eGk5CDRNjyVVRYoOHqRI75HVfAq7OObAJRRCxjPbDSvbULGOMjehvetfmGz7MhNupeq863Zj2goA==", "create_student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 569)
+
+
+Started GET "/" for ::1 at 2022-12-19 16:21:58 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 18605)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 19150)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 16:22:00 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 903)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 19410)
+Completed 200 OK in 40ms (Views: 39.7ms | ActiveRecord: 0.0ms | Allocations: 19684)
+
+
+Started POST "/student_login" for ::1 at 2022-12-19 16:22:16 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q2d8a8e21wApg00lZcNQDIj8g1BaFo5n2RMjv81cIv9QwmSFx3euKhobxUUCYbmHaV2lfgNzNnSa7y2jGO/uXQ==", "student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 563)
+
+
+Started GET "/" for ::1 at 2022-12-19 16:22:16 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 18605)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 19148)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2022-12-19 21:22:40.019247"], ["key", "environment"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (10.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-19 21:22:44.435620"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+Started GET "/student_login_page" for ::1 at 2022-12-19 16:23:05 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2140)
+  Rendered layouts/_flash.erb (Duration: 0.7ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 132.1ms | Allocations: 318340)
+Completed 200 OK in 142ms (Views: 135.9ms | Allocations: 321327)
+
+
+Started POST "/new_student" for ::1 at 2022-12-19 16:23:18 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/X5BXDRlLnPzgCY0pMTXwm4X8T6trYEYP0zxALszYxbu21myNKRXWcAYrlTDZj5Jj7bXEPTIOQt8sP8cboCvtA==", "create_student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("uni", "name", "password") VALUES ($1, $2, $3) RETURNING "id"[0m  [["uni", "sk4699@columbia.edu"], ["name", "SK"], ["password", "pass"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 74ms (ActiveRecord: 9.9ms | Allocations: 33116)
+
+
+Started GET "/events" for ::1 at 2022-12-19 16:23:18 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social','When I''m Free'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1261)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 19769)
+Completed 200 OK in 50ms (Views: 41.7ms | ActiveRecord: 1.9ms | Allocations: 24261)
+
+
+Started GET "/student_profile" for ::1 at 2022-12-19 16:23:21 -0500
+Processing by StudentsController#my_profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/my_profile.html.erb within layouts/application
+  Rendered students/my_profile.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1213)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 19717)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.2ms | Allocations: 20914)
+
+
+Started GET "/show_schedule" for ::1 at 2022-12-19 16:23:23 -0500
+Processing by StudentsController#show_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/show_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.8ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendered students/show_schedule.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1649)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 20155)
+Completed 200 OK in 39ms (Views: 16.4ms | ActiveRecord: 3.8ms | Allocations: 26606)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-12-19 16:23:25 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.4ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 17.3ms | Allocations: 4729)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 23233)
+Completed 200 OK in 49ms (Views: 41.5ms | ActiveRecord: 2.1ms | Allocations: 25060)
+
+
+Started POST "/update_schedule" for ::1 at 2022-12-19 16:23:30 -0500
+Processing by StudentsController#update_schedule as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/VE0MV5c2FcTT2OlyDlbThT6l9v5imsuhmBxRdjx71ju9CzfXp2hfSDX68Wvm7LF9Vux9aDv0z3FnH9ZDUIj+g==", "timeblock"=>{"weekday"=>"Sunday", "busy_start(1i)"=>"2022", "busy_start(2i)"=>"12", "busy_start(3i)"=>"19", "busy_start(4i)"=>"09", "busy_start(5i)"=>"00", "busy_end(1i)"=>"2022", "busy_end(2i)"=>"12", "busy_end(3i)"=>"19", "busy_end(4i)"=>"02", "busy_end(5i)"=>"00"}, "commit"=>"Add"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/edit_schedule
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1229)
+
+
+Started GET "/edit_schedule" for ::1 at 2022-12-19 16:23:30 -0500
+Processing by StudentsController#edit_schedule as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit_schedule.html.erb within layouts/application
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-07 00:00:00', '1996-01-07 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-01 00:00:00', '1996-01-01 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-02 00:00:00', '1996-01-02 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-03 00:00:00', '1996-01-03 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.2ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-04 00:00:00', '1996-01-04 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-05 00:00:00', '1996-01-05 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  [1m[36mTimeblock Load (0.3ms)[0m  [1m[34mSELECT "timeblocks".* FROM "timeblocks" WHERE "timeblocks"."student_id" = $1 AND (busy_range && tsrange('1996-01-06 00:00:00', '1996-01-06 23:59:59.999999')) ORDER BY lower(busy_range)[0m  [["student_id", 1]]
+  Rendered students/edit_schedule.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3606)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 22114)
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 2.1ms | Allocations: 23825)
+
+
+Started POST "/organization_logout" for ::1 at 2022-12-19 16:27:40 -0500
+Processing by OrganizersController#logout as HTML
+  Parameters: {"authenticity_token"=>"m/Ah04j2fNLw2UWzKS7zgCYzy+NrKqasYyNSjnfz+ieIVTk9iDcF+MNBzdNOjBoLx5LtzTJPHr8g31ySokA2hQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (Allocations: 1697)
+
+
+Started GET "/" for ::1 at 2022-12-19 16:27:40 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 470)
+  Rendered layouts/_flash.erb (Duration: 1.8ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 129.0ms | Allocations: 316676)
+Completed 200 OK in 136ms (Views: 132.8ms | Allocations: 319129)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 16:27:41 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1849)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 20353)
+Completed 200 OK in 20ms (Views: 19.6ms | Allocations: 20727)
+
+
+Started POST "/student_login" for ::1 at 2022-12-19 16:27:51 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KCB0CUfDgycyspB51x41SiwwXbMg55Gmdiu7XLykZ9UNtmmCgPwjR+58Qg3AXHC2wxoGx4Ik9tZlCpH3c0Em/A==", "student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 109ms (ActiveRecord: 10.7ms | Allocations: 32405)
+
+
+Started GET "/events" for ::1 at 2022-12-19 16:27:51 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social','When I''m Free'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1259)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 19767)
+Completed 200 OK in 27ms (Views: 18.1ms | ActiveRecord: 2.2ms | Allocations: 24287)
+
+
+Started GET "/" for ::1 at 2022-12-19 16:27:53 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 102)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 18610)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 19144)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 16:27:54 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 906)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 19412)
+Completed 200 OK in 23ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 19686)
+
+
+Started POST "/student_login" for ::1 at 2022-12-19 16:28:05 -0500
+Processing by StudentsController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AVyE1UVY/Ebs74+WVquvEmrLk1dhXLc2FpmUvSLY5+0kyplegmdcJjAhXeJB6eruheHII8Of0EYFuL4W7T2mxA==", "student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Student Login"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 572)
+
+
+Started GET "/events" for ::1 at 2022-12-19 16:28:05 -0500
+Processing by EventsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (array_length(tags, 1) is NULL OR tags && array['Freshman','Sophomore','Junior','Senior','STEM','Humanities','Free Food','Academic','Professional','Social','When I''m Free'])[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 721)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 19228)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.5ms | Allocations: 20171)
+
+
+Started GET "/" for ::1 at 2022-12-19 16:28:06 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 18603)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 19136)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2022-12-19 22:12:37.956975"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-19 22:12:42.767945"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2022-12-19 17:28:00 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 486)
+  Rendered layouts/_flash.erb (Duration: 0.3ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 129.7ms | Allocations: 316695)
+Completed 200 OK in 143ms (Views: 133.1ms | Allocations: 320411)
+
+
+Started GET "/student_login_page" for ::1 at 2022-12-19 17:28:01 -0500
+Processing by PagesController#student_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/student_login.html.erb within layouts/application
+  Rendered pages/student_login.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1865)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 20369)
+Completed 200 OK in 17ms (Views: 16.3ms | Allocations: 20743)
+
+
+Started POST "/new_student" for ::1 at 2022-12-19 17:28:18 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QX+O1InZ90dRBXzsbg4BdTda3wpfWR0sgyKuIY87yatk6ZNfTuZXJ43Lrph5TESJ2HCEfv2aelyQA4SKQN6Igg==", "create_student"=>{"name"=>"SK", "uni"=>"sk4699@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Create Student Account"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."uni" = $1 LIMIT $2[0m  [["uni", "sk4699@columbia.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 101ms (ActiveRecord: 11.5ms | Allocations: 32436)
+
+
+Started GET "/" for ::1 at 2022-12-19 17:28:18 -0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 99)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 18608)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 19157)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2022-12-19 22:50:27.545043"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (2.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (12.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" text, "datetime" timestamp, "location" text, "description" text, "tags" text[] DEFAULT '{}', "organizer_id" bigint)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_events_on_organizer_id" ON "events" ("organizer_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "events_students" CASCADE[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "events_students" ("student_id" bigint NOT NULL, "event_id" bigint NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_event_id" ON "events_students" ("event_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_events_students_on_student_id" ON "events_students" ("student_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "organizers" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "name" text, "email" text NOT NULL, "password" text NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_organizers_on_email" ON "organizers" ("email")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "uni" text NOT NULL, "name" text, "password" text NOT NULL, "tags" text[] DEFAULT '{}')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_uni" ON "students" ("uni")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "timeblocks" CASCADE[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "timeblocks" ("id" bigserial primary key, "busy_range" tsrange, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "student_id" bigint)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_timeblocks_on_student_id" ON "timeblocks" ("student_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "events" ADD CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "timeblocks" ADD CONSTRAINT "fk_rails_72c5769462"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-19 22:50:46.623137"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]

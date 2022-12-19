@@ -8,9 +8,9 @@ describe EventsController do
     end
     test_org.events << test_event
 
-    student = Student.find_by(:uni => "sk4699")
+    student = Student.find_by(:uni => "sk4699@columbia.edu")
     if (student == nil)
-        student = Student.create({name: "sk", uni: "sk4699", password: "password"})
+        student = Student.create({name: "sk", uni: "sk4699@columbia.edu", password: "password"})
     end
 
     describe 'GET index' do
@@ -114,9 +114,9 @@ describe EventsController do
     describe 'best_scheduling options works as intended' do
       Timeblock.delete_all
       Student.delete_all
-      student = Student.create({name: "sk", uni: "sk4699_tag_test", password: "password", tags: ["Freshman", "STEM"]})
-      student2 = Student.create({name: "sv", uni: "sv2611_tag_test", password: "password", tags: ["Sophomore", "STEM"]})
-      student = Student.find_by(:uni => "sk4699_tag_test")
+      student = Student.create({name: "sk", uni: "sk1@columbia.edu", password: "password", tags: ["Freshman", "STEM"]})
+      student2 = Student.create({name: "sv1", uni: "sv1@columbia.edu", password: "password", tags: ["Sophomore", "STEM"]})
+      student = Student.find_by(:uni => "sk1@columbia.edu")
       # if (student == nil)
       #   student = Student.create({name: "sk", uni: "sk4699_tag_test", password: "password", tags: ["Freshman", "STEM"]})
       # end
