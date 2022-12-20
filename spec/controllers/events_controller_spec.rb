@@ -18,6 +18,7 @@ describe EventsController do
           request.session[:student_id] = student.id
           get :index
           expect(response).to render_template('index')
+          assigns(:events).should eq([])
         end
         it 'should only show events that the student is free for if requested' do
           d = Date.new(1996,1,2)

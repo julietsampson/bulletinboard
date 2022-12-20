@@ -23,7 +23,7 @@ Scenario: View all created events
   Given I check the following tags: Freshman,Sophomore,Junior,Senior,STEM,Humanities
   And I check "Free Food" checkbox
   And I press "Filter"
-  Then I should see all the events
+  Then I should see all events with filter "Free Food"
 
 Scenario: Filter existing events
   When I check the following tags: Freshman,STEM

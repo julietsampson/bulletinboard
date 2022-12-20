@@ -17,12 +17,12 @@ class EventsController < ApplicationController
     id = params[:id]
     @student = Student.find(student_id)
     @all_tags = Event.all_tags 
-    relevant_events = Event.with_tags(tags_list, sort_by)
+    @relevant_events = Event.with_tags(tags_list, sort_by)
     if (tags_list.include?("When I'm Free")== false)
-      @events = relevant_events
+      @events = @relevant_events
     else
       @events = []
-      for event in relevant_events
+      for event in @relevant_events
         if event.datetime
           free = true
           day = day_order_list[event.datetime.wday]

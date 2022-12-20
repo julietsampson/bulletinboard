@@ -18,7 +18,7 @@ describe StudentsController do
 
         it 'creates a new student when given all params, and only if an account with this uni does not already exist' do
             expect {post :create, params: {create_student: {name: "New stud", uni: "ab1234@columbia.edu", password: "password"}}}.to change {Student.count}.by(1)
-            expect {post :create, params: {create_student: {name: "New student", uni: "ab1234", password: "password"}}}.to change {Organizer.count}.by(0)
+            expect {post :create, params: {create_student: {name: "New student", uni: "ab1234@columbia.edu", password: "password"}}}.to change {Organizer.count}.by(0)
         end
     end
 

@@ -25,6 +25,7 @@ Given("the student with uni {string} is busy on {string} from {int}:{int} to {in
 end
 
 Given /the following events exist/ do |events_table|
+  # Event.delete_all
   @organization = Organizer.create!({
     :name => "CucumberTestUser",
     :email => "ab@columbia.edu",
@@ -38,6 +39,7 @@ Given /the following events exist/ do |events_table|
 end
   
 Given /the following events are on my events list/ do |events_table|
+  # Event.delete_all
   events_table.hashes.each do |event|
     @event = Event.find_by(:name => event[:name])
     @student.events << @event
@@ -49,6 +51,13 @@ Then /I should see all the events/ do
     rows = page.all('tbody tr').count
     expect(rows).to eq Event.count
   end
+
+Then /I should see all events with filter "(.*)"/ do |filter|
+  filter_array = [filter]
+  rows = page.all('tbody tr').count - 1
+  db_count = Event.where('tags && array[?]', filter_array).count
+  expect(rows).to eq db_count
+end
 
 Then /my event list should be updated/ do
     
