@@ -4,6 +4,7 @@ ruby '2.6.6'
 gem 'rails', '6.1.2'
 gem 'pg', '~> 1.1'
 gem 'rails-controller-testing'
+gem "tailwindcss-rails", "~> 2.0"
 
 # for Heroku deployment 
 group :development, :test do
@@ -29,5 +30,3 @@ end
 gem 'sass-rails', '~> 5.0.3'
 gem 'uglifier', '>= 2.7.1'
 gem 'jquery-rails'
-
-gem "tailwindcss-rails", "~> 2.0"

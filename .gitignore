@@ -8,3 +8,6 @@ rottenpotatoes/lib/tasks/
 rottenpotatoes/log/
 rottenpotatoes/tmp/
 rottenpotatoes/vendor/bundle
+coverage
+# /app/assets/builds/*
+# !/app/assets/builds/.keep
